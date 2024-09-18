@@ -1,0 +1,174 @@
+/* Основные стили */
+.form-container {
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-subtitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.quantity-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quantity-slider {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.quantity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff5100;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-output {
+    font-size: 18px;
+    color: #333;
+    min-width: 40px;
+    text-align: left;
+}
+
+.name__input,
+.email__input {
+    width: 100%;
+    max-width: 479px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+.name__input,
+.email__input::placeholder{
+    font-size: 15px;
+}
+
+.name__input {
+    width: 93%;
+}
+
+.email-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.submit__button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6777ef;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit__button:hover {
+    background-color: #5661e5;
+}
+
+/* Стили для планшетов и больших телефонов */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        margin-bottom: 100px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .form-subtitle {
+        font-size: 16px;
+    }
+
+    .quantity-label {
+        font-size: 15px;
+    }
+
+    .slider-output {
+        font-size: 16px;
+    }
+
+    .submit__button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Стили для маленьких экранов (телефонов) */
+@media (max-width: 550px) {
+    .form-container {
+        padding: 15px;
+        margin-bottom: 80px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-subtitle {
+        font-size: 14px;
+    }
+
+    .quantity-label {
+        font-size: 14px;
+    }
+
+    .slider-output {
+        font-size: 14px;
+    }
+
+    .submit__button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .phone-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .name__input,
+    .email__input {
+        width: 100%;
+        max-width: 100%;
+    }
+}

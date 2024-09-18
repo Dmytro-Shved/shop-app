@@ -1,0 +1,51 @@
+.reviews {
+  position: relative;
+  padding-top: 150px;
+    
+  h2{
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.star__img {
+  position: absolute; /* Абсолютное позиционирование для звезд */
+  top: 90px; /* Центрируем звезды относительно левого края */
+}
+
+
+.reviews__hr{
+  width: 50%;
+  height: 3px;
+ background-color: black; 
+ outline: none;
+ border: none;
+ border-radius: 50%;
+
+}
+
+.reviews__grid{
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    row-gap: 50px;
+}
+.reviews__grid__item{
+  flex-basis: calc(100% / 4 - 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.grid__photo{
+  
+  width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+  

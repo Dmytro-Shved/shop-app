@@ -1,0 +1,29 @@
+html{
+    scroll-behavior: smooth
+}
+@import "./base/reset";
+@import "./base/variables";
+@import "./base/base";
+@import "./base/typography";
+
+@import "./layout/layout";
+
+
+
+@import "./components/header/header";
+@import "./components/hero/hero";
+
+@import "./components/main/catalog";
+@import "./components/main/blocks";
+
+
+
+@import "./components/main/blocks/RECENZJE/recenzje";
+@import "./components/main/blocks/KONTAKT/contact/contact";
+@import "./components/main/blocks/HURTOWNIA/hurtovnia";
+
+
+
+@import "./components/footer/footer";
+@import "./components/footer/info-list";
+@import "./components/footer/social_network-list";

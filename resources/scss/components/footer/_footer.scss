@@ -1,0 +1,41 @@
+footer{
+    background-color: var(--colorBackgroundPrimary);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 14px;
+  
+}
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+}
+.footer-logo {
+    max-width: 200px;
+    max-height: 200px;
+    filter: drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.3));
+  }
+
+
+  .konto-mastercard{
+    bottom: -30px;
+    left: 410px;
+    width: 80px;
+    height: 80px;
+  }
+  .konto-blik{
+    bottom: -20px;
+    left: 760px;
+    width: 100px;
+    height: 70px;
+  }
+
+  @media (max-width: 550px) {
+    .footer-container {
+        flex-direction: column;
+
+    }
+  }

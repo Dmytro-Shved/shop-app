@@ -1,0 +1,83 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 250px;
+  padding-bottom: 240px;
+
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1; 
+}
+
+.hero-title {
+  line-height: 1.363;
+  letter-spacing: 3px;
+  font-size: 50px;
+  color: var(--colorTextContrast);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "New Amsterdam", sans-serif;
+
+}
+
+.creeping-line {
+  padding: 5px 0px;
+  position: absolute;
+  bottom: 0; 
+  width: 100%; 
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgb(255, 89, 0);
+  color: aliceblue;
+  white-space: nowrap;
+}
+
+.creeping-line div {
+  display: flex;
+  gap: 5px;
+  animation: marquee-text 10s linear infinite;
+}
+
+.creeping-title {
+  white-space: nowrap;
+}
+
+@keyframes marquee-text {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  
+  }
+ 
+}
+

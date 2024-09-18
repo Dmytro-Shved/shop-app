@@ -1,0 +1,20 @@
+.kontakt__link{
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.55;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #0041d947;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    padding: 25px;
+    -webkit-box-shadow: 0px 8px 52px -9px rgba(249, 249, 255, 1);
+    -moz-box-shadow: 0px 8px 52px -9px rgba(249, 249, 255, 1);
+    box-shadow: 0px 8px 40px -15px rgba(249, 249, 255, 1);
+    transition: box-shadow 1s;
+    &:hover{
+        box-shadow: none;
+    }
+}
