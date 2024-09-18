@@ -369,6 +369,8 @@
         <a href="https://t.me/GgYyPpSsY" class="kontakt__link">Skontaktuj się z menadżerem</a>
     </section>
     <section class="wholesale" id="wholesale">
+
+        {{-- Form --}}
         <div class="form-container">
             <h2 class="form-title">
                 Chcesz zostać klientem hurtowym?</h2>
@@ -381,14 +383,14 @@
                     <output class="slider-output">50</output>
                 </div>
 
-
+                {{-- Name--}}
                 <input type="text" id="name" name="name" class="name__input" placeholder="Twoje imie">
 
+                {{-- Email --}}
                 <div class="email-container">
-
                     <input type="tel" id="email" name="email" class="email__input" placeholder="elfvapeshop@gmail.com">
                 </div>
-
+                {{-- Submit button --}}
                 <button type="submit" class="submit__button">WYŚLIJ WNIOSEK</button>
             </form>
         </div>
