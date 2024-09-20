@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cigarettes', function (Blueprint $table) {
+        Schema::create('liquids', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('strength', 50);
-            $table->integer('puffs');
+            $table->string('name', 191);
+            $table->string('pg_vg_ratio', 10);
+            $table->integer('volume');
             $table->string('flavor', 191);
-            $table->decimal('price', 8, 2);
+            $table->decimal('price', 8, 2)->nullable(0);
             $table->string('image');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cigarettes');
+        Schema::dropIfExists('liquids');
     }
 };
