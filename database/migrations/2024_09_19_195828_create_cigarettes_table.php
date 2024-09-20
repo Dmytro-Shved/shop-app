@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cigarettes', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->string('type', 50);
             $table->string('strength', 50);
             $table->integer('puffs');
             $table->string('flavor', 191);
