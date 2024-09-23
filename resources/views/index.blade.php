@@ -112,6 +112,7 @@
                         :puffs="$cigarette->puffs"
                         :flavor="$cigarette->flavor"
                         :price="$cigarette->price"
+                        :type="$cigarette->type"
                     />
                 @endforeach
 

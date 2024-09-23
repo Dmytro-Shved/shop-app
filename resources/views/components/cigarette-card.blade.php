@@ -1,9 +1,9 @@
-@props(['name', 'image', 'strength', 'puffs', 'flavor', 'price'])
+@props(['name', 'image', 'strength', 'puffs', 'flavor', 'price', 'type'])
 
 <li class="grid__item">
-    <article class="product elfbar">
+    <article class="product {{ $type }}">
         {{-- Image --}}
-        <img class="product__image" src="{{ asset('./storage/images/elfbar/' . $image) }}" alt="{{ $name }}" />
+        <img class="product__image" src="{{ asset('./storage/images/'.$type.'/' . $image) }}" alt="{{ $name }}" />
         <div class="product__description">
             {{-- Name --}}
             <h2 class="product__name">{{ $name }}</h2>
