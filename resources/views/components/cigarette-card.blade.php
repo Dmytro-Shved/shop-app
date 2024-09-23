@@ -19,6 +19,7 @@
             {{-- Price --}}
             <p class="product__price">Cena: {{ $price }} zł</p>
         </div>
+        {{-- Buy button --}}
         <button class="button product__buy">Kupić</button>
         {{-- Cart button --}}
         <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
