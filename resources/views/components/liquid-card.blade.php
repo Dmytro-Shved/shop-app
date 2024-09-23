@@ -1,4 +1,4 @@
-@props(['name' => '#', 'image' => '#', 'pg_vg_ratio' => '#', 'volume' => '#', 'flavor' => '#', 'price' => '#'])
+@props(['name', 'image', 'pg_vg_ratio', 'volume', 'flavor', 'price'])
 
 <li class="grid__item">
     <article class="product liquid">
