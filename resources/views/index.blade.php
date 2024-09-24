@@ -102,7 +102,7 @@
             </ul>
 
 
-            <ul class="grid">
+            <div class="grid">
                 {{-- Cigarettes --}}
                 @foreach($cigarettes as $cigarette)
                     <x-cigarette-card
@@ -127,7 +127,7 @@
                     :price="$liquid->price"
                     />
                 @endforeach
-            </ul>
+            </div>
 
         </div>
     </section>
