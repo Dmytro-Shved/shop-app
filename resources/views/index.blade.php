@@ -108,215 +108,33 @@
             </ul>
 
 
-            <ul class="grid">
-                <li class="grid__item">
-                    <article class="product elfbar">
-                        <img class="product__image" src="{{ asset('./storage/images/elfbar/ice.jpg') }}" alt="ElfBar Ice" />
-                        <div class="product__description">
-                            <h2 class="product__name">ElfBar Ice 3000</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 5%
-                                <br>
-                                ✔&nbsp;3000 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: mentolowy lód
+            <div class="grid">
+                {{-- Cigarettes --}}
+                @foreach($cigarettes as $cigarette)
+                    <x-cigarette-card
+                        :name="$cigarette->name"
+                        :image="$cigarette->image"
+                        :strength="$cigarette->strength"
+                        :puffs="$cigarette->puffs"
+                        :flavor="$cigarette->flavor"
+                        :price="$cigarette->price"
+                        :type="$cigarette->type"
+                    />
+                @endforeach
 
-                            </div>
-                            <p class="product__price">Cena: 400 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
+                {{-- Liquids --}}
+                @foreach($liquids as $liquid)
+                    <x-liquid-card
+                    :name="$liquid->name"
+                    :image="$liquid->image"
+                    :pg_vg_ratio="$liquid->pg_vg_ratio"
+                    :volume="$liquid->volume"
+                    :flavor="$liquid->flavor"
+                    :price="$liquid->price"
+                    />
+                @endforeach
+            </div>
 
-                <li class="grid__item">
-                    <article class="product elfbar">
-                        <img class="product__image" src="{{ asset('./storage/images/elfbar/blast.png') }}" alt="ElfBar Blast" />
-                        <div class="product__description">
-                            <h2 class="product__name">ElfBar Blast 3000</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 5%
-                                <br>
-                                ✔&nbsp;3000 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: mieszanka owoców
-                            </div>
-                            <p class="product__price">Cena: 150 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product pod">
-                        <img class="product__image" src="{{ asset('./storage/images/pod/hydra.jpg') }}" alt="Hydra Pod" />
-                        <div class="product__description">
-                            <h2 class="product__name">Hydra Pod 2500</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 4%
-                                <br>
-                                ✔&nbsp;2500 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: tropikalne owoce
-                            </div>
-                            <p class="product__price">Cena: 270 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product liquid">
-                        <img class="product__image" src="{{ asset('./storage/images/liquid/ice.png') }}" alt="Liquid Ice" />
-                        <div class="product__description">
-                            <h2 class="product__name">Liquid Ice 50 ml</h2>
-                            <div class="product__info">
-                                ✔&nbsp;PG/VG - 50/50
-                                <br>
-                                ✔&nbsp;Pojemność - 50 ml
-                                <br>
-                                ✔&nbsp;Smak: miętowy chłód
-                            </div>
-                            <p class="product__price">Cena: 320 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product liquid">
-                        <img class="product__image" src="{{ asset('./storage/images/liquid/lost.jpg') }}" alt="Liquid Lost" />
-                        <div class="product__description">
-                            <h2 class="product__name">Liquid Lost 60 ml</h2>
-                            <div class="product__info">
-                                ✔&nbsp;PG/VG - 60/40
-                                <br>
-                                ✔&nbsp;Pojemność - 60 ml
-                                <br>
-                                ✔&nbsp;Smak: jagodowy miks
-                            </div>
-                            <p class="product__price">Cena: 240 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product pod">
-                        <img class="product__image" src="{{ './storage/images/pod/xros.png' }}" alt="XROS Pod" />
-                        <div class="product__description">
-                            <h2 class="product__name">XROS Pod 1500</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 3.5%
-                                <br>
-                                ✔&nbsp;1500 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: arbuzowy sok
-                            </div>
-                            <p class="product__price">Cena: 240 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product pod">
-                        <img class="product__image" src="{{ asset('./storage/images/pod/nano.png') }}" alt="Nano Pod" />
-                        <div class="product__description">
-                            <h2 class="product__name">Nano Pod 2000</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 3%
-                                <br>
-                                ✔&nbsp;2000 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: truskawkowy sorbet
-                            </div>
-                            <p class="product__price">Cena: 240 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product elfbar">
-                        <img class="product__image" src="{{ asset('./storage/images/elfbar/apple.png') }}" alt="ElfBar Apple" />
-                        <div class="product__description">
-                            <h2 class="product__name">ElfBar Apple 3000</h2>
-                            <div class="product__info">
-                                ✔&nbsp;Moc - 5%
-                                <br>
-                                ✔&nbsp;3000 zaciągnięć
-                                <br>
-                                ✔&nbsp;Smak: soczyste jabłko
-                            </div>
-                            <p class="product__price">Cena: 200 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-
-                <li class="grid__item">
-                    <article class="product liquid">
-                        <img class="product__image" src="{{ asset('./storage/images/liquid/mango.jpg') }}" alt="Liquid Mango" />
-                        <div class="product__description">
-                            <h2 class="product__name">Liquid Mango 50 ml</h2>
-                            <div class="product__info">
-                                ✔&nbsp;PG/VG - 50/50
-                                <br>
-                                ✔&nbsp;Pojemność - 50 ml
-                                <br>
-                                ✔&nbsp;Smak: dojrzałe mango
-                            </div>
-                            <p class="product__price">Cena: 120 zł</p>
-                        </div>
-                        <button class="button product__buy">Kupić</button>
-                        <button type="button" class="button product__button" aria-label="Dodaj do koszyka">
-                            <svg class="button__icon" width="20" height="20">
-                                <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
-                            </svg>
-                        </button>
-                    </article>
-                </li>
-            </ul>
         </div>
     </section>
 
@@ -422,6 +240,8 @@
         <a href="https://t.me/GgYyPpSsY" class="kontakt__link">Skontaktuj się z menadżerem</a>
     </section>
     <section class="wholesale" id="wholesale">
+
+        {{-- Form --}}
         <div class="form-container">
             <h2 class="form-title">
                 Chcesz zostać klientem hurtowym?</h2>
@@ -434,14 +254,14 @@
                     <output class="slider-output">50</output>
                 </div>
 
-
+                {{-- Name--}}
                 <input type="text" id="name" name="name" class="name__input" placeholder="Twoje imie">
 
+                {{-- Email --}}
                 <div class="email-container">
-
                     <input type="tel" id="email" name="email" class="email__input" placeholder="elfvapeshop@gmail.com">
                 </div>
-
+                {{-- Submit button --}}
                 <button type="submit" class="submit__button">WYŚLIJ WNIOSEK</button>
             </form>
         </div>
