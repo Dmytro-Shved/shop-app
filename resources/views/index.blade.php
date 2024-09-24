@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=New+Amsterdam&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
 
-    <link rel="stylesheet" href="/resources/css/main.css" />
+    <!-- <link rel="stylesheet" href=".\resources\css\main.css"/> -->
 
     @yield('content')
 
@@ -21,11 +21,17 @@
     @vite('resources/js/hurt.js')
     @vite('resources/js/main.js')
     @vite('resources/js/filtr.js')
+    @vite('resources/js/reviews.js')
+
+    
+    <!-- @vite('resources/js/reviews.js') -->
 
     @vite('public/images')
 
     @vite('resources/js/header-menu.js')
 </head>
+
+
 
 <body>
 <header class="header">
@@ -313,8 +319,10 @@
             </ul>
         </div>
     </section>
-    <section class="reviews">
-        <div class="star__img">
+
+
+
+    <!-- <div class="star__img">
             <svg role="presentation" width="" height="21.48px" viewBox="0 0 88 21" class="star__svg">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g fill="#ff5100">
@@ -331,39 +339,15 @@
                     </g>
                 </g>
             </svg>
-        </div>
-        <hr class="reviews__hr">
-        <h2 id="rec">RECENZJE</h2>
 
-        <ul class="reviews__grid">
+                <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
 
-
-
-            <li class="reviews__grid__item">
-                <article class="grid__photo">
-                    <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
-                </article>
-            </li>
-            <li class="reviews__grid__item">
-                <article class="grid__photo">
-                    <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
-                </article>
-            </li>
-            <li class="reviews__grid__item">
-                <article class="grid__photo">
-                    <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
-                </article>
-            </li>
-            <li class="reviews__grid__item">
-                <article class="grid__photo">
-                    <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
-                </article>
-            </li>
-
-        </ul>
+        </div> -->
+bbr
 
 
-    </section>
+
+
     <section class="contact">
         <h2 id="kon">KONTAKT</h2>
         <a href="https://t.me/GgYyPpSsY" class="kontakt__link">Skontaktuj się z menadżerem</a>
@@ -448,10 +432,12 @@
 </footer>
 
 
-<script src="/resources/js/filtr.js"></script>
+<!-- <script src="/resources/js/filtr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-<script src="/resources/js/hurt.js"></script>
+<script src="./resources/js/hurt.js"></script>
 <script src="/resources/js/header-menu.js"></script>
+<script src="/resources/js/reviews.js"></script> -->
+
 </body>
 
 </html>

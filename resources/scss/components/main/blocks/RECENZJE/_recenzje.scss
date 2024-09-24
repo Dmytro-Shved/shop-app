@@ -1,51 +1,91 @@
-.reviews {
+.carousel {
   position: relative;
-  padding-top: 150px;
-    
-  h2{
-    margin-top: 20px;
-    margin-bottom: 50px;
+  z-index: 1;
+  height: 700px;
+  overflow: visible;
+  
+  pointer-events: none;
+  margin: 20px 0;
+  width: 100%;
+}
+.carousel-item {
+  --width: clamp(150px, 30vw, 300px); /* Адаптивная ширина карточек */
+  --height: clamp(200px, 40vw, 400px); /* Адаптивная высота карточек */
+  --x: calc(var(--active) * 80% * var(--items));
+  --y: calc(var(--active) * 20% * var(--items));
+  --rot: calc(var(--active) * 120deg);
+  --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+  overflow: hidden;
+  position: absolute;
+  z-index: var(--zIndex);
+  width: var(--width);
+  height: var(--height);
+  margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  user-select: none;
+  transform-origin: 0% 100%;
+  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+  background: black;
+  pointer-events: all;
+  transform: translate(var(--x), var(--y)) rotate(var(--rot));
+  transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+}
+.carousel-item .carousel-box {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+  opacity: var(--opacity);
+}
+.carousel-item .carousel-box:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5));
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .carousel {
+    height: 400px; /* уменьшаем высоту карусели */
+  }
+
+  .carousel-item {
+    --width: clamp(180px, 40vw, 240px); /* увеличиваем минимальный размер карточек */
+    --height: clamp(240px, 60vw, 320px); /* увеличиваем минимальный размер карточек */
+    --x: calc(var(--active) * 60% * var(--items)); /* уменьшаем смещение по горизонтали */
+    --y: calc(var(--active) * 10% * var(--items)); /* уменьшаем смещение по вертикали */
+    --rot: calc(var(--active) * 90deg); /* уменьшаем угол поворота */
   }
 }
 
-.star__img {
-  position: absolute; /* Абсолютное позиционирование для звезд */
-  top: 90px; /* Центрируем звезды относительно левого края */
-}
+/* Адаптация для очень маленьких экранов (например, телефоны < 480px) */
+@media (max-width: 480px) {
+  .carousel {
+    height: 300px; /* уменьшаем высоту карусели еще сильнее */
+    overflow: visible;
+  }
 
-
-.reviews__hr{
-  width: 50%;
-  height: 3px;
- background-color: black; 
- outline: none;
- border: none;
- border-radius: 50%;
-
+  .carousel-item {
+    --width: clamp(120px, 50vw, 180px); /* делаем карточки крупнее для очень маленьких экранов */
+    --height: clamp(160px, 70vw, 240px); /* делаем карточки крупнее для очень маленьких экранов */
+    --x: calc(var(--active) * 50% * var(--items)); /* уменьшаем смещение по горизонтали */
+    --y: calc(var(--active) * 5% * var(--items)); /* уменьшаем смещение по вертикали */
+    --rot: calc(var(--active) * 60deg); /* еще сильнее уменьшаем угол поворота */
+  }
 }
-
-.reviews__grid{
-    width: 80%;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    row-gap: 50px;
-}
-.reviews__grid__item{
-  flex-basis: calc(100% / 4 - 16px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-.grid__photo{
-  
-  width: 250px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-  
