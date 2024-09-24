@@ -10,11 +10,22 @@ document.getElementById('tg').addEventListener('submit', function(e) {
     const quantity = this.quantity.value;
     const email = this.email.value.trim();
 
-
     const orderNumber = generateOrderNumber();
 
+    // Валидация
     if (!name || !quantity || !email) {
         alert("Proszę wypełnić wszystkie pola formularza.");
+        return;
+    }
+
+    if (name.length > 20) {
+        alert("Imię nie może быть длиннее 10 znaków.");
+        return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Proszę wprowadzić prawidłowy adres e-mail.");
         return;
     }
 
@@ -40,10 +51,10 @@ document.getElementById('tg').addEventListener('submit', function(e) {
     });
 });
 
-
 function generateOrderNumber() {
     const timestamp = Date.now();
     const randomNum = Math.floor(Math.random() * 1000);
     return `ORD-${timestamp}-${randomNum}`;
 }
+
 
