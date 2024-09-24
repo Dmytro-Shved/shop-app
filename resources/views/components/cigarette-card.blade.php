@@ -1,6 +1,6 @@
 @props(['name', 'image', 'strength', 'puffs', 'flavor', 'price', 'type'])
 
-<li class="grid__item">
+<div class="grid__item">
     <article class="product {{ $type }}">
         {{-- Image --}}
         <img class="product__image" src="{{ asset('./storage/images/'.$type.'/' . $image) }}" alt="{{ $name }}" />
@@ -28,7 +28,7 @@
             </svg>
         </button>
     </article>
-</li>
+</div>
 
 <div>
     {{ $slot }}
