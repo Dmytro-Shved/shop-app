@@ -2,8 +2,7 @@
   position: relative;
   z-index: 1;
   height: 700px;
-  overflow: visible;
-  
+  overflow: hidden;
   pointer-events: none;
   margin: 20px 0;
   width: 100%;
@@ -59,33 +58,31 @@
   pointer-events: none;
 }
 
-/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   .carousel {
-    height: 400px; /* уменьшаем высоту карусели */
+    height: 500px; /* увеличиваем высоту карусели для мобильных */
+    overflow-x: hidden;
   }
 
   .carousel-item {
-    --width: clamp(180px, 40vw, 240px); /* увеличиваем минимальный размер карточек */
-    --height: clamp(240px, 60vw, 320px); /* увеличиваем минимальный размер карточек */
-    --x: calc(var(--active) * 60% * var(--items)); /* уменьшаем смещение по горизонтали */
-    --y: calc(var(--active) * 10% * var(--items)); /* уменьшаем смещение по вертикали */
-    --rot: calc(var(--active) * 90deg); /* уменьшаем угол поворота */
+    --width: clamp(220px, 50vw, 320px); /* увеличиваем размер карточек */
+    --height: clamp(300px, 70vw, 420px); /* увеличиваем высоту карточек */
+    --x: calc(var(--active) * 80% * var(--items)); /* корректируем смещение по горизонтали */
+    --y: calc(var(--active) * 15% * var(--items)); /* немного корректируем смещение по вертикали */
+    --rot: calc(var(--active) * 80deg); /* сохраняем угол поворота для эффекта */
   }
 }
-
 /* Адаптация для очень маленьких экранов (например, телефоны < 480px) */
 @media (max-width: 480px) {
   .carousel {
-    height: 300px; /* уменьшаем высоту карусели еще сильнее */
-    overflow: visible;
+    height: 400px; /* увеличиваем высоту карусели */
   }
 
   .carousel-item {
-    --width: clamp(120px, 50vw, 180px); /* делаем карточки крупнее для очень маленьких экранов */
-    --height: clamp(160px, 70vw, 240px); /* делаем карточки крупнее для очень маленьких экранов */
-    --x: calc(var(--active) * 50% * var(--items)); /* уменьшаем смещение по горизонтали */
-    --y: calc(var(--active) * 5% * var(--items)); /* уменьшаем смещение по вертикали */
-    --rot: calc(var(--active) * 60deg); /* еще сильнее уменьшаем угол поворота */
+    --width: clamp(200px, 60vw, 280px); /* делаем карточки еще крупнее */
+    --height: clamp(280px, 80vw, 360px); /* увеличиваем высоту карточек */
+    --x: calc(var(--active) * 70% * var(--items)); /* корректируем смещение по горизонтали */
+    --y: calc(var(--active) * 10% * var(--items)); /* уменьшаем смещение по вертикали */
+    --rot: calc(var(--active) * 70deg); /* уменьшаем угол поворота для лучшего восприятия */
   }
 }

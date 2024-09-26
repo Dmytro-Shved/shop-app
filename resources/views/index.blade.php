@@ -161,7 +161,7 @@
                 <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
 
         </div> -->
-<section class="reviews">
+<section class="reviews ">
             <h2 class="reviews-title">RECENZJE</h2>
             <div class="star__img">
             <svg role="presentation" width="" height="21.48px" viewBox="0 0 88 21" class="star__svg">
