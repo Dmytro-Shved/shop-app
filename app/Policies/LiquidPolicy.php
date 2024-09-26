@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Liquid;
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Auth\Access\Response;
 
 class LiquidPolicy
@@ -11,7 +11,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(Admin $user): bool
     {
         //
     }
@@ -19,7 +19,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Liquid $liquid): bool
+    public function view(Admin $user, Liquid $liquid): bool
     {
         //
     }
@@ -27,7 +27,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(Admin $user): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Liquid $liquid): bool
+    public function update(Admin $user, Liquid $liquid): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Liquid $liquid): bool
+    public function delete(Admin $user, Liquid $liquid): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Liquid $liquid): bool
+    public function restore(Admin $user, Liquid $liquid): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class LiquidPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Liquid $liquid): bool
+    public function forceDelete(Admin $user, Liquid $liquid): bool
     {
         //
     }
