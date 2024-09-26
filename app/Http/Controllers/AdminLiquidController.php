@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cigarette;
-use App\Http\Requests\StoreCigaretteRequest;
-use App\Http\Requests\UpdateCigaretteRequest;
+use App\Models\Liquid;
+use App\Http\Requests\StoreLiquidRequest;
+use App\Http\Requests\UpdateLiquidRequest;
 
-class CigaretteController extends Controller
+class AdminLiquidController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CigaretteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCigaretteRequest $request)
+    public function store(StoreLiquidRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class CigaretteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cigarette $cigarette)
+    public function show(Liquid $liquid)
     {
         //
     }
@@ -43,7 +43,7 @@ class CigaretteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cigarette $cigarette)
+    public function edit(Liquid $liquid)
     {
         //
     }
@@ -51,7 +51,7 @@ class CigaretteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCigaretteRequest $request, Cigarette $cigarette)
+    public function update(UpdateLiquidRequest $request, Liquid $liquid)
     {
         //
     }
@@ -59,7 +59,7 @@ class CigaretteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cigarette $cigarette)
+    public function destroy(Liquid $liquid)
     {
         //
     }
