@@ -69,7 +69,6 @@
         <div class="#">
             <button type="submit" class="#">Confirm</button>
         </div>
-
     </form>
 </div>
 </body>
