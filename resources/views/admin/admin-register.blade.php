@@ -10,11 +10,14 @@
 {{--    @yield('content')--}}
 {{--    @vite('resources/css/main.css')--}}
 
+    {{-- Hot reboot for page --}}
+    @vite('resources/views/admin')
+
 </head>
 <body>
 <div class="#">
-    {{-- Go back to main page --}}
-    <a href="{{ route('index') }}">&larr; Go back to main page</a>
+    {{-- Go back to home page --}}
+    <a href="{{ route('home') }}">&larr; Go back to home page</a>
 
     <h2>Admin Registration</h2>
     {{-- Form --}}

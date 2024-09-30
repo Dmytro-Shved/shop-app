@@ -13,7 +13,9 @@ export default defineConfig({
                 'resources/js/main.js',
 
                 'resources/js/filtr.js',
-                'resources/js/header-menu.js'
+                'resources/js/header-menu.js',
+
+                'resources/views/admin'
             ],
             refresh: true,
         }),
