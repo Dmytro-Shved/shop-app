@@ -3,7 +3,7 @@
 <div class="grid__item">
     <article class="product liquid">
         {{-- Image --}}
-        <img class="product__image" src="{{ asset('./storage/images/liquid/' . $image) }}" alt="{{ $name }}" />
+        <img class="product__image" src="{{ asset('./storage/'. $image) }}" alt="{{ $name }}" />
         <div class="product__description">
             {{-- Name --}}
             <h2 class="product__name">{{ $name }}</h2>

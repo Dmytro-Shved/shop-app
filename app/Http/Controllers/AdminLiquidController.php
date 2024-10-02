@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Liquid;
 use App\Http\Requests\StoreLiquidRequest;
 use App\Http\Requests\UpdateLiquidRequest;
+use Illuminate\Support\Facades\Storage;
 
 class AdminLiquidController extends Controller
 {
@@ -29,7 +30,34 @@ class AdminLiquidController extends Controller
      */
     public function store(StoreLiquidRequest $request)
     {
-        //
+        // Validate
+        $liquid = $request->validate([
+            'name' => ['required', 'max:50'],
+            'pg_vg_ratio' => ['required', 'max:10'],
+            'volume'=> ['required', 'max:25', 'numeric'],
+            'flavor'=> ['required'],
+            'price'=> ['required', 'numeric'],
+            'image'=> ['required', 'image', 'nullable'],
+        ]);
+
+        // Store an image if exist
+        $path = null;
+        if ($request->hasFile('image')){
+            $path = Storage::disk('public')->put( 'images/liquid',$request->image);
+        }
+
+        // Create product
+        Liquid::create([
+            'name' => $request->name,
+            'pg_vg_ratio' =>$request->pg_vg_ratio,
+            'volume'=>$request->volume,
+            'flavor'=>$request->flavor,
+            'price'=>$request->price,
+            'image'=> $path
+        ]);
+
+        // Redirect
+        return redirect()->route('admin_panel')->with('success', 'New liquid was successfully created');
     }
 
     /**

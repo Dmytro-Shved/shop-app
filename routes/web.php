@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCigaretteController;
+use App\Http\Controllers\AdminLiquidController;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,4 @@ Route::post('/admin/register', [AdminAuthController::class, 'register'])->name('
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('login');
 
 Route::resource('cigarettes', AdminCigaretteController::class);
+Route::resource('liquids', AdminLiquidController::class);

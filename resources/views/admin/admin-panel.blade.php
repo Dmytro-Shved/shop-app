@@ -105,6 +105,78 @@
     </form>
 
     <hr>
+    <h3>Create new Liquid</h3>
+
+    {{-- Liquid Form --}}
+    <form action="{{ route('liquids.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        {{-- Name --}}
+        <div class="#">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="input">
+
+            @error('name')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- PG/VG Ratio --}}
+        <div class="#">
+            <label for="pg_vg_ratio">PG/VG Ratio</label>
+            <input type="text" name="pg_vg_ratio" class="input">
+
+            @error('pg_vg_ratio')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- Volume --}}
+        <div class="#">
+            <label for="volume">Volume</label>
+            <input type="number" name="volume" class="input">
+
+            @error('volume')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- Flavor --}}
+        <div class="#">
+            <label for="flavor">Flavor</label>
+            <input type="text" name="flavor" class="input">
+
+            @error('flavor')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- Price --}}
+        <div class="#">
+            <label for="price">Price</label>
+            <input type="number" name="price" class="input">
+
+            @error('price')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- Image --}}
+        <div class="#">
+            <label for="image">Image</label>
+            <input type="file" name="image" class="input">
+
+            @error('image')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        {{-- Confirm --}}
+        <div class="#">
+            <button type="submit">Confirm</button>
+        </div>
+    </form>
+
+    <hr>
 </div>
     <br>
     <br>
