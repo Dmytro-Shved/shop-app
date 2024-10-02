@@ -234,7 +234,6 @@
 
 
 
-
     <section class="contact">
         <h2 id="kon">KONTAKT</h2>
         <a href="https://t.me/GgYyPpSsY" class="kontakt__link">Skontaktuj się z menadżerem</a>
