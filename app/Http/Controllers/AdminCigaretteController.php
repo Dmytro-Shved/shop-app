@@ -36,7 +36,7 @@ class AdminCigaretteController extends Controller
             'type' => ['required', 'max:50', 'in:elfbar,pod'],
             'strength'=> ['required', 'max:50'],
             'puffs'=> ['required', 'max:50000', 'numeric'],
-            'flavor'=> ['required'],
+            'flavor'=> ['required', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['required', 'image', 'nullable'],
         ]);
