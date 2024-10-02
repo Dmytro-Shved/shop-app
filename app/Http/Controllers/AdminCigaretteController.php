@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cigarette;
 use App\Http\Requests\StoreCigaretteRequest;
 use App\Http\Requests\UpdateCigaretteRequest;
+use Illuminate\Support\Facades\Storage;
 
 class AdminCigaretteController extends Controller
 {
@@ -29,7 +30,25 @@ class AdminCigaretteController extends Controller
      */
     public function store(StoreCigaretteRequest $request)
     {
-        //
+        // Path for image
+        Storage::disk('')->put('');
+
+        // Validate
+        $cigarette = $request->validate([
+            'name' => ['required', 'max:50'],
+            'type' => ['required', 'max:50', 'in:elfbar,pod'],
+            'strength'=> ['required', 'max:50'],
+            'puffs'=> ['required', 'max:50000', 'numeric'],
+            'flavor'=> ['required'],
+            'price'=> ['required', 'numeric'],
+            'image'=> ['required', 'image'],
+        ]);
+
+        // Create product
+        Cigarette::create($cigarette);
+
+        // Redirect
+        return redirect()->route('admin_panel')->with('success', 'New cigarette was successfully created');
     }
 
     /**
