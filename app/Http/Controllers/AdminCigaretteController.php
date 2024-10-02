@@ -30,9 +30,6 @@ class AdminCigaretteController extends Controller
      */
     public function store(StoreCigaretteRequest $request)
     {
-        // Path for image
-        Storage::disk('')->put('');
-
         // Validate
         $cigarette = $request->validate([
             'name' => ['required', 'max:50'],
@@ -41,11 +38,25 @@ class AdminCigaretteController extends Controller
             'puffs'=> ['required', 'max:50000', 'numeric'],
             'flavor'=> ['required'],
             'price'=> ['required', 'numeric'],
-            'image'=> ['required', 'image'],
+            'image'=> ['required', 'image', 'nullable'],
         ]);
 
+        // Store an image if exist
+        $path = null;
+        if ($request->hasFile('image')){
+            $path = Storage::disk('public')->put( 'images/'.$request->type,$request->image);
+        }
+
         // Create product
-        Cigarette::create($cigarette);
+        Cigarette::create([
+            'name' => $request->name,
+            'type' =>$request->type,
+            'strength'=>$request->strength,
+            'puffs'=>$request->puffs,
+            'flavor'=>$request->flavor,
+            'price'=>$request->price,
+            'image'=> $path
+        ]);
 
         // Redirect
         return redirect()->route('admin_panel')->with('success', 'New cigarette was successfully created');
