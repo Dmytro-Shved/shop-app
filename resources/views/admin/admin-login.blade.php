@@ -29,28 +29,37 @@
         {{-- Login --}}
         <div class="login__inputs">
             <div class="login__name">
-                <input type="text" name="name"  class="input-name" placeholder="dimon pisidron">
-                <i class='bx bxs-user'></i>
+            <input type="text" name="name" 
+            @class(['input-name', 'error-red-input' => $errors->has('name')]) placeholder="dimon pisidron">
+                <!-- <i class='bx bxs-user'></i> -->
 
-            @error('name')
-                <p>{{ $message }}</p>
-            @enderror
+                <div class="valid-error">
+                    @error('name')
+                        <p class="message-error">{{ $message }}</p>
+                    @enderror
+                </div> 
+
+            
             </div>
 
             {{-- Password --}}
             <div class="login__password">
-                <input type="password" name="password" class="input-password" placeholder="123">
-                <i class='bx bxs-key icon-q'></i>
+                <input type="password" name="password"
+                @class(['input-password', 'error-red-input' => $errors->has('password')]) placeholder="123">
+                <!-- <i class='bx bxs-key icon-q'></i> -->
 
-                @error('password')
-                <p>{{ $message }}</p>
-                @enderror
+                <div class="valid-error">
+                    @error('password')
+                        <p class="message-error">{{ $message }}</p>
+                    @enderror
+                </div>
+                
             </div>
         </div>
 
         {{-- Error Message --}}
         @error('failed')
-            <p>{{ $message }}</p>
+            <p class="failed-base">{{ $message }}</p>
         @enderror
 
         {{-- Confirm --}}

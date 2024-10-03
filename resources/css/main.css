@@ -1001,8 +1001,8 @@ footer {
 
 .button__back {
   position: absolute;
-  left: 25%;
-  top: 48%;
+  left: 50%;
+  top: 15%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.57);
   color: aliceblue;
@@ -1042,38 +1042,68 @@ footer {
   border-radius: 15px;
 }
 
+.login__name, .login__password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .input-name,
 .input-password {
-  padding: 15px 45px;
-  margin-bottom: 20px;
+  padding: 15px 15px;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.496);
   border: 3px solid rgb(23, 142, 23);
   color: aliceblue;
-  font-size: 20px;
-  position: relative; /* Обязательно для иконок */
+  font-size: 15px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-i {
-  position: absolute;
-  left: 45px;
+.input-name::-moz-placeholder {
+  padding: 0px 20px;
+  text-align: center;
 }
 
-.bxs-user {
-  position: absolute;
-  top: 34.5%; /* Позиционирование по центру по вертикали */
-  transform: translateY(-50%); /* Центрирование по вертикали относительно самой иконки */
-  color: rgb(196, 196, 196);
-  font-size: 20px;
+.input-name::placeholder {
+  padding: 0px 20px;
+  text-align: center;
 }
 
-.bxs-key {
-  position: absolute;
-  left: 45px;
-  top: 57.5%; /* Позиционирование по центру по вертикали */
-  transform: translateY(-50%); /* Центрирование по вертикали относительно самой иконки */
-  color: rgb(196, 196, 196);
-  font-size: 20px;
+.input-password::-moz-placeholder {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.input-password::placeholder {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.input-name:focus {
+  padding: 15px 35px;
+  border: 3px solid rgb(28, 200, 188);
+}
+
+.input-password:focus {
+  padding: 15px 35px;
+  border: 3px solid rgb(28, 200, 188);
+}
+
+.message-error {
+  font-size: 14px;
+  color: rgb(234, 107, 107);
+}
+
+.failed-base {
+  text-align: center;
+  color: rgb(234, 107, 107);
+  font-size: 16px;
+}
+
+.error-red-input {
+  border: 3px solid rgb(161, 19, 19);
 }
 
 .button__submit {
