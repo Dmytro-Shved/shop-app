@@ -35,7 +35,7 @@ class AdminLiquidController extends Controller
             'name' => ['required', 'max:50'],
             'pg_vg_ratio' => ['required', 'max:10'],
             'volume'=> ['required', 'max:25', 'numeric'],
-            'flavor'=> ['required', '191'],
+            'flavor'=> ['required', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['required', 'image', 'nullable'],
         ]);
