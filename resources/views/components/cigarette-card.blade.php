@@ -34,9 +34,9 @@
         @auth
             {{-- If admin is on admin_panel, display buttons for redact --}}
             @if (Request::route()->getName() === 'admin_panel')
-                <button>Delete</button>
-                <button>Edit</button>
-                <button>Show</button>
+                <button class="button-panel">Delete</button>
+                <button class="button-panel">Edit</button>
+                <button class="button-panel">Show</button>
             {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}
             @else
                 {{-- Buy button --}}

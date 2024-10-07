@@ -999,6 +999,15 @@ footer {
   height: 20px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: rgba(0, 0, 0, 0.496) !important; /* Устанавливаем прозрачный фон */
+  -webkit-text-fill-color: rgb(255, 255, 255) !important; /* Цвет текста */
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s; /* Избегаем изменения фона при автозаполнении */
+}
+
 .button__back {
   position: absolute;
   left: 50%;
@@ -1017,7 +1026,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
 }
 
 .login__title {
@@ -1054,7 +1062,7 @@ footer {
   padding: 15px 15px;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.496);
-  border: 3px solid rgb(23, 142, 23);
+  border: 3px solid rgb(158, 158, 158);
   color: aliceblue;
   font-size: 15px;
   position: relative;
@@ -1111,7 +1119,49 @@ footer {
   margin-bottom: 20px;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.496);
-  border: 3px solid rgb(23, 142, 23);
+  border: 3px solid rgb(158, 158, 158);
   color: aliceblue;
   letter-spacing: 1.5px;
+}
+
+.button-panel {
+  border: 1px dashed black;
+  padding: 5px 10px;
+}
+
+.produkt-title {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+}
+
+.produkts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+.arrow-top-link {
+  background-color: aqua;
+  z-index: 99;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
 }

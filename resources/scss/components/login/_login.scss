@@ -1,3 +1,11 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    background-color: rgba(0, 0, 0, 0.496) !important; /* Устанавливаем прозрачный фон */
+    -webkit-text-fill-color: rgb(255, 255, 255) !important; /* Цвет текста */
+    transition: background-color 5000s ease-in-out 0s; /* Избегаем изменения фона при автозаполнении */
+}
+
 .button__back{
     position: absolute;
     left: 50%;
@@ -15,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
     
 }
 
@@ -51,7 +58,7 @@
     padding: 15px 15px;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.496); 
-    border: 3px solid rgb(23, 142, 23);
+    border: 3px solid rgb(158, 158, 158);
     color: aliceblue;
     font-size: 15px;
     position: relative;
@@ -111,7 +118,7 @@
     margin-bottom: 20px;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.496); 
-    border: 3px solid rgb(23, 142, 23);
+    border: 3px solid rgb(158, 158, 158);
     color: aliceblue;
     letter-spacing: 1.5px;
 }
