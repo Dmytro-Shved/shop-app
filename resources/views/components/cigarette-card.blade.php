@@ -41,7 +41,10 @@
                     <button class="button-panel" type="submit">Delete</button>
                 </form>
 
-                <button class="button-panel">Edit</button>
+                <button class="button-panel">
+                    <a href="{{ route('cigarettes.edit', $cigarette) }}">Edit</a>
+                </button>
+
                 <button class="button-panel">Show</button>
             {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}
             @else

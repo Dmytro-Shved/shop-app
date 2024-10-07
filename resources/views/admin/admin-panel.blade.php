@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{{ asset('https://cdn-icons-png.flaticon.com/512/3665/3665892.png') }}">
     <title>Admin Panel</title>
 </head>
 @vite('resources/css/main.css')
@@ -19,6 +20,10 @@
     @elseif(session()->has('delete'))
         <div>
             {{ session('delete') }}
+        </div>
+    @elseif(session()->has('edit'))
+        <div>
+            {{ session('edit') }}
         </div>
     @endif
 

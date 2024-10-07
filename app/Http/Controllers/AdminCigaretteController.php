@@ -31,7 +31,7 @@ class AdminCigaretteController extends Controller
     public function store(StoreCigaretteRequest $request)
     {
         // Validate
-        $cigarette = $request->validate([
+        $request->validate([
             'name' => ['required', 'max:50'],
             'type' => ['required', 'max:50', 'in:elfbar,pod'],
             'strength'=> ['required', 'max:50'],
@@ -41,11 +41,8 @@ class AdminCigaretteController extends Controller
             'image'=> ['required', 'image', 'nullable'],
         ]);
 
-        // Store an image if exist
-        $path = null;
-        if ($request->hasFile('image')){
-            $path = Storage::disk('public')->put( 'images/'.$request->type,$request->image);
-        }
+        // Store an image
+        $path = Storage::disk('public')->put( 'images/'.$request->type,$request->image);
 
         // Create product
         Cigarette::create([
@@ -75,7 +72,7 @@ class AdminCigaretteController extends Controller
      */
     public function edit(Cigarette $cigarette)
     {
-        //
+        return view('product/cigarette-edit', ['cigarette' => $cigarette]);
     }
 
     /**
@@ -83,7 +80,41 @@ class AdminCigaretteController extends Controller
      */
     public function update(UpdateCigaretteRequest $request, Cigarette $cigarette)
     {
-        //
+        // Validate
+        $request->validate([
+            'name' => ['required', 'max:50'],
+            'type' => ['required', 'max:50', 'in:elfbar,pod'],
+            'strength'=> ['required', 'max:50'],
+            'puffs'=> ['required', 'max:50000', 'numeric'],
+            'flavor'=> ['required', 'max:191'],
+            'price'=> ['required', 'numeric'],
+            'image'=> ['image', 'nullable'],
+        ]);
+
+        // Old image path
+        $path = $cigarette->image;
+
+        // If we have new image, delete old image and save the new one
+        if ($request->hasFile('image')){
+            if ($cigarette->image){
+                Storage::disk('public')->delete($cigarette->image);
+            }
+            $path = Storage::disk('public')->put( 'images/'.$request->type,$request->image);
+        }
+
+        // Update product
+        $cigarette->update([
+            'name' => $request->name,
+            'type' =>$request->type,
+            'strength'=>$request->strength,
+            'puffs'=>$request->puffs,
+            'flavor'=>$request->flavor,
+            'price'=>$request->price,
+            'image'=> $path
+        ]);
+
+        // Redirect to admin panel
+        return redirect()->route('admin_panel')->with('edit', 'Product was edited successfully!');
     }
 
     /**
@@ -91,8 +122,15 @@ class AdminCigaretteController extends Controller
      */
     public function destroy(Cigarette $cigarette)
     {
+        // Delete product image if exists
+        if ($cigarette->image){
+            Storage::disk('public')->delete($cigarette->image);
+        }
+
+        // Delete a product fields
         $cigarette->delete();
 
+        // Redirect
         return back()->with('delete', 'Cigarette '.$cigarette->name.' was deleted successfully!');
     }
 }
