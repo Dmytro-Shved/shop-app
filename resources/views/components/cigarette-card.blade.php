@@ -1,23 +1,23 @@
-@props(['name', 'image', 'strength', 'puffs', 'flavor', 'price', 'type'])
+@props(['cigarette'])
 
 <div class="grid__item">
-    <article class="product {{ $type }}">
+    <article class="product {{ $cigarette->type }}">
         {{-- Image --}}
-        <img class="product__image" src="{{ asset('./storage/'. $image) }}" alt="{{ $name }}" />
+        <img class="product__image" src="{{ asset('./storage/'. $cigarette->image) }}" alt="{{ $cigarette->name }}" />
         <div class="product__description">
             {{-- Name --}}
-            <h2 class="product__name">{{ $name }}</h2>
+            <h2 class="product__name">{{ $cigarette->name }}</h2>
             {{-- Info --}}
             <div class="product__info">
-                ✔&nbsp;Moc - {{ $strength }}%
+                ✔&nbsp;Moc - {{ $cigarette->strength }}%
                 <br>
-                ✔&nbsp;{{ $puffs }} zaciągnięć
+                ✔&nbsp;{{ $cigarette->puffs }} zaciągnięć
                 <br>
-                ✔&nbsp;Smak: {{ $flavor }}
+                ✔&nbsp;Smak: {{ $cigarette->flavor }}
 
             </div>
             {{-- Price --}}
-            <p class="product__price">Cena: {{ $price }} zł</p>
+            <p class="product__price">Cena: {{ $cigarette->price }} zł</p>
         </div>
 
         @guest
@@ -34,7 +34,13 @@
         @auth
             {{-- If admin is on admin_panel, display buttons for redact --}}
             @if (Request::route()->getName() === 'admin_panel')
-                <button class="button-panel">Delete</button>
+                {{-- Delete Cigarette --}}
+                <form action="{{ route('cigarettes.destroy',  $cigarette->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{ $cigarette->name }} product ?');">
+                    @csrf
+                    @method('DELETE')
+                    <button class="button-panel" type="submit">Delete</button>
+                </form>
+
                 <button class="button-panel">Edit</button>
                 <button class="button-panel">Show</button>
             {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}

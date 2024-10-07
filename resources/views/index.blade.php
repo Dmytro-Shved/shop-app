@@ -23,7 +23,7 @@
     @vite('resources/js/filtr.js')
     @vite('resources/js/reviews.js')
 
-    
+
     <!-- @vite('resources/js/reviews.js') -->
 
     @vite('public/images')
@@ -111,27 +111,12 @@
             <div class="grid">
                 {{-- Cigarettes --}}
                 @foreach($cigarettes as $cigarette)
-                    <x-cigarette-card
-                        :name="$cigarette->name"
-                        :image="$cigarette->image"
-                        :strength="$cigarette->strength"
-                        :puffs="$cigarette->puffs"
-                        :flavor="$cigarette->flavor"
-                        :price="$cigarette->price"
-                        :type="$cigarette->type"
-                    />
+                    <x-cigarette-card :cigarette="$cigarette"/>
                 @endforeach
 
                 {{-- Liquids --}}
                 @foreach($liquids as $liquid)
-                    <x-liquid-card
-                    :name="$liquid->name"
-                    :image="$liquid->image"
-                    :pg_vg_ratio="$liquid->pg_vg_ratio"
-                    :volume="$liquid->volume"
-                    :flavor="$liquid->flavor"
-                    :price="$liquid->price"
-                    />
+                    <x-liquid-card :liquid="$liquid" />
                 @endforeach
             </div>
 
@@ -189,46 +174,46 @@
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
     </div>
-    
-    <div class="carousel-item">
-        <div class="carousel-box">
-            <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
-        </div>
-    </div>  
 
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>  
+    </div>
 
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>  
+    </div>
 
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>  
-    
+    </div>
+
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>    
+    </div>
+
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>    
+    </div>
     <div class="carousel-item">
         <div class="carousel-box">
             <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
         </div>
-    </div>    
+    </div>
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <img class="product__image" src="{{ asset('./storage/images/reviews-img/tg1.jpg') }}" alt="Liquid Mango" />
+        </div>
+    </div>
 </div>
         </section>
 

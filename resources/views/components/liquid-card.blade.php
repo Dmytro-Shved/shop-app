@@ -1,22 +1,22 @@
-@props(['name', 'image', 'pg_vg_ratio', 'volume', 'flavor', 'price'])
+@props(['liquid'])
 
 <div class="grid__item">
     <article class="product liquid">
         {{-- Image --}}
-        <img class="product__image" src="{{ asset('./storage/'. $image) }}" alt="{{ $name }}" />
+        <img class="product__image" src="{{ asset('./storage/'. $liquid->image) }}" alt="{{ $liquid->name }}" />
         <div class="product__description">
             {{-- Name --}}
-            <h2 class="product__name">{{ $name }}</h2>
+            <h2 class="product__name">{{ $liquid->name }}</h2>
             {{-- Info --}}
             <div class="product__info">
-                ✔&nbsp;PG/VG - {{ $pg_vg_ratio }}
+                ✔&nbsp;PG/VG - {{ $liquid->pg_vg_ratio }}
                 <br>
-                ✔&nbsp;Pojemność - {{ $volume }} ml
+                ✔&nbsp;Pojemność - {{ $liquid->volume }} ml
                 <br>
-                ✔&nbsp;Smak: {{ $flavor }}
+                ✔&nbsp;Smak: {{ $liquid->flavor }}
             </div>
             {{-- Price --}}
-            <p class="product__price">Cena: {{ $price }} zł</p>
+            <p class="product__price">Cena: {{ $liquid->price }} zł</p>
         </div>
         @guest
             {{-- Buy button --}}
@@ -32,7 +32,12 @@
         @auth
             {{-- If admin is on admin_panel, display buttons for redact --}}
             @if (Request::route()->getName() === 'admin_panel')
-                <button>Delete</button>
+                {{-- Delete Liquid --}}
+                <form action="{{ route('liquids.destroy',  $liquid->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{ $liquid->name }} product ?');">
+                    @csrf
+                    @method('DELETE')
+                    <button class="button-panel" type="submit">Delete</button>
+                </form>
                 <button>Edit</button>
                 <button>Show</button>
                 {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}

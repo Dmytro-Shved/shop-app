@@ -16,6 +16,10 @@
         <div>
             {{ session('success') }}
         </div>
+    @elseif(session()->has('delete'))
+        <div>
+            {{ session('delete') }}
+        </div>
     @endif
 
     <section class="catalog">
@@ -174,15 +178,12 @@
             <div class="grid">
                 {{-- Cigarettes --}}
                 @foreach($cigarettes as $cigarette)
-                    <x-cigarette-card :name="$cigarette->name" :image="$cigarette->image" :strength="$cigarette->strength"
-                        :puffs="$cigarette->puffs" :flavor="$cigarette->flavor" :price="$cigarette->price"
-                        :type="$cigarette->type" />
+                    <x-cigarette-card :cigarette="$cigarette"/>
                 @endforeach
 
                 {{-- Liquids --}}
                 @foreach($liquids as $liquid)
-                    <x-liquid-card :name="$liquid->name" :image="$liquid->image" :pg_vg_ratio="$liquid->pg_vg_ratio"
-                        :volume="$liquid->volume" :flavor="$liquid->flavor" :price="$liquid->price" />
+                    <x-liquid-card :liquid="$liquid" />
                 @endforeach
             </div>
         </div>

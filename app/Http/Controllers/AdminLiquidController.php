@@ -89,6 +89,8 @@ class AdminLiquidController extends Controller
      */
     public function destroy(Liquid $liquid)
     {
-        //
+        $liquid->delete();
+
+        return back()->with('delete', 'Liquid '.$liquid->name.' was deleted successfully!');
     }
 }

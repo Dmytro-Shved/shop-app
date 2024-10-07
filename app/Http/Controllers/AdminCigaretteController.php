@@ -91,6 +91,8 @@ class AdminCigaretteController extends Controller
      */
     public function destroy(Cigarette $cigarette)
     {
-        //
+        $cigarette->delete();
+
+        return back()->with('delete', 'Cigarette '.$cigarette->name.' was deleted successfully!');
     }
 }
