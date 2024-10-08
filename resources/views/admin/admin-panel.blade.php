@@ -28,9 +28,9 @@
     @endif
 
     <section class="catalog">
+
         <div class="container produkts">
             <h1 class="produkt-title" id="produkts">Admin Panel</h1>
-
 
             {{-- Cigarette Form --}}
             <form action="{{ route('cigarettes.store') }}" method="POST" enctype="multipart/form-data" class="form__login">

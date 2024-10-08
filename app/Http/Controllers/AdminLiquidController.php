@@ -65,7 +65,7 @@ class AdminLiquidController extends Controller
      */
     public function show(Liquid $liquid)
     {
-        //
+        return view('product/liquid-show', ['liquid' => $liquid]);
     }
 
     /**
@@ -85,7 +85,7 @@ class AdminLiquidController extends Controller
         $request->validate([
             'name' => ['required', 'max:50'],
             'pg_vg_ratio' => ['required', 'max:10'],
-            'volume'=> ['required', 'max:25', 'numeric'],
+            'volume'=> ['required', 'max:100', 'numeric'],
             'flavor'=> ['required', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['image', 'nullable'],

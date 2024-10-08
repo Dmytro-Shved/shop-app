@@ -43,7 +43,15 @@
                 <button class="button-panel">
                     <a href="{{ route('liquids.edit', $liquid) }}">Edit</a>
                 </button>
-                <button>Show</button>
+
+                {{-- Go to a show page  --}}
+                <button class="button-panel">
+                    <a href="{{ route('liquids.show', $liquid) }}">Show</a>
+                </button>
+
+                {{-- If admin is on show page thrn don't display buttons --}}
+                @elseif(Request::route()->getName() === 'liquids.show')
+
                 {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}
             @else
                 {{-- Buy button --}}

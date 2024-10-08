@@ -12,6 +12,11 @@
 
 <body>
 <section class="#">
+    {{-- Redirect to admin panel --}}
+    <button class="button button__back">
+        <a href="{{ route('admin_panel') }}">&larr; Go back to admin panel</a>
+    </button>
+
     <h1>Edit Panel</h1>
 
     {{-- Edit Cigarette Form --}}

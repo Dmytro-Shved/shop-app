@@ -64,7 +64,7 @@ class AdminCigaretteController extends Controller
      */
     public function show(Cigarette $cigarette)
     {
-        //
+        return view('product/cigarette-show', ['cigarette' => $cigarette]);
     }
 
     /**
