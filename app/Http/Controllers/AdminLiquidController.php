@@ -73,7 +73,7 @@ class AdminLiquidController extends Controller
      */
     public function edit(Liquid $liquid)
     {
-        //
+        return view('product/liquid-edit', ['liquid' => $liquid]);
     }
 
     /**
@@ -81,7 +81,39 @@ class AdminLiquidController extends Controller
      */
     public function update(UpdateLiquidRequest $request, Liquid $liquid)
     {
-        //
+        // Validate
+        $request->validate([
+            'name' => ['required', 'max:50'],
+            'pg_vg_ratio' => ['required', 'max:10'],
+            'volume'=> ['required', 'max:25', 'numeric'],
+            'flavor'=> ['required', 'max:191'],
+            'price'=> ['required', 'numeric'],
+            'image'=> ['image', 'nullable'],
+        ]);
+
+        // Old image
+        $path = $liquid->image;
+
+        // Store a new image if exists
+        if ($request->hasFile('image')){
+            if ($request->image){
+                Storage::disk('public')->delete($path);
+            }
+            $path = Storage::disk('public')->put( 'images/liquid', $request->image);
+        }
+
+        // Create product
+        $liquid->update([
+            'name' => $request->name,
+            'pg_vg_ratio' =>$request->pg_vg_ratio,
+            'volume'=>$request->volume,
+            'flavor'=>$request->flavor,
+            'price'=>$request->price,
+            'image'=> $path
+        ]);
+
+        // Redirect
+        return redirect()->route('admin_panel')->with('edit', 'Liquid was edited successfully!');
     }
 
     /**
@@ -89,8 +121,13 @@ class AdminLiquidController extends Controller
      */
     public function destroy(Liquid $liquid)
     {
+        // Delete an image
+        Storage::disk('public')->delete($liquid->image);
+
+        // Delete a product (fields)
         $liquid->delete();
 
+        // Redirect
         return back()->with('delete', 'Liquid '.$liquid->name.' was deleted successfully!');
     }
 }

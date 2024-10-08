@@ -114,7 +114,7 @@ class AdminCigaretteController extends Controller
         ]);
 
         // Redirect to admin panel
-        return redirect()->route('admin_panel')->with('edit', 'Product was edited successfully!');
+        return redirect()->route('admin_panel')->with('edit', 'Cigarette was edited successfully!');
     }
 
     /**

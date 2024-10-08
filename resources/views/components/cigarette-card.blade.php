@@ -41,6 +41,7 @@
                     <button class="button-panel" type="submit">Delete</button>
                 </form>
 
+                {{-- Go to a page with edit form --}}
                 <button class="button-panel">
                     <a href="{{ route('cigarettes.edit', $cigarette) }}">Edit</a>
                 </button>

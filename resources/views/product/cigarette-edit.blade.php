@@ -87,7 +87,7 @@
             {{-- Select new image --}}
             <div class="#">
                 <label for="image">Cover a new image</label>
-                <input type="file" name="image" class="input" placeholder="Image">
+                <input type="file" name="image" class="input">
 
                 @error('image')
                     <p>{{ $message }}</p>

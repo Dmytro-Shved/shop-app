@@ -38,7 +38,11 @@
                     @method('DELETE')
                     <button class="button-panel" type="submit">Delete</button>
                 </form>
-                <button>Edit</button>
+
+                {{-- Go to a page with edit form --}}
+                <button class="button-panel">
+                    <a href="{{ route('liquids.edit', $liquid) }}">Edit</a>
+                </button>
                 <button>Show</button>
                 {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}
             @else
