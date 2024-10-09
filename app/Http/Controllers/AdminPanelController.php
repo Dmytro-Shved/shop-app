@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cigarette;
 use App\Models\Liquid;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminPanelController extends Controller
 {
@@ -19,51 +20,18 @@ class AdminPanelController extends Controller
         return view('admin/admin-panel', compact('cigarettes', 'liquids'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function logout(Request $request)
     {
-        //
-    }
+        // Logout
+        Auth::logout();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        // Invalidate
+        $request->session()->invalidate();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        // Regenerate @csrf
+        $request->session()->regenerateToken();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // Redirect
+        return redirect()->route('home');
     }
 }

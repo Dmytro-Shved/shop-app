@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 
 Route::view('/admin/login', 'admin/admin-login')->name('admin_login');
+Route::post('/admin/logout', [AdminPanelController::class, 'logout'])->name('admin_logout');
 
 Route::middleware('admin')->group(function (){
     Route::get('/admin/panel', [AdminPanelController::class, 'index'])->name('admin_panel');

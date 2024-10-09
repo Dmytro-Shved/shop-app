@@ -175,6 +175,13 @@
             </form>
 
         </div>
+
+    {{-- Logout button --}}
+    <form action="{{ route('admin_logout') }}" method="POST" class="px-4 py-2">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+
     </section>
 
     <section class="catalog">
