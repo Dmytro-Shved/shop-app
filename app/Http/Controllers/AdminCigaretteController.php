@@ -11,7 +11,7 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Storage;
 
-class AdminCigaretteController extends Controller implements hasMiddleware
+class AdminCigaretteController extends Controller implements HasMiddleware
 {
     public static function middleware(): array
     {

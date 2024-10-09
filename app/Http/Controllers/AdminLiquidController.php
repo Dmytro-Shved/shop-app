@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Liquid;
 use App\Http\Requests\StoreLiquidRequest;
 use App\Http\Requests\UpdateLiquidRequest;
+use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Support\Facades\Storage;
 
-class AdminLiquidController extends Controller
+class AdminLiquidController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            'auth'
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
