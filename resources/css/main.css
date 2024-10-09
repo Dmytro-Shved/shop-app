@@ -1165,3 +1165,9 @@ input:-webkit-autofill:focus {
   font-size: 25px;
   margin-bottom: 25px;
 }
+
+.button__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

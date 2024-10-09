@@ -179,7 +179,7 @@
     {{-- Logout button --}}
     <form action="{{ route('admin_logout') }}" method="POST" class="px-4 py-2">
         @csrf
-        <button type="submit">Logout</button>
+        <button type="submit" class="button button__logout">Logout</button>
     </form>
 
     </section>
