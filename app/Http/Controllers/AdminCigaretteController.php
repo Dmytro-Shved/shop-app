@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Cigarette;
 use App\Http\Requests\StoreCigaretteRequest;
 use App\Http\Requests\UpdateCigaretteRequest;
+use Illuminate\Auth\Access\Gate;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Storage;
 
-class AdminCigaretteController extends Controller
+class AdminCigaretteController extends Controller implements hasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            'auth'
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -70,7 +81,7 @@ class AdminCigaretteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cigarette $cigarette)
+    public function edit(Cigarette $cigarette, Admin $admin)
     {
         return view('product/cigarette-edit', ['cigarette' => $cigarette]);
     }
