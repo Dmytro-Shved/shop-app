@@ -38,18 +38,5 @@
     {{-- Кнопка "Купить" --}}
     <button class="product__buy">Kup teraz</button>
 
-    <script>
-        // Обработчик кнопки "Купить"
-        document.querySelector('.product__buy').addEventListener('click', function () {
-            const productCard = this.closest('.product__description'); // Находим ближайший блок карточки
-            const productId = productCard.getAttribute('data-id'); // Уникальный идентификатор товара
-            const productName = productCard.querySelector('.product__name').textContent;
-            const productPrice = parseFloat(productCard.querySelector('.product__price').textContent.replace('Cena: ', '').replace(' zł', ''));
-            const productImage = document.querySelector('.product__image').src;
-            const quantity = 1; // Или добавить логику для получения количества из поля ввода
-
-            addToCart(productId, productName, productPrice, productImage, quantity);
-        });
-    </script>
 </body>
 </html>
