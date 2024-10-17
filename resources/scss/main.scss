@@ -15,12 +15,9 @@ html{
 
 @import "./components/main/catalog";
 @import "./components/main/blocks";
-
-
-
-@import "./components/main/blocks/RECENZJE/recenzje";
-@import "./components/main/blocks/KONTAKT/contact";
-@import "./components/main/blocks/HURTOWNIA/hurtovnia";
+@import "./components/main/recenzje";
+@import "./components/main/contact";
+@import "./components/main/hurtovnia";
 
 
 
@@ -31,4 +28,7 @@ html{
 
 @import "./components/login/login";
 @import "./components/panel/panel";
+
+
+@import "./components/basket/cart";
 

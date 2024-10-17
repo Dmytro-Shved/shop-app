@@ -1,8 +1,34 @@
+
 body {
-    color: var(--colorTextTitle);
-    line-height: 1.714;
-    font-family: sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-  }
+  color: var(--colorTextTitle);
+  line-height: 1.714;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  
+}
+/* Вся область скроллбара */
+body::-webkit-scrollbar {
+  width: 12px; /* ширина скроллбара */
+  background-color: #e0e0e0; /* светлый фон */
+}
+
+/* Ползунок */
+body::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(
+    45deg, /* угол наклона полосок */
+    #dfea7c 0%,   /* тёмно-серый */
+    #dfea7c 30%,
+    #e58f8f 30%,  /* средне-серый */
+    #e58f8f 60%,
+    #dfea7c 60%,  /* светло-серый */
+    #dfea7c 90%,
+    #e58f8f 90%,
+    #e58f8f 100%
+  );
+  border-radius: 4px; /* скругление */
+  border: 2px solid #631db8; /* рамка */
+}
+
+

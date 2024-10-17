@@ -157,6 +157,19 @@ body {
   font-size: 18px;
 }
 
+/* Вся область скроллбара */
+body::-webkit-scrollbar {
+  width: 12px; /* ширина скроллбара */
+  background-color: #e0e0e0; /* светлый фон */
+}
+
+/* Ползунок */
+body::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(45deg, #dfea7c 0%, #dfea7c 30%, #e58f8f 30%, #e58f8f 60%, #dfea7c 60%, #dfea7c 90%, #e58f8f 90%, #e58f8f 100%);
+  border-radius: 4px; /* скругление */
+  border: 2px solid #631db8; /* рамка */
+}
+
 .container {
   min-width: 320px;
   max-width: 1400px;
@@ -592,6 +605,123 @@ body {
     padding: 6px 12px;
   }
 }
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Пробел между кнопками и полем ввода */
+}
+
+.quantity-button {
+  background-color: #5b5b5b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quantity-button:hover {
+  background-color: #55bc39;
+}
+
+.quantity-input {
+  width: 50px; /* Ширина поля ввода */
+  text-align: center; /* Центрирование текста в поле ввода */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(128, 11, 253, 0.7607843137);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+  background-color: #9900ff;
+}
+
+.cart-modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 0.3s ease; /* Transition for fade effect */
+}
+
+.cart-modal.show {
+  display: flex; /* Make it flex when shown */
+  opacity: 1; /* Fade in */
+}
+
+.cart-modal__content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+  transform: translateY(-30px); /* Start slightly above */
+  transition: transform 0.3s ease; /* Transition for slide effect */
+}
+
+.cart-modal.show .cart-modal__content {
+  transform: translateY(0); /* Slide in */
+}
+
+.cart-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.cart-modal__close:hover {
+  transform: rotate(180deg);
+  color: rgb(98, 0, 255);
+}
+
+.cart-modal__heading {
+  margin: 0 0 10px;
+}
+
+.cart-modal__items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-modal__total {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .reviews, .contact, .wholesale {
   display: flex;
   justify-content: center;
@@ -1137,6 +1267,9 @@ input:-webkit-autofill:focus {
 }
 
 .produkts {
+  background-color: aliceblue;
+  border-radius: 25px;
+  padding: 25px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1144,6 +1277,44 @@ input:-webkit-autofill:focus {
   align-items: center;
   margin-top: 50px;
   gap: 30px;
+}
+
+.form__nov-product {
+  background-color: black;
+  padding: 25px;
+  width: 300px;
+  height: 400px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.product-input {
+  padding: 5px;
+}
+.product-input input {
+  background-color: rgb(15, 18, 20);
+  color: azure;
+  border: 1px solid rgb(86, 77, 31);
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+.product-input input::-moz-placeholder {
+  color: azure;
+}
+.product-input input::placeholder {
+  color: azure;
+}
+
+.form-button-card {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 
 .arrow-top-link {
@@ -1167,7 +1338,72 @@ input:-webkit-autofill:focus {
 }
 
 .button__logout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background-color: rgb(66, 161, 243);
+  color: azure;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button__logout:hover {
+  background-color: rgb(229, 169, 95);
+}
+
+@media (max-width: 560px) {
+  .button__logout {
+    font-size: 16px;
+  }
+}
+.cart-item {
+  display: flex; /* Используем flexbox для удобного расположения элементов */
+  align-items: center; /* Выравниваем по центру по вертикали */
+  margin: 10px 0; /* Отступы между карточками */
+  padding: 10px; /* Отступы внутри карточки */
+  border: 1px solid #ddd; /* Обводка для карточки */
+  border-radius: 5px; /* Скругленные углы */
+  background-color: #fff; /* Белый фон */
+}
+
+.cart-item__image {
+  width: 60px; /* Ширина изображения */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  margin-right: 10px; /* Отступ справа от изображения */
+}
+
+.cart-item__details {
+  flex-grow: 1; /* Позволяем этому блоку занимать оставшееся пространство */
+}
+
+.cart-item__name {
+  font-size: 16px; /* Размер шрифта для названия */
+  font-weight: bold; /* Жирный шрифт для названия */
+  margin: 0; /* Убираем отступы */
+}
+
+.cart-item__quantity {
+  display: flex; /* Используем flexbox для удобного расположения кнопок и инпута */
+  align-items: center; /* Выравниваем по центру по вертикали */
+}
+
+.quantity-button {
+  border: none; /* Убираем рамку у кнопок */
+  background-color: #007bff; /* Цвет кнопок */
+  color: white; /* Цвет текста на кнопках */
+  padding: 5px 10px; /* Отступы внутри кнопок */
+  border-radius: 3px; /* Скругленные углы кнопок */
+  cursor: pointer; /* Курсор при наведении */
+  margin: 0 5px; /* Отступы между кнопками */
+}
+
+.quantity-input {
+  width: 40px; /* Ширина инпута количества */
+  text-align: center; /* Выравнивание текста по центру */
+  border: 1px solid #ddd; /* Обводка для инпута */
+  border-radius: 3px; /* Скругленные углы для инпута */
+}
+
+.cart-item__price {
+  font-size: 14px; /* Размер шрифта для цены */
+  color: #333; /* Цвет текста для цены */
 }

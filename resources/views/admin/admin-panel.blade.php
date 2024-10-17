@@ -33,12 +33,12 @@
             <h1 class="produkt-title" id="produkts">Admin Panel</h1>
 
             {{-- Cigarette Form --}}
-            <form action="{{ route('cigarettes.store') }}" method="POST" enctype="multipart/form-data" class="form__login">
-            <h3 class="login__title">Create new Cigarette :</h3>
+            <form action="{{ route('cigarettes.store') }}" method="POST" enctype="multipart/form-data" class="form__nov-product">
+            <h3 class="login__title">Create new Cigarette</h3>
 
                 @csrf
                 {{-- Name --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="name" class="input" placeholder="Name">
 
                     @error('name')
@@ -47,7 +47,7 @@
                 </div>
 
                 {{-- Type --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" list="options" class="input" name="type" placeholder="Type">
                     <datalist id="options">
                         <option value="elfbar">
@@ -60,7 +60,7 @@
                 </div>
 
                 {{-- Strength --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="strength" class="input" placeholder="Strength">
 
                     @error('strength')
@@ -69,7 +69,7 @@
                 </div>
 
                 {{-- Puffs --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="number" name="puffs" class="input" placeholder="Puffs">
 
                     @error('puffs')
@@ -78,7 +78,7 @@
                 </div>
 
                 {{-- Flavor --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="flavor" class="input" placeholder="Flavor">
 
                     @error('flavor')
@@ -87,7 +87,7 @@
                 </div>
 
                 {{-- Price --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="number" name="price" class="input" placeholder="Price">
 
                     @error('price')
@@ -96,7 +96,7 @@
                 </div>
 
                 {{-- Image --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="file" name="image" class="input" placeholder="Image">
 
                     @error('image')
@@ -112,12 +112,12 @@
 
 
             {{-- Liquid Form --}}
-            <form action="{{ route('liquids.store') }}" method="POST" enctype="multipart/form-data" class="form__login">
+            <form action="{{ route('liquids.store') }}" method="POST" enctype="multipart/form-data" class="form__nov-product">
             <h3 class="login__title">Create new Liquid</h3>
 
                 @csrf
                 {{-- Name --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="name" class="input" placeholder="Name">
 
                     @error('name')
@@ -126,7 +126,7 @@
                 </div>
 
                 {{-- PG/VG Ratio --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="pg_vg_ratio" class="input" placeholder="PG/VG Ratio">
 
                     @error('pg_vg_ratio')
@@ -135,7 +135,7 @@
                 </div>
 
                 {{-- Volume --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="number" name="volume" class="input" placeholder="Volume">
 
                     @error('volume')
@@ -144,7 +144,7 @@
                 </div>
 
                 {{-- Flavor --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="text" name="flavor" class="input" placeholder="Flavor">
 
                     @error('flavor')
@@ -153,7 +153,7 @@
                 </div>
 
                 {{-- Price --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="number" name="price" class="input" placeholder="Price">
 
                     @error('price')
@@ -162,7 +162,7 @@
                 </div>
 
                 {{-- Image --}}
-                <div class="#">
+                <div class="product-input">
                     <input type="file" name="image" class="input" placeholder="Image">
 
                     @error('image')
@@ -177,7 +177,7 @@
         </div>
 
     {{-- Logout button --}}
-    <form action="{{ route('admin_logout') }}" method="POST" class="px-4 py-2">
+    <form action="{{ route('admin_logout') }}" method="POST" class="px-4    ">
         @csrf
         <button type="submit" class="button button__logout">Logout</button>
     </form>
