@@ -308,6 +308,7 @@
         <svg class="cart-button__icon" width="30" height="30">
             <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
         </svg>
+        <p class="cart-number">9</p>
     </button>
 
     <!-- Modal Cart -->
