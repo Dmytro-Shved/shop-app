@@ -15,6 +15,7 @@
     @yield('content')
 
     @vite('resources/css/main.css')
+    @vite('resources/css/basket.css')
 
     @vite('resources/js/app.js')
     @vite('resources/js/bootstrap.js')
@@ -27,15 +28,12 @@
     @vite('resources/js/basket-js/buy.js')
     @vite('resources/js/basket-js/cart.js')
 
-
     <!-- @vite('resources/js/reviews.js') -->
 
     @vite('public/images')
 
     @vite('resources/js/header-menu.js')
 </head>
-
-
 
 <body id="element">
     <header class="header">
@@ -69,9 +67,7 @@
         </div>
     </header>
 
-
     <main class="main">
-
 
         <section class="hero">
             <div class="hero-video">
@@ -103,10 +99,34 @@
             </div>
         </section>
 
-
         <section class="catalog" id="сat">
+
+        {{-- Session messages --}}
+        @if(session()->has('added'))
+            <div class="#" id="flash-message">
+                {{ session('added') }}
+            </div>
+        @elseif(session()->has('removed'))
+            <div class="#" id="flash-message">
+                {{ session('removed') }}
+            </div>
+        @elseif(session()->has('updated'))
+            <div class="#" id="flash-message">
+                {{ session('updated') }}
+            </div>
+        @elseif(session()->has('destroyed'))
+            <div class="#" id="flash-message">
+                {{ session('destroyed') }}
+            </div>
+        @elseif(session()->has('empty'))
+            <div class="#" id="flash-message">
+                {{ session('empty') }}
+            </div>
+        @endif
+
             <div class="container">
 
+                {{-- Filter --}}
                 <ul class="filter-list">
                     <li class="filter-item" data-filter="">All</li>
                     <li class="filter-item" data-filter="liquid">Liquid</li>
@@ -116,22 +136,30 @@
 
                 <div class="grid">
                     {{-- Cigarettes --}}
-                    @foreach($cigarettes as $cigarette)
-                        <x-cigarette-card :cigarette="$cigarette" />
-                    @endforeach
+                    @forelse($cigarettes as $cigarette)
+                        <x-cigarette-card :cigarette="$cigarette"
+                                          :cart="$cart"
+                        />
+                    @empty
+                        <div class="#">
+                            No cigarettes in the database
+                        </div>
+                    @endforelse
 
                     {{-- Liquids --}}
-                    @foreach($liquids as $liquid)
-                        <x-liquid-card :liquid="$liquid" />
-                    @endforeach
+                    @forelse($liquids as $liquid)
+                        <x-liquid-card :liquid="$liquid"
+                                       :cart="$cart"
+                        />
+
+                    @empty
+                        <div class="#">
+                            No liquids in the database
+                        </div>
+                    @endforelse
                 </div>
-
-
-
             </div>
         </section>
-
-
 
         <section class="reviews" id="rec">
             <h2 class="reviews-title">RECENZJE</h2>
@@ -152,7 +180,6 @@
                         </g>
                     </g>
                 </svg>
-
 
             </div>
             <div class="carousel">
@@ -212,8 +239,6 @@
             </div>
         </section>
 
-
-
         <section class="contact">
             <h2 id="kon">KONTAKT</h2>
             <a href="https://t.me/GgYyPpSsY" class="kontakt__link">Skontaktuj się z menadżerem</a>
@@ -247,7 +272,6 @@
                     <button type="submit" class="submit__button">WYŚLIJ WNIOSEK</button>
                 </form>
             </div>
-
         </section>
     </main>
 
@@ -303,33 +327,130 @@
             </ul>
         </div>
     </footer>
+
+
     <!-- Fixed Cart Button -->
     <button class="cart-button" aria-label="Open Cart">
         <svg class="cart-button__icon" width="30" height="30">
             <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
         </svg>
-        <p class="cart-number">9</p>
+
+        <p class="cart-number">{{ $cart->count() }}</p>
     </button>
 
     <!-- Modal Cart -->
     <div class="cart-modal" id="cart-modal">
-    <div class="cart-modal__content">
-        <button class="cart-modal__close" aria-label="Close Cart">✖</button>
-        <h2 class="cart-modal__heading">Your Cart</h2>
-        <div class="cart-modal__items" id="cart-items"></div>
-        <div class="cart-modal__total" id="cart-total">Total: 0 zł</div>
-        <button class="button cart-modal__checkout">Przejdź do kasy</button>
+        <div class="cart-modal__content">
+            <button class="cart-modal__close" aria-label="Close Cart">✖️</button>
+            <h2 class="cart-modal__heading">Your Cart</h2>
+
+            {{-- Cart table --}}
+            <div class="cart-table-container">
+                <table class="cart-table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Edit quantity</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        Products
+                        {{-- Loop for products from cart --}}
+                        @forelse($cart as $product)
+                            <tr class="tr-border">
+                                <!-- Product name -->
+                                <td>{{ $product->name }}</td>
+
+                                <!-- Product price -->
+                                <td>{{ $product->price }} zł</td>
+
+                                <!-- Product quantity -->
+                                <td>
+                                    <!-- Decrease quantity -->
+                                    <form action="{{ route('cart.update') }}" method="POST">
+                                        @csrf
+                                        <!-- rowId -->
+                                        <input type="hidden" name="rowId" value="{{ $cart->where('id', $product->id)->first()->rowId }}">
+                                        <!-- New quantity -->
+                                        <input type="hidden" name="new_qty" value="{{ $product->qty - 1 }}">
+
+                                        <!-- Decrease button -->
+                                        <button type="submit" class="quantity-button decrease">-</button>
+                                    </form>
+
+                                    <!-- Old quantity -->
+                                    <input type="number" class="quantity-input" value="{{ $product->qty }}" min="1" readonly>
+
+                                    <!-- Increase quantity -->
+                                    <form action="{{ route('cart.update') }}" method="POST">
+                                        @csrf
+                                        <!-- rowId -->
+                                        <input type="hidden" name="rowId" value="{{ $cart->where('id', $product->id)->first()->rowId }}">
+                                        <!-- New quantity -->
+                                        <input type="hidden" name="new_qty" value="{{ $product->qty + 1 }}" >
+
+                                        <!-- Increase button -->
+                                        <button type="submit" class="quantity-button increase">+</button>
+                                    </form>
+                                </td>
+
+                                {{-- Delete from cart --}}
+                                <form action="{{ route('cart.delete') }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{ $product->name }} from cart?');">
+                                    @csrf
+                                    <!-- rowId -->
+                                    <input type="hidden" name="rowId" value="{{ $cart->where('id', $product->id)->first()->rowId }}">
+                                    <!-- Product id -->
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <!-- Type -->
+                                    <input type="hidden" name="type" value="{{ $product->options['type'] }}">
+
+                                    <!-- Delete from cart button -->
+                                    <td><button type="submit" class="remove-item">🗑</button></td>
+                                </form>
+                            </tr>
+                            @empty
+                                <div>
+                                    <p>Cart is empty, add your products!</p>
+                                </div>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+            {{-- Total price --}}
+            <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
+
+            {{-- Przejdź do kasy --}}
+            <button class="button cart-modal__checkout">Przejdź do kasy</button>
+
+            {{-- Cleat cart button --}}
+            <a
+                href="{{ route('cart.destroy') }}" onclick="return confirm('Destroy the cart?');">
+                <button class="cart-delete__basket">🛒&rarr;  <span class="bask">🗑</span></button>
+            </a>
+        </div>
     </div>
-</div>
 
 
+    {{-- Hide session message after 3s. --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var flashMessage = document.getElementById('flash-message');
+
+            if (flashMessage) {
+                setTimeout(function() {
+                    flashMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
 
     <!-- <script src="/resources/js/filtr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 <script src="./resources/js/hurt.js"></script>
 <script src="/resources/js/header-menu.js"></script>
 <script src="/resources/js/reviews.js"></script> -->
-
 </body>
-
 </html>

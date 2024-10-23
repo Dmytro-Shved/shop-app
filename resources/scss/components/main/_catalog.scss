@@ -186,8 +186,10 @@
     gap: 8px; /* Пробел между кнопками и полем ввода */
 }
 
+
+
 .quantity-button {
-    background-color: #5b5b5b;
+    background-color: #525050;
     color: white;
     border: none;
     border-radius: 4px;
@@ -196,126 +198,17 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 .quantity-button:hover {
-    background-color: #55bc39;
+    background-color: rgb(57, 42, 87);
 }
 
 .quantity-input {
-    width: 50px; /* Ширина поля ввода */
-    text-align: center; /* Центрирование текста в поле ввода */
-    border: 1px solid #ccc;
+    width: 50px;
+    text-align: center;
     border-radius: 4px;
     padding: 6px;
     font-size: 16px;
+
 }
 
 
-.cart-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #800bfdc2;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-    z-index: 99;
-}
-
-.cart-number{
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
-    cursor: pointer;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-    z-index: 100;
-    font-weight: 700;
-}
-
-
-.cart-button:hover {
-    background-color: #9900ff;
-}
-
-.cart-modal {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0; /* Start with opacity 0 */
-    transition: opacity 0.3s ease; /* Transition for fade effect */
-}
-
-.cart-modal.show {
-    display: flex; /* Make it flex when shown */
-    opacity: 1; /* Fade in */
-}
-
-.cart-modal__content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    position: relative;
-    transform: translateY(-30px); /* Start slightly above */
-    transition: transform 0.3s ease; /* Transition for slide effect */
-    
-}
-
-.cart-modal.show .cart-modal__content {
-    transform: translateY(0); /* Slide in */
-}
-
-.cart-modal__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-}
-.cart-modal__close:hover{
-    transform: rotate(180deg);
-    color: rgb(98, 0, 255)
-}
-
-.cart-modal__heading {
-    margin: 0 0 10px;
-}
-
-.cart-modal__items {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.cart-modal__total {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}

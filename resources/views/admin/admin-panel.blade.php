@@ -8,11 +8,16 @@
     <title>Admin Panel</title>
 </head>
 @vite('resources/css/main.css')
+@vite('resources/js/filtr.js')
 
 <body>
+
+    {{-- Go to the top --}}
     <div class="arrow-top">
         <a href="#produkts" class="arrow-top-link">↑</a>
     </div>
+
+    {{--Session messages --}}
     @if(session()->has('success'))
         <div>
             {{ session('success') }}
@@ -26,6 +31,9 @@
             {{ session('edit') }}
         </div>
     @endif
+
+    {{-- Welcome Admin --}}
+    <h2 class="welcome-admin">Welcome {{auth()->user()->name}}</h2>
 
     <section class="catalog">
 
@@ -110,7 +118,6 @@
                 </div>
             </form>
 
-
             {{-- Liquid Form --}}
             <form action="{{ route('liquids.store') }}" method="POST" enctype="multipart/form-data" class="form__nov-product">
             <h3 class="login__title">Create new Liquid</h3>
@@ -173,35 +180,51 @@
                 {{-- Confirm --}}
                     <button type="submit">Confirm</button>
             </form>
-
         </div>
 
-    {{-- Logout button --}}
-    <form action="{{ route('admin_logout') }}" method="POST" class="px-4    ">
-        @csrf
-        <button type="submit" class="button button__logout">Logout</button>
-    </form>
-
+        {{-- Logout button --}}
+        <form action="{{ route('admin_logout') }}" method="POST" class="px-4    ">
+            @csrf
+            <button type="submit" class="button button__logout">Logout</button>
+        </form>
     </section>
 
+    {{-- Go back to home page --}}
+    <a href="{{ route('home') }}" class="button">&larr; Go back to home page</a>
+
     <section class="catalog">
-        <h2 class="catalog-title">All Products:</h2>
+        <h2 class="catalog-title">Edit Products:</h2>
         <div class="container">
+
+            {{-- Filter --}}
+            <ul class="filter-list">
+                <li class="filter-item" data-filter="">All</li>
+                <li class="filter-item" data-filter="liquid">Liquid</li>
+                <li class="filter-item" data-filter="elfbar">Elfbar</li>
+                <li class="filter-item" data-filter="pod">Vape</li>
+            </ul>
+
             <div class="grid">
                 {{-- Cigarettes --}}
-                @foreach($cigarettes as $cigarette)
+                @forelse($cigarettes as $cigarette)
                     <x-cigarette-card :cigarette="$cigarette"/>
-                @endforeach
+                @empty
+                    <div class="#">
+                        No cigarettes in the database
+                    </div>
+                @endforelse
 
                 {{-- Liquids --}}
-                @foreach($liquids as $liquid)
-                    <x-liquid-card :liquid="$liquid" />
-                @endforeach
+                @forelse($liquids as $liquid)
+                    <x-liquid-card :liquid="$liquid"/>
+                @empty
+                    <div class="#">
+                        No liquids in the database
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>
-
-
 </body>
 
 </html>

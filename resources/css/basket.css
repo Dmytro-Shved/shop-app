@@ -1,0 +1,202 @@
+/* Вся область скроллбара */
+.cart-table-container::-webkit-scrollbar {
+    width: 12px; /* ширина скроллбара */
+    background-color: #e0e0e0; /* светлый фон */
+}
+
+/* Ползунок */
+.cart-table-container::-webkit-scrollbar-thumb {
+    background: repeating-linear-gradient(
+        45deg, /* угол наклона полосок */
+        #dfea7c 0%,   /* тёмно-серый */
+        #dfea7c 30%,
+        #e58f8f 30%,  /* средне-серый */
+        #e58f8f 60%,
+        #dfea7c 60%,  /* светло-серый */
+        #dfea7c 90%,
+        #e58f8f 90%,
+        #e58f8f 100%
+    );
+    border-radius: 4px; /* скругление */
+    border: 1px solid #583581; /* рамка */
+}
+
+
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #800bfdc2;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 99;
+}
+.cart-table-container {
+    max-height: 300px; /* Ограничиваем высоту для скролла */
+    overflow-y: auto;  /* Прокрутка, если товаров много */
+    max-width: 100%;
+    min-height: 100px; /* Минимальная высота таблицы, если товаров мало */
+}
+th{
+    padding: 15px 0;
+
+    border-bottom: 5px solid #ccc;
+}
+.tr-border td {
+    border-bottom: 5px solid #ccc;
+}
+
+.cart-number{
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 100;
+    font-weight: 700;
+}
+
+
+.cart-button:hover {
+    background-color: #9900ff;
+}
+
+.cart-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.3s ease; /* Transition for fade effect */
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(193, 190, 191, 0.6);
+    border-radius: 25px;
+    padding: 5px;
+}
+.remove-item{
+    font-size: 30px;
+    background: none;
+    color: red;
+    cursor: pointer;
+}
+
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cart-modal.show {
+    display: flex; /* Make it flex when shown */
+    opacity: 1; /* Fade in */
+}
+
+.cart-modal__content {
+    min-width: 550px;
+    min-height: 450px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: relative;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+
+}
+
+.cart-modal.show .cart-modal__content {
+    transform: translateY(0); /* Slide in */
+}
+
+.cart-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.cart-modal__close:hover{
+    transform: rotate(180deg);
+}
+
+.cart-modal__heading {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.cart-modal__items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-modal__checkout{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.cart-modal__total {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+
+
+.cart-delete__basket{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 20px;
+    padding: 7px;
+    border: 1px solid #d31313;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.bask{
+
+    color: red;
+    font-size: 25px;
+    vertical-align: center;
+
+}

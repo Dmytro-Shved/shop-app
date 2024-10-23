@@ -1,66 +1,195 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="http://127.0.0.1:8000/storage/images/logo/logo-header.svg"><img src="http://127.0.0.1:8000/storage/images/logo/logo-header.svg" alt=""></a>
 </p>
 
-## About Laravel
+## About Shop App (ElfVapeShop)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Shop App is an online store where users can conveniently browse, add products to the cart, save their quantity and quickly place orders. We offer a wide range of products and an intuitive interface for comfortable shopping. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requirements
 
-## Learning Laravel
+- **[PHP 8.2](https://www.php.net/downloads)**
+- **[Laravel 11.x](https://laravel.com/docs/11.x)**
+- **[Composer](https://getcomposer.org/download/)**
+- **[MySQL](https://www.mysql.com/downloads/)** or install local web server (for example **[WampServer](https://www.wampserver.com/en/)**)
+- **[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)** or **[PhpMyAdmin](https://www.phpmyadmin.net/)** (that comes with **[WampServer](https://www.wampserver.com/en/)**) to manage **[MySQL](https://www.mysql.com/downloads/)** queries
+- **[Node.js](https://nodejs.org/en)**
+- **[Livewire](https://laravel-livewire.com/docs/2.x/installation)**
+- **[Shopping Cart Package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+*Install the **[Laravel 11.x](https://laravel.com/docs/11.x)** through **[Composer](https://getcomposer.org/download/)**.*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Run the Composer require command from the Terminal:
+```
+     composer create-project laravel/laravel example-app
+```
+   Now you're ready to start using the Laravel in your application.
 
-## Contributing
+*Install the Vite through **[Node.js](https://nodejs.org/en)**.*
+```
+     npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+*Create a database in **[MySQL](https://www.mysql.com/downloads/)** and connect it to your project through .env*
 
-## Code of Conduct
+For example:
+```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=example_db // name of your database+
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+*Run migrations in **[MySQL](https://www.mysql.com/downloads/)**.*
+```
+    php artisan migrate
+```
 
-## Security Vulnerabilities
+*Install the **[Livewire](https://laravel-livewire.com/docs/2.x/installation)**.*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Install the package
+```
+    composer require livewire/livewire
+```
 
-## License
+*Install the **[Shopping Cart package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)** through **[Composer](https://getcomposer.org/download/)**.*
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run the Composer require command from the Terminal:
+```
+    composer require anayarojo/shoppingcart
+```
+
+You definitely should publish the config file and take a look at it.
+```
+    php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
+```
+This will give you a cart.php config file in which you can make changes to the packages behaivor.
+
+(If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
+
+## Using
+
+---
+
+This application is an online store where users can browse, add items to cart and place orders. A special control panel is provided for administrators, where they can manage products and users.
+
+#### Basic functionality
+
+* View products:
+
+    Users can view a list of all available products, including their descriptions and prices.
+
+
+* Cart button:
+
+    Each product has an "Add to Cart" button, allowing users to add selected items to their cart (session cart) for later purchase.
+
+    The user can also: change the number of items, remove items from the cart and also completely clear the cart of items. By calculating the price of all items in the cart the user can find out how much he has to pay for all items
+
+
+* Placing an order:
+
+    After adding items to their cart, users can proceed to checkout and complete their purchase.
+
+
+* Wholesale customer:
+
+  Opportunity to become a wholesale customer using the form at the bottom of the site. 
+
+  The data from the user will be sent to the Telegram bot, where the order will be visible to dealers.
+
+
+* View reviews:
+
+  The user can view reviews of purchases on the page, reviews are located at the bottom of the site and are designed as a convenient and beautiful carousel.
+
+
+* Possibility to contact with manager:
+
+  The user can contact the manager using the “Contact with manager” button and get to the Telegram chat where he can communicate with the manager.
+
+
+#### Admin functionality
+
+* Administrator registration:
+
+  To register a new admin for the first time you will need the artisan command 
+ ```
+    php artisan create:admin
+```
+  this command will create an admin in the admins table, once the admin is created you will have access to the form to register a new admin (done for security to prevent new users from becoming admins from the browser). 
+
+
+
+* Authentication of an existing admin:
+
+  Admins can log in through the login page using their credentials (if the credentials are correct, the admin gets access to the admin panel).
+
+
+* Admin panel (CRUD operations for products):
+
+  Create products: Adding new products to the database using a form separately for cigarettes and separately for liquids
+
+  Read products: Show selected product on the separate page (Show button).
+
+  Update products: Editing information about existing products (Update button).
+
+  Delete Product: Deletes products from the database (Delete button).
+
+
+## Contributors
+<!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Dmytro-Shved">
+            <img src="https://avatars.githubusercontent.com/u/153960097?v=4" width="100;" alt="Dmytro Shved"/>
+            <br />
+            <sub><b>Dmytro Shved (back-end)</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/sammri">
+            <img src="https://avatars.githubusercontent.com/u/109173034?v=4" width="100;" alt="Samir Chub"/>
+            <br />
+            <sub><b>Samir Chub (front-end)</b></sub>
+        </a>
+    </td>
+</table>
+
+
+## Special thanks to
+comments
+[//]: # (<table>)
+
+[//]: # (<tr>)
+
+[//]: # (    <td align="center">)
+
+[//]: # (        <a href="https://github.com/kirchevsky">)
+
+[//]: # (            <img src="https://avatars.githubusercontent.com/u/1301010?v=4" width="100;" alt="Igor Kyrchevskiy"/>)
+
+[//]: # (            <br />)
+
+[//]: # (            <sub><b>Igor Kyrchevskiy</b></sub>)
+
+[//]: # (        </a>)
+
+[//]: # (    </td>)
+
+[//]: # (</table>)
+
+[//]: # ()
+[//]: # (Thank you very much ❤ )

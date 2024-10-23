@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Cigarette;
 use App\Models\Liquid;
 use Illuminate\Http\Request;
