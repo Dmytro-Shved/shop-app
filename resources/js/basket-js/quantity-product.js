@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            quantityInput.value = currentQuantity; 
+            quantityInput.value = currentQuantity;
         });
     });
 

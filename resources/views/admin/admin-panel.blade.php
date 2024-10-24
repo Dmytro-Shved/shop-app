@@ -33,7 +33,7 @@
     @endif
 
     {{-- Welcome Admin --}}
-    <h2 class="welcome-admin">Welcome {{auth()->user()->name}}</h2>
+    <h2 class="welcome-admin" style="text-align: center">Welcome {{auth()->user()->name}}</h2>
 
     <section class="catalog">
 
@@ -187,10 +187,12 @@
             @csrf
             <button type="submit" class="button button__logout">Logout</button>
         </form>
-    </section>
 
     {{-- Go back to home page --}}
-    <a href="{{ route('home') }}" class="button">&larr; Go back to home page</a>
+    <a href="{{ route('home') }}" class="button" style="background-color: #559def; color: white">&larr; Go back to home page</a>
+
+    </section>
+
 
     <section class="catalog">
         <h2 class="catalog-title">Edit Products:</h2>
