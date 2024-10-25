@@ -56,12 +56,16 @@ For example:
     php artisan migrate
 ```
 
-*Install the **[Livewire](https://laravel-livewire.com/docs/2.x/installation)**.*
+[//]: # (*Install the **[Livewire]&#40;https://laravel-livewire.com/docs/2.x/installation&#41;**.*)
 
-Install the package
-```
-    composer require livewire/livewire
-```
+[//]: # ()
+[//]: # (Install the package)
+
+[//]: # (```)
+
+[//]: # (    composer require livewire/livewire)
+
+[//]: # (```)
 
 *Install the **[Shopping Cart package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)** through **[Composer](https://getcomposer.org/download/)**.*
 
