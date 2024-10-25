@@ -25,7 +25,7 @@
             {{-- Buy button --}}
             <button class="button product__buy">Kupić</button>
 
-            @if($cart->where('id', $cigarette->id)->count())
+            @if($cart->where('id', $cigarette->id)->first() && $cart->where('name', $cigarette->name)->first())
                 <div class="#">
                     In cart
                 </div>
@@ -102,7 +102,7 @@
                 <button class="button product__buy">Kupić</button>
 
                 {{-- If product is in the cart then show message and delete button --}}
-                @if($cart->where('id', $cigarette->id)->count())
+                @if($cart->where('id', $cigarette->id)->first() && $cart->where('name', $cigarette->name)->first())
                     <div class="#">
                         In cart
                     </div>
