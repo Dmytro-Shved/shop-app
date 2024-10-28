@@ -132,14 +132,28 @@ This application is an online store where users can browse, add items to cart an
  ```
     php artisan create:admin
 ```
+then in the future you'll be able to create a new admin using this example of uri:
+```
+    http://127.0.0.1:8000/admin/register
+```
+
   this command will create an admin in the admins table, once the admin is created you will have access to the form to register a new admin (done for security to prevent new users from becoming admins from the browser). 
 
 
 
 * Authentication of an existing admin:
+ 
+ ```
+    http://127.0.0.1:8000/admin/login
+ ```
 
-  Admins can log in through the login page using their credentials (if the credentials are correct, the admin gets access to the admin panel).
+  Admins can log in through the login page using this example of uri and providing their credentials (if the credentials are correct, the admin gets access to the admin panel).
 
+to access the admin panel through the main page use this example uri:
+
+```
+    http://127.0.0.1:8000/admin/panel
+```
 
 * Admin panel (CRUD operations for products):
 
