@@ -409,30 +409,38 @@
                                     <!-- Delete from cart button -->
                                     <td><button type="submit" class="remove-item">🗑</button></td>
                                 </form>
+
+                                {{-- Przejdź do kasy --}}
+                                <form action="{{ route('cart.accept') }}" method="POST">
+                                    @csrf
+                                    <button class="button cart-modal__checkout">Przejdź do kasy</button>
+                                </form>
+                                {{-- Total price --}}
+                                <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
+
+                                {{-- Cleat cart button --}}
+                                <a
+                                    href="{{ route('cart.destroy') }}" onclick="return confirm('Destroy the cart?');">
+                                    <button class="cart-delete__basket">🛒&rarr;  <span class="bask">🗑</span></button>
+                                </a>
                             </tr>
                             @empty
                                 <div>
-                                    <p>Cart is empty, add your products!</p>
+                                    <table class="cart-table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <p>Cart is empty, add your products!</p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                         @endforelse
                     </tbody>
                 </table>
             </div>
 
-            {{-- Total price --}}
-            <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
-
-            {{-- Przejdź do kasy --}}
-            <form action="{{ route('cart.accept') }}" method="POST">
-                @csrf
-                <button class="button cart-modal__checkout">Przejdź do kasy</button>
-            </form>
-
-            {{-- Cleat cart button --}}
-            <a
-                href="{{ route('cart.destroy') }}" onclick="return confirm('Destroy the cart?');">
-                <button class="cart-delete__basket">🛒&rarr;  <span class="bask">🗑</span></button>
-            </a>
         </div>
     </div>
 
