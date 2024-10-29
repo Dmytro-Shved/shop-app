@@ -423,7 +423,10 @@
             <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
 
             {{-- Przejdź do kasy --}}
-            <button class="button cart-modal__checkout">Przejdź do kasy</button>
+            <form action="{{ route('cart.accept') }}" method="POST">
+                @csrf
+                <button class="button cart-modal__checkout">Przejdź do kasy</button>
+            </form>
 
             {{-- Cleat cart button --}}
             <a

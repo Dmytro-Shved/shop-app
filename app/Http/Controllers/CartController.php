@@ -74,4 +74,12 @@ class CartController extends Controller
 
         return redirect()->route('home')->with('destroyed', 'Cart was destroyed');
     }
+
+    public function accept(Cart $cart)
+    {
+        $total = Cart::priceTotal();
+        $cart = Cart::content();
+
+        return view('cart.cart-accept', ['cart' => $cart, 'total'=> $total]);
+    }
 }

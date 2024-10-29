@@ -45,3 +45,6 @@ Route::get('/cart/destroy', [\App\Http\Controllers\CartController::class, 'destr
 
 Route::post('/cart/update', [\App\Http\Controllers\CartController::class, 'update_qty'])
     ->name('cart.update');
+
+Route::post('/cart/accept', [\App\Http\Controllers\CartController::class, 'accept'])
+    ->name('cart.accept');
