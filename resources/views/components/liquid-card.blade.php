@@ -26,7 +26,7 @@
             <button class="button product__buy">Kupić</button>
 
             {{-- If product is in the cart then show message and delete button --}}
-            @if($cart->where('id', $liquid->id)->first() && $cart->where('name', $liquid->name)->first())
+            @if(1 == 1)
                 <div class="#">
                     In cart
                 </div>
@@ -35,7 +35,7 @@
                 <form action="{{ route('cart.delete') }}" method="POST">
                     @csrf
                     <!-- rowId -->
-                    <input type="hidden" name="rowId" value="{{ $cart->where('id', $liquid->id)->first()->rowId }}">
+                    <input type="hidden" name="rowId" value="">
                     <!-- Product id -->
                     <input type="hidden" name="product_id" value="{{ $liquid->id }}">
                     <!-- Type -->
@@ -103,7 +103,7 @@
                 <button class="button product__buy">Kupić</button>
 
                 {{-- If product is in the cart then show message and delete button --}}
-                @if($cart->where('id', $liquid->id)->first() && $cart->where('name', $liquid->name)->first())
+                @if(2 > 1)
                     <div class="#">
                         In cart
                     </div>
@@ -112,7 +112,7 @@
                     <form action="{{ route('cart.delete') }}" method="POST">
                         @csrf
                         <!-- rowId -->
-                        <input type="hidden" name="rowId" value="{{ $cart->where('id', $liquid->id)->first()->rowId }}">
+                        <input type="hidden" name="rowId" value="">
                         <!-- Product id -->
                         <input type="hidden" name="product_id" value="{{ $liquid->id }}">
                         <!-- Type -->

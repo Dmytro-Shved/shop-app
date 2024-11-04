@@ -99,67 +99,45 @@
             </div>
         </section>
 
-        <section class="catalog" id="сat">
+            <section class="catalog" id="сat">
 
-        {{-- Session messages --}}
-        @if(session()->has('added'))
-            <div class="#" id="flash-message">
-                {{ session('added') }}
-            </div>
-        @elseif(session()->has('removed'))
-            <div class="#" id="flash-message">
-                {{ session('removed') }}
-            </div>
-        @elseif(session()->has('updated'))
-            <div class="#" id="flash-message">
-                {{ session('updated') }}
-            </div>
-        @elseif(session()->has('destroyed'))
-            <div class="#" id="flash-message">
-                {{ session('destroyed') }}
-            </div>
-        @elseif(session()->has('empty'))
-            <div class="#" id="flash-message">
-                {{ session('empty') }}
-            </div>
-        @endif
-
-            <div class="container">
-
-                {{-- Filter --}}
-                <ul class="filter-list">
-                    <li class="filter-item" data-filter="">All</li>
-                    <li class="filter-item" data-filter="liquid">Liquid</li>
-                    <li class="filter-item" data-filter="elfbar">Elfbar</li>
-                    <li class="filter-item" data-filter="pod">Vape</li>
-                </ul>
-
-                <div class="grid">
-                    {{-- Cigarettes --}}
-                    @forelse($cigarettes as $cigarette)
-                        <x-cigarette-card :cigarette="$cigarette"
-                                          :cart="$cart"
-                        />
-                    @empty
-                        <div class="#">
-                            No cigarettes in the database
-                        </div>
-                    @endforelse
-
-                    {{-- Liquids --}}
-                    @forelse($liquids as $liquid)
-                        <x-liquid-card :liquid="$liquid"
-                                       :cart="$cart"
-                        />
-
-                    @empty
-                        <div class="#">
-                            No liquids in the database
-                        </div>
-                    @endforelse
+            {{-- Session messages --}}
+            @if(session()->has('added'))
+                <div class="#" id="flash-message">
+                    {{ session('added') }}
                 </div>
-            </div>
-        </section>
+            @elseif(session()->has('removed'))
+                <div class="#" id="flash-message">
+                    {{ session('removed') }}
+                </div>
+            @elseif(session()->has('updated'))
+                <div class="#" id="flash-message">
+                    {{ session('updated') }}
+                </div>
+            @elseif(session()->has('destroyed'))
+                <div class="#" id="flash-message">
+                    {{ session('destroyed') }}
+                </div>
+            @elseif(session()->has('empty'))
+                <div class="#" id="flash-message">
+                    {{ session('empty') }}
+                </div>
+            @endif
+
+                <div class="container">
+
+                    {{-- Filter --}}
+                    <ul class="filter-list">
+                        <li class="filter-item" data-filter="">All</li>
+                        <li class="filter-item" data-filter="liquid">Liquid</li>
+                        <li class="filter-item" data-filter="elfbar">Elfbar</li>
+                        <li class="filter-item" data-filter="pod">Vape</li>
+                    </ul>
+
+                    {{-- Product list --}}
+                    <livewire:product-list/>
+                </div>
+            </section>
 
         <section class="reviews" id="rec">
             <h2 class="reviews-title">RECENZJE</h2>
@@ -335,7 +313,8 @@
             <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
         </svg>
 
-        <p class="cart-number">{{ $cart->count() }}</p>
+        {{-- {{ $cart->count() }} --}}
+        <p class="cart-number">x</p>
     </button>
 
     <!-- Modal Cart -->
