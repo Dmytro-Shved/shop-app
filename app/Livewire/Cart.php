@@ -38,6 +38,27 @@ class Cart extends Component
 
     public function store($productId, $productType)
     {
-        dd('ok');
+        // Check if product is a Cigarette or Liquid, then store it in a cart
+        if ($productType == 'cigarette') {
+            $product = Cigarette::findOrFail($productId);
+        }
+        else {
+            $product = Liquid::findOrFail($productId);
+        }
+
+        // Create new product in the cart
+        \Gloudemans\Shoppingcart\Facades\Cart::add(
+            $product->id,
+            $product->name,
+            $this->quantity[$productId],
+            $product->price,
+            (float)null, // weight (unnecessary value)
+            ['type' => $productType] //options
+        );
+    }
+
+    public function delete( $rowId)
+    {
+        \Gloudemans\Shoppingcart\Facades\Cart::remove($rowId);
     }
 }
