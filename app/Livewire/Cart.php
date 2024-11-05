@@ -70,10 +70,8 @@ class Cart extends Component
             ['type' => $productType] //options
         );
 
-//        $this->dispatch('added to cart', title: $product->id);
         $this->dispatch('added to cart');
     }
-
 
     public function delete( $rowId)
     {

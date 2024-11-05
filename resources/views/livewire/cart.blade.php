@@ -1,15 +1,13 @@
 <div>
     {{-- See that product is in the cart --}}
     @if($cart->where('id', $productId)->first() && $cart->where('name', $productName)->first())
-        <div class="#">
-            In cart
-
+        <div>
             {{-- Delete from cart --}}
             <form wire:submit.prevent="delete('{{ $cart->where('id', $productId)->first()->rowId }}')">
                 @csrf
 
                 <!-- Delete from cart button -->
-                <button type="submit" class="#">Delete from cart</button>
+                <button type="submit" class="delete-from-cart">Delete from cart</button>
             </form>
         </div>
 

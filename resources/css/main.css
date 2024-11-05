@@ -611,6 +611,22 @@ body::-webkit-scrollbar-thumb {
   gap: 8px; /* Пробел между кнопками и полем ввода */
 }
 
+.delete-from-cart{
+    color: white;
+    background-color: #f63535;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px;
+    width: 145px;
+    height: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-from-cart:hover {
+    background-color: darkred;
+}
+
 .quantity-button {
   background-color: #5b5b5b;
   color: white;
