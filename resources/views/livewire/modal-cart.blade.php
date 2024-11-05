@@ -30,9 +30,9 @@
                         <td>
                             {{-- Quantity control --}}
                             <div class="quantity-control">
-                                <button wire:click="decrement()" type="button" class="quantity-button decrease">-</button>
-                                <input wire:model="quantity." type="number" name="quantity" class="quantity-input" readonly/>
-                                <button wire:click="increment()" type="button" class="quantity-button increase">+</button>
+                                <button wire:click="decrement({{ $product->id }})" type="button" class="quantity-button decrease">-</button>
+                                <input type="number" value="{{ $product->qty }}" name="quantity" class="quantity-input" readonly/>
+                                <button wire:click="increment({{ $product->id }})" type="button" class="quantity-button increase">+</button>
                             </div>
                         </td>
 

@@ -4,7 +4,14 @@ namespace App\Livewire;
 
 use App\Models\Cigarette;
 use App\Models\Liquid;
+use Livewire\Attributes\On;
 use Livewire\Component;
+
+use function Livewire\Volt\{on};
+
+on(['update_quantity' => function () {
+
+}]);
 
 class Cart extends Component
 {
@@ -85,8 +92,26 @@ class Cart extends Component
         $this->dispatch('removed from cart');
     }
 
-    public function update ()
+//    #[On('update_quantity')]
+//    public function increment ($rowId, $current_qty, $action)
+//    {
+//        dd($rowId, $current_qty, $action);
+//    }
+
+    #[On('increment_old_qty')]
+    public function update_increment($rowId, $current_qty)
     {
-        dd('ok');
+        \Gloudemans\Shoppingcart\Facades\Cart::update($rowId, $current_qty + 1);
+
+        $new_qty = $current_qty + 1;
+    }
+
+    #[On('decrement_old_qty')]
+    public function update_decrement($rowId, $current_qty)
+    {
+        if ($current_qty == 1)
+            return;
+
+        \Gloudemans\Shoppingcart\Facades\Cart::update($rowId, $current_qty - 1);
     }
 }
