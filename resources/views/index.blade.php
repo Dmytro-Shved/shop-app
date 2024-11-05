@@ -375,7 +375,7 @@
                                     </form>
                                 </td>
 
-                                 Delete from cart
+                                 {{-- Delete from cart --}}
                                 <form action="{{ route('cart.delete') }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{ $product->name }} from cart?');">
                                     @csrf
                                     <!-- rowId -->
@@ -389,15 +389,15 @@
                                     <td><button type="submit" class="remove-item">🗑</button></td>
                                 </form>
 
-                                 Przejdź do kasy
+                                 {{-- Przejdź do kasy --}}
                                 <form action="{{ route('cart.accept') }}" method="POST">
                                     @csrf
                                     <button class="button cart-modal__checkout">Przejdź do kasy</button>
                                 </form>
-                                 Total price
+                                 {{-- Total price --}}
                                 <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
 
-                                 Cleat cart button
+                                 {{-- Clear cart button --}}
                                 <a
                                     href="{{ route('cart.destroy') }}" onclick="return confirm('Destroy the cart?');">
                                     <button class="cart-delete__basket">🛒&rarr;  <span class="bask">🗑</span></button>

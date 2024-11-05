@@ -36,6 +36,20 @@ class Cart extends Component
         );
     }
 
+    public function increment($productId)
+    {
+        $this->quantity[$productId]++;
+    }
+
+    public function decrement($productId)
+    {
+        if ($this->quantity[$productId] == 1)
+            return;
+
+        $this->quantity[$productId]--;
+    }
+
+
     public function store($productId, $productType)
     {
         // Check if product is a Cigarette or Liquid, then store it in a cart
@@ -55,10 +69,16 @@ class Cart extends Component
             (float)null, // weight (unnecessary value)
             ['type' => $productType] //options
         );
+
+//        $this->dispatch('added to cart', title: $product->id);
+        $this->dispatch('added to cart');
     }
+
 
     public function delete( $rowId)
     {
         \Gloudemans\Shoppingcart\Facades\Cart::remove($rowId);
+
+        $this->dispatch('removed from cart');
     }
 }

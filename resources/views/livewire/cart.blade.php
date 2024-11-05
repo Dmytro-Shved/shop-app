@@ -21,9 +21,9 @@
 
             {{-- Quantity control --}}
             <div class="quantity-control">
-                <button type="button" class="quantity-button decrease">-</button>
-                <input wire:model="quantity.{{ $productId }}" type="number" name="quantity" class="quantity-input"  min="1"/>
-                <button type="button" class="quantity-button increase">+</button>
+                <button wire:click="decrement({{ $productId }})" type="button" class="quantity-button decrease">-</button>
+                <input wire:model="quantity.{{ $productId }}" type="number" name="quantity" class="quantity-input" readonly/>
+                <button wire:click="increment({{ $productId }})" type="button" class="quantity-button increase">+</button>
             </div>
 
             {{-- Cart button submit (with an image) --}}
