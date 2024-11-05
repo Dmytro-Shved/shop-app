@@ -30,9 +30,9 @@
                         <td>
                             {{-- Quantity control --}}
                             <div class="quantity-control">
-                                <button wire:click="decrement({{ $product->id }})" type="button" class="quantity-button decrease">-</button>
+                                <button wire:click="update_qty_dec('{{ $product->rowId }}', {{ $product->qty - 1 }})" type="button" class="quantity-button decrease">-</button>
                                 <input type="number" value="{{ $product->qty }}" name="quantity" class="quantity-input" readonly/>
-                                <button wire:click="increment({{ $product->id }})" type="button" class="quantity-button increase">+</button>
+                                <button wire:click="update_qty_inc('{{ $product->rowId }}', {{ $product->qty + 1 }})" type="button" class="quantity-button increase">+</button>
                             </div>
                         </td>
 
@@ -55,6 +55,7 @@
                             @csrf
                             <button class="button cart-modal__checkout">Przejdź do kasy</button>
                         </form>
+
                         {{-- Total price --}}
                         <div class="cart-modal__total" id="cart-total">Total: {{ $total }} zł.</div>
 

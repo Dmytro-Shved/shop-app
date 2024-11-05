@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Cigarette;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -25,22 +26,17 @@ class ModalCart extends Component
         ]);
     }
 
-    public function increment($productId)
-    {
-        $cart = \Gloudemans\Shoppingcart\Facades\Cart::content();
-        $rowId = $cart->where('id', $productId)->first()->rowId;
-        $current_qty = $cart->where('rowId', $rowId)->first()->qty;
 
-        $this->dispatch('increment_old_qty', $rowId, $current_qty);
+    public function update_qty_dec($rowId, $new_qty)
+    {
+        if ($new_qty == 0)
+            return;
+
+        \Gloudemans\Shoppingcart\Facades\Cart::update($rowId, $new_qty);
     }
 
-    public function decrement($productId)
+    public function update_qty_inc($rowId, $new_qty)
     {
-        $cart = \Gloudemans\Shoppingcart\Facades\Cart::content();
-        $rowId = $cart->where('id', $productId)->first()->rowId;
-        $current_qty = $cart->where('rowId', $rowId)->first()->qty;
-
-        $this->dispatch('decrement_old_qty', $rowId, $current_qty);
+        \Gloudemans\Shoppingcart\Facades\Cart::update($rowId, $new_qty);
     }
-
 }
