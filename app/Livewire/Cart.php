@@ -49,7 +49,6 @@ class Cart extends Component
         $this->quantity[$productId]--;
     }
 
-
     public function store($productId, $productType)
     {
         // Check if product is a Cigarette or Liquid, then store it in a cart
@@ -70,13 +69,24 @@ class Cart extends Component
             ['type' => $productType] //options
         );
 
+        // Dispatch the event
         $this->dispatch('added to cart');
     }
 
-    public function delete( $rowId)
+    public function delete($rowId)
     {
+        // Remove product from cart using $rowId
         \Gloudemans\Shoppingcart\Facades\Cart::remove($rowId);
 
+        // if we remove the product, then put 1
+        $this->quantity[$this->productId] = 1;
+
+        // Dispatch the event
         $this->dispatch('removed from cart');
+    }
+
+    public function update ()
+    {
+        dd('ok');
     }
 }

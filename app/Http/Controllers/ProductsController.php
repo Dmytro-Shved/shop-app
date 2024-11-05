@@ -12,9 +12,6 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        $cart = Cart::content();
-        $total = Cart::priceTotal();
-
-        return view('index', compact('cart', 'total'));
+        return view('index');
     }
 }

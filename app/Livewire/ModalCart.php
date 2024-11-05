@@ -10,18 +10,18 @@ on(['added to cart' => function () {
 
 }]);
 
-class Counter extends Component
+class ModalCart extends Component
 {
     #[On('added to cart')]
     #[On('removed from cart')]
     public function render()
     {
         $cart = \Gloudemans\Shoppingcart\Facades\Cart::content();
+        $total = \Gloudemans\Shoppingcart\Facades\Cart::priceTotal();
 
-        return view('livewire.counter',
-            ['total' => $cart->count()]
-        );
+        return view('livewire.modal-cart', [
+            'cart' => $cart,
+            'total' => $total
+        ]);
     }
-
-
 }
