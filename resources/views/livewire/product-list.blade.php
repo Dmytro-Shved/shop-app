@@ -10,7 +10,7 @@
 
     {{-- Liquids --}}
     @forelse($liquids as $liquid)
-        <x-liquid-card :liquid="$liquid"/>
+        <livewire:liquid-card :liquid="$liquid"/>
     @empty
         <div class="#">
             No liquids in the database

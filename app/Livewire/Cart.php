@@ -29,10 +29,10 @@ class Cart extends Component
             $this->quantity[$cigarette->id] = 1;
         }
 
-//        $this->liquids = Liquid::all();
-//        foreach ($this->liquids as $liquid){
-//            $this->quantity[$liquid->id];
-//        }
+        $this->liquids = Liquid::all();
+        foreach ($this->liquids as $liquid){
+            $this->quantity[$liquid->id] = 1;
+        }
     }
 
     #[On('removed_from_modal')]
