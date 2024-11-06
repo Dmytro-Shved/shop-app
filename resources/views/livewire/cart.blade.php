@@ -1,12 +1,12 @@
 <div>
     {{-- See that product is in the cart --}}
     @if($cart->where('id', $productId)->first() && $cart->where('name', $productName)->first())
+
+        {{-- Remove product from cart --}}
         <div>
-            {{-- Delete from cart --}}
-            <form wire:submit.prevent="delete('{{ $cart->where('id', $productId)->first()->rowId }}')">
+            <form wire:submit="remove('{{ $cart->where('id', $productId)->first()->rowId }}')">
                 @csrf
 
-                <!-- Delete from cart button -->
                 <button type="submit" class="delete-from-cart">Delete from cart</button>
             </form>
         </div>
@@ -14,7 +14,7 @@
         {{-- If product NOT in the cart, then show cart add button --}}
     @else
         {{-- Cart button --}}
-        <form wire:submit.prevent="store({{ $productId}}, '{{ $productType }}')">
+        <form wire:submit="store({{ $productId}}, '{{ $productType }}')">
             @csrf
 
             {{-- Quantity control --}}

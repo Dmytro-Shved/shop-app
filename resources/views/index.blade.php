@@ -23,10 +23,10 @@
     @vite('resources/js/main.js')
     @vite('resources/js/filtr.js')
     @vite('resources/js/reviews.js')
-    @vite('resources/js/basket-js/quantity-product.js')
-    @vite('resources/js/basket-js/button-modal.js')
-    @vite('resources/js/basket-js/buy.js')
-    @vite('resources/js/basket-js/cart.js')
+{{--    @vite('resources/js/basket-js/quantity-product.js')--}}
+{{--    @vite('resources/js/basket-js/button-modal.js')--}}
+{{--    @vite('resources/js/basket-js/buy.js')--}}
+{{--    @vite('resources/js/basket-js/cart.js')--}}
 
     <!-- @vite('resources/js/reviews.js') -->
 
@@ -307,18 +307,29 @@
     </footer>
 
 
+    {{-- Modal button (old)--}}
     <!-- Fixed Cart Button -->
-    <button class="cart-button" aria-label="Open Cart">
-        <svg class="cart-button__icon" width="30" height="30">
+    {{--<button class="cart-button" aria-label="Open Cart">--}}
+    {{--    <svg class="cart-button__icon" width="30" height="30">--}}
+    {{--        <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>--}}
+    {{--    </svg>--}}
+
+    {{--     {{ $cart->count() }} --}}
+    {{--    <livewire:counter/>--}}
+    {{--</button>--}}
+
+    {{-- Modal button (new) --}}
+    <button x-data x-on:click="$dispatch('open-modal')"  class="cart-button">
+        <svg class="cart-button__icon" width="30" height="30">--}}
             <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
         </svg>
-
-        {{-- {{ $cart->count() }} --}}
+        {{-- Counter --}}
         <livewire:counter/>
+
     </button>
 
-<livewire:modal-cart/>
-
+    {{-- Modal cart--}}
+    <livewire:modal-cart/>
 
     {{-- Hide session message after 3s. --}}
     <script>

@@ -21,7 +21,6 @@
     border: 1px solid #583581; /* рамка */
 }
 
-
 .cart-button {
     position: fixed;
     bottom: 20px;
@@ -81,7 +80,7 @@ th{
 }
 
 .cart-modal {
-    display: none; /* Initially hidden */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -91,8 +90,8 @@ th{
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0; /* Start with opacity 0 */
-    transition: opacity 0.3s ease; /* Transition for fade effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .cart-table {
@@ -117,6 +116,7 @@ td{
 .cart-modal.show {
     display: flex; /* Make it flex when shown */
     opacity: 1; /* Fade in */
+
 }
 
 .cart-modal__content {

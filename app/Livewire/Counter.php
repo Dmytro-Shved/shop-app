@@ -14,6 +14,8 @@ class Counter extends Component
 {
     #[On('added to cart')]
     #[On('removed from cart')]
+    #[On('removed_from_modal')]
+    #[On('cart_destroyed')]
     public function render()
     {
         $cart = \Gloudemans\Shoppingcart\Facades\Cart::content();
