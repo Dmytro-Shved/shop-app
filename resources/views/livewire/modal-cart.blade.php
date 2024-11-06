@@ -63,13 +63,11 @@
                             </td>
 
                             {{-- Remove product from cart button --}}
-                            <form x-data wire:submit="remove">
-                                <td>
-                                    <button x-on:click="$wire.remove('{{ $product->rowId }}')" type="submit"
-                                            class="remove-item">🗑
-                                    </button>
-                                </td>
-                            </form>
+                            <td>
+                                <button wire:click="remove('{{ $product->rowId }}')" type="submit"
+                                        class="remove-item">🗑
+                                </button>
+                            <td>
 
                             {{-- Proceed to payment --}}
                             <form action="{{ route('cart.accept') }}" method="POST">
