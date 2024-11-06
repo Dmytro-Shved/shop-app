@@ -306,18 +306,6 @@
         </div>
     </footer>
 
-
-    {{-- Modal button (old)--}}
-    <!-- Fixed Cart Button -->
-    {{--<button class="cart-button" aria-label="Open Cart">--}}
-    {{--    <svg class="cart-button__icon" width="30" height="30">--}}
-    {{--        <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>--}}
-    {{--    </svg>--}}
-
-    {{--     {{ $cart->count() }} --}}
-    {{--    <livewire:counter/>--}}
-    {{--</button>--}}
-
     {{-- Modal button (new) --}}
     <button x-data x-on:click="$dispatch('open-modal')"  class="cart-button">
         <svg class="cart-button__icon" width="30" height="30">--}}
