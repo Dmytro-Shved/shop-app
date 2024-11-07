@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCigaretteController;
 use App\Http\Controllers\AdminLiquidController;
 use App\Http\Controllers\AdminPanelController;
-use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartAccept;
 use App\Http\Controllers\ProductsController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +35,4 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])
 Route::resource('cigarettes', AdminCigaretteController::class);
 Route::resource('liquids', AdminLiquidController::class);
 
-Route::post('/cart/accept', [CartController::class, 'accept'])->name('cart.accept');
+Route::post('/cart/accept', [CartAccept::class, 'accept'])->name('cart.accept');
