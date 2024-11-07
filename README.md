@@ -1,5 +1,5 @@
 <p align="center">
-<a href="http://127.0.0.1:8000/storage/images/logo/logo-header.svg"><img src="http://127.0.0.1:8000/storage/images/logo/logo-header.svg" alt=""></a>
+<img src="https://i.ibb.co/hVf88B1/Elf-VApe-Shop.jpg" alt="">
 </p>
 
 ## About Shop App (ElfVapeShop)
