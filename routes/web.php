@@ -33,18 +33,3 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])
 
 Route::resource('cigarettes', AdminCigaretteController::class);
 Route::resource('liquids', AdminLiquidController::class);
-
-Route::post('/cart/store', [\App\Http\Controllers\CartController::class, 'store'])
-    ->name('cart.store');
-
-Route::post('/cart/delete', [\App\Http\Controllers\CartController::class, 'delete'])
-    ->name('cart.delete');
-
-Route::get('/cart/destroy', [\App\Http\Controllers\CartController::class, 'destroy'])
-    ->name('cart.destroy');
-
-Route::post('/cart/update', [\App\Http\Controllers\CartController::class, 'update_qty'])
-    ->name('cart.update');
-
-Route::post('/cart/accept', [\App\Http\Controllers\CartController::class, 'accept'])
-    ->name('cart.accept');

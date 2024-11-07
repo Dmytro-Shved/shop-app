@@ -23,13 +23,6 @@
     @vite('resources/js/main.js')
     @vite('resources/js/filtr.js')
     @vite('resources/js/reviews.js')
-{{--    @vite('resources/js/basket-js/quantity-product.js')--}}
-{{--    @vite('resources/js/basket-js/button-modal.js')--}}
-{{--    @vite('resources/js/basket-js/buy.js')--}}
-{{--    @vite('resources/js/basket-js/cart.js')--}}
-
-    <!-- @vite('resources/js/reviews.js') -->
-
     @vite('public/images')
 
     @vite('resources/js/header-menu.js')
@@ -294,19 +287,6 @@
 
     {{-- Modal cart--}}
     <livewire:modal-cart/>
-
-    {{-- Hide session message after 3s. --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var flashMessage = document.getElementById('flash-message');
-
-            if (flashMessage) {
-                setTimeout(function() {
-                    flashMessage.style.display = 'none';
-                }, 3000);
-            }
-        });
-    </script>
 
     <!-- <script src="/resources/js/filtr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
