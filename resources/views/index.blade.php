@@ -100,30 +100,6 @@
         </section>
 
             <section class="catalog" id="сat">
-
-            {{-- Session messages --}}
-            @if(session()->has('added'))
-                <div class="#" id="flash-message">
-                    {{ session('added') }}
-                </div>
-            @elseif(session()->has('removed'))
-                <div class="#" id="flash-message">
-                    {{ session('removed') }}
-                </div>
-            @elseif(session()->has('updated'))
-                <div class="#" id="flash-message">
-                    {{ session('updated') }}
-                </div>
-            @elseif(session()->has('destroyed'))
-                <div class="#" id="flash-message">
-                    {{ session('destroyed') }}
-                </div>
-            @elseif(session()->has('empty'))
-                <div class="#" id="flash-message">
-                    {{ session('empty') }}
-                </div>
-            @endif
-
                 <div class="container">
 
                     {{-- Filter --}}
