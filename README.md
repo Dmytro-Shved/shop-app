@@ -4,8 +4,6 @@
 
 ## About Shop App (ElfVapeShop)
 
----
-
 Shop App is an online store where users can conveniently browse, add products to the cart, save their quantity and quickly place orders. We offer a wide range of products and an intuitive interface for comfortable shopping. 
 
 ## Requirements
@@ -22,7 +20,6 @@ Shop App is an online store where users can conveniently browse, add products to
 
 ## Installation
 
----
 
 *Install the **[Laravel 11.x](https://laravel.com/docs/11.x)** through **[Composer](https://getcomposer.org/download/)**.*
 
@@ -83,8 +80,6 @@ This will give you a cart.php config file in which you can make changes to the p
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
 
 ## Using
-
----
 
 This application is an online store where users can browse, add items to cart and place orders. A special control panel is provided for administrators, where they can manage products and users.
 
