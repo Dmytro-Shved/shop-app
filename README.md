@@ -186,16 +186,26 @@ to access the admin panel through the main page use this example uri:
 </table>
 
 
-## Special thanks to 
+[//]: # (## Special thanks to )
 
-<table>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/kirchevsky">
-                <img src="https://avatars.githubusercontent.com/u/1301010?v=4" width="100;" alt="Igor Kyrchevskiy"/>
-                <br />
-                <sub><b>Igor Kyrchevskiy</b></sub>
-            </a>
-        </td>
-    </tr>
-</table>
+[//]: # (<table>)
+
+[//]: # (    <tr>)
+
+[//]: # (        <td align="center">)
+
+[//]: # (            <a href="https://github.com/kirchevsky">)
+
+[//]: # (                <img src="https://avatars.githubusercontent.com/u/1301010?v=4" width="100;" alt="Igor Kyrchevskiy"/>)
+
+[//]: # (                <br />)
+
+[//]: # (                <sub><b>Igor Kyrchevskiy</b></sub>)
+
+[//]: # (            </a>)
+
+[//]: # (        </td>)
+
+[//]: # (    </tr>)
+
+[//]: # (</table>)
