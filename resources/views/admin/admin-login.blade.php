@@ -13,10 +13,10 @@
     @vite('resources/css/main.css')
 </head>
 <body>
-    
+
 <div class="container__login">
     {{-- Go back to main page --}}
-    
+
     <button class="button button__back">
         <a href="{{ route('home') }}">&larr; Go back to home page</a>
     </button>
@@ -29,17 +29,15 @@
         {{-- Login --}}
         <div class="login__inputs">
             <div class="login__name">
-            <input type="text" name="name" 
-            @class(['input-name', 'error-red-input' => $errors->has('name')]) placeholder="dimon pisidron">
-                <!-- <i class='bx bxs-user'></i> -->
+                <input type="text" name="name" value="{{ old('name') }}"
+                @class(['input-name', 'error-red-input' => $errors->has('name')]) placeholder="dimon pisidron">
+                    <!-- <i class='bx bxs-user'></i> -->
 
-                <div class="valid-error">
-                    @error('name')
-                        <p class="message-error">{{ $message }}</p>
-                    @enderror
-                </div> 
-
-            
+                    <div class="valid-error">
+                        @error('name')
+                            <p class="message-error">{{ $message }}</p>
+                        @enderror
+                    </div>
             </div>
 
             {{-- Password --}}
@@ -53,7 +51,7 @@
                         <p class="message-error">{{ $message }}</p>
                     @enderror
                 </div>
-                
+
             </div>
         </div>
 

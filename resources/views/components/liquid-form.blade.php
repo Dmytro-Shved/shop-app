@@ -6,7 +6,7 @@
     @csrf
     {{-- Name --}}
     <div class="product-input">
-        <input type="text" name="name" class="input" placeholder="Name">
+        <input type="text" name="name" class="input" value="{{ old('name') }}" placeholder="Name">
 
         @error('name')
         <p>{{ $message }}</p>
@@ -15,7 +15,7 @@
 
     {{-- PG/VG Ratio --}}
     <div class="product-input">
-        <input type="text" name="pg_vg_ratio" class="input" placeholder="PG/VG Ratio">
+        <input type="text" name="pg_vg_ratio" class="input" value="{{ old('pg_vg_ratio') }}" placeholder="PG/VG Ratio">
 
         @error('pg_vg_ratio')
         <p>{{ $message }}</p>
@@ -24,7 +24,7 @@
 
     {{-- Volume --}}
     <div class="product-input">
-        <input type="number" name="volume" class="input" placeholder="Volume">
+        <input type="number" name="volume" class="input" value="{{ old('volume') }}" placeholder="Volume">
 
         @error('volume')
         <p>{{ $message }}</p>
@@ -33,7 +33,7 @@
 
     {{-- Flavor --}}
     <div class="product-input">
-        <input type="text" name="flavor" class="input" placeholder="Flavor">
+        <input type="text" name="flavor" class="input" value="{{ old('flavor') }}" placeholder="Flavor">
 
         @error('flavor')
         <p>{{ $message }}</p>
@@ -42,7 +42,7 @@
 
     {{-- Price --}}
     <div class="product-input">
-        <input type="number" name="price" class="input" placeholder="Price">
+        <input type="number" name="price" class="input" value="{{ old('price') }}" placeholder="Price">
 
         @error('price')
         <p>{{ $message }}</p>

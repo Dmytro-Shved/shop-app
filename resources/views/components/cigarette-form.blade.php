@@ -6,7 +6,7 @@
     @csrf
     {{-- Name --}}
     <div class="product-input">
-        <input type="text" name="name" class="input" placeholder="Name">
+        <input type="text" name="name" class="input" value="{{ old('name') }}" placeholder="Name">
 
         @error('name')
         <p>{{ $message }}</p>
@@ -15,7 +15,7 @@
 
     {{-- Type --}}
     <div class="product-input">
-        <input type="text" list="options" class="input" name="type" placeholder="Type">
+        <input type="text" list="options" class="input" value="{{ old('type') }}" name="type" placeholder="Type">
         <datalist id="options">
             <option value="elfbar">
             <option value="pod">
@@ -28,7 +28,7 @@
 
     {{-- Strength --}}
     <div class="product-input">
-        <input type="text" name="strength" class="input" placeholder="Strength">
+        <input type="text" name="strength" class="input" value="{{ old('strength') }}" placeholder="Strength">
 
         @error('strength')
         <p>{{ $message }}</p>
@@ -37,7 +37,7 @@
 
     {{-- Puffs --}}
     <div class="product-input">
-        <input type="number" name="puffs" class="input" placeholder="Puffs">
+        <input type="number" name="puffs" class="input" value="{{ old('puffs') }}" placeholder="Puffs">
 
         @error('puffs')
         <p>{{ $message }}</p>
@@ -46,7 +46,7 @@
 
     {{-- Flavor --}}
     <div class="product-input">
-        <input type="text" name="flavor" class="input" placeholder="Flavor">
+        <input type="text" name="flavor" class="input" value="{{ old('flavor') }}" placeholder="Flavor">
 
         @error('flavor')
         <p>{{ $message }}</p>
@@ -55,7 +55,7 @@
 
     {{-- Price --}}
     <div class="product-input">
-        <input type="number" name="price" class="input" placeholder="Price">
+        <input type="number" name="price" class="input" value="{{ old('price') }}" placeholder="Price">
 
         @error('price')
         <p>{{ $message }}</p>
