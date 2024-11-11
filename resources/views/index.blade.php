@@ -10,23 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=New+Amsterdam&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
 
-    <!-- <link rel="stylesheet" href=".\resources\css\main.css"/> -->
-
-    @yield('content')
-
-    @vite('resources/css/main.css')
-    @vite('resources/css/basket.css')
-
-    @vite('resources/js/app.js')
-    @vite('resources/js/bootstrap.js')
-    @vite('resources/js/hurt.js')
-    @vite('resources/js/main.js')
-    @vite('resources/js/filtr.js')
-    @vite('resources/js/reviews.js')
-    @vite('public/images')
-
-    @vite('resources/js/header-menu.js')
+    @vite([
+        'resources/css/main.css',
+        'resources/css/basket.css',
+        'resources/js/app.js',
+        'resources/js/bootstrap.js',
+        'resources/js/hurt.js',
+        'resources/js/main.js',
+        'resources/js/filtr.js',
+        'resources/js/reviews.js',
+        'public/images',
+        'resources/js/header-menu.js'
+    ])
 </head>
+
 
 <body id="element">
     <header class="header">
@@ -55,7 +52,6 @@
 
             <div class="header-button"><a href="https://t.me/GgYyPpSsY" target="_blank" rel="noopener">subskrybuj
                     Telegram</a></div>
-
             <div class="overlay" id="overlay"></div>
         </div>
     </header>
@@ -127,8 +123,8 @@
                         </g>
                     </g>
                 </svg>
-
             </div>
+
             <div class="carousel">
                 <div class="carousel-item">
                     <div class="carousel-box">
@@ -282,16 +278,10 @@
         </svg>
         {{-- Counter --}}
         <livewire:counter/>
-
     </button>
 
     {{-- Modal cart--}}
     <livewire:modal-cart/>
 
-    <!-- <script src="/resources/js/filtr.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-<script src="./resources/js/hurt.js"></script>
-<script src="/resources/js/header-menu.js"></script>
-<script src="/resources/js/reviews.js"></script> -->
 </body>
 </html>

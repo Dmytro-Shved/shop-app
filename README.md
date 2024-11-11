@@ -43,12 +43,12 @@ For example:
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=example_db // name of your database+
+    DB_DATABASE=example_db // name of your database
     DB_USERNAME=root
     DB_PASSWORD=
 ```
 
-*Run migrations in **[MySQL](https://www.mysql.com/downloads/)**.*
+*Run migrations suing this command:
 ```
     php artisan migrate
 ```
