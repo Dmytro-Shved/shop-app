@@ -21,52 +21,40 @@ Shop App is an online store where users can conveniently browse, add products to
 ## Installation
 
 
-*Install the **[Laravel 11.x](https://laravel.com/docs/11.x)** through **[Composer](https://getcomposer.org/download/)**.*
+1. *Clone the repository:*
 
-
-
-Run the Composer require command from the Terminal:
 ```
-     composer create-project laravel/laravel example-app
-```
-   Now you're ready to start using the Laravel in your application.
-
-*Install the Vite through **[Node.js](https://nodejs.org/en)**.*
-```
-     npm install
+    git clone https://github.com/Dmytro-Shved/shop-app.git
 ```
 
-*Create a database in **[MySQL](https://www.mysql.com/downloads/)** and connect it to your project through .env*
-
-For example:
+2. *Install dependencies:*
+ 
 ```
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=example_db // name of your database
-    DB_USERNAME=root
-    DB_PASSWORD=
+    composer install
+    npm install
+    npm run dev
 ```
 
-Run migrations using this command:
+3. *Environment configuration: copy code from `.env.example` to `.env`:*
+
+```
+    cp .env.example .env
+```
+
+4. *Run migrations:*
+ 
 ```
     php artisan migrate
 ```
 
-[//]: # (*Install the **[Livewire]&#40;https://laravel-livewire.com/docs/2.x/installation&#41;**.*)
+5. *Install Livewire:*
 
-[//]: # ()
-[//]: # (Install the package)
+```
+    composer require livewire/livewire
+```
 
-[//]: # (```)
-
-[//]: # (    composer require livewire/livewire)
-
-[//]: # (```)
-
-*Install the **[Shopping Cart package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)** through **[Composer](https://getcomposer.org/download/)**.*
-
-Run the Composer require command from the Terminal:
+6. *Install the **[Shopping Cart package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)** through **[Composer](https://getcomposer.org/download/)** :*
+ 
 ```
     composer require anayarojo/shoppingcart
 ```
@@ -78,6 +66,12 @@ You definitely should publish the config file and take a look at it.
 This will give you a cart.php config file in which you can make changes to the packages behaivor.
 
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
+
+7. *Run the application:*
+
+```
+    php artisan serve 
+``` 
 
 ## Using
 
