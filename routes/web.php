@@ -35,4 +35,4 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])
 Route::resource('cigarettes', AdminCigaretteController::class);
 Route::resource('liquids', AdminLiquidController::class);
 
-Route::post('/cart/accept', [CartAccept::class, 'accept'])->name('cart.accept');
+Route::get('/cart/accept', [CartAccept::class, 'accept'])->name('cart.accept');

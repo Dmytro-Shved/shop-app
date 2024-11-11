@@ -48,7 +48,7 @@ For example:
     DB_PASSWORD=
 ```
 
-*Run migrations suing this command:
+Run migrations using this command:
 ```
     php artisan migrate
 ```

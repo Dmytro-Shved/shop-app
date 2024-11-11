@@ -70,16 +70,12 @@
                             <td>
 
                             {{-- Proceed to payment --}}
-                            <form action="{{ route('cart.accept') }}" method="POST">
-                                @csrf
+                            <a href="{{ route('cart.accept') }}">
                                 <button class="button cart-modal__checkout">Przejdź do kasy</button>
-                            </form>
+                            </a>
 
                             {{-- Total price --}}
                             <div class="cart-modal__total" id="cart-total">Total price: {{ $total }} zł.</div>
-
-                            {{-- Clear cart button --}}
-                            {{--<button wire:click="destroy" class="cart-delete__basket">🛒&rarr; <span class="bask">🗑</span></button>--}}
 
                             <form wire:submit="destroy_cart">
                                 @csrf
