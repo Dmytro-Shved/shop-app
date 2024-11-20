@@ -27,11 +27,11 @@ class AdminCigaretteController extends Controller implements HasMiddleware
     {
         // Validate
         $request->validate([
-            'name' => ['required', 'max:50'],
-            'type' => ['required', 'max:50', 'in:elfbar,pod'],
-            'strength'=> ['required', 'max:50'],
+            'name' => ['required', 'string', 'max:50'],
+            'type' => ['required', 'string', 'max:50', 'in:elfbar,pod'],
+            'strength'=> ['required', 'numeric', 'max:50'],
             'puffs'=> ['required', 'max:50000', 'numeric'],
-            'flavor'=> ['required', 'max:191'],
+            'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['required', 'image', 'nullable'],
         ]);
@@ -77,13 +77,13 @@ class AdminCigaretteController extends Controller implements HasMiddleware
     {
         // Validate
         $request->validate([
-            'name' => ['required', 'max:50'],
-            'type' => ['required', 'max:50', 'in:elfbar,pod'],
-            'strength'=> ['required', 'max:50'],
+            'name' => ['required', 'string', 'max:50'],
+            'type' => ['required', 'string', 'max:50', 'in:elfbar,pod'],
+            'strength'=> ['required', 'numeric', 'max:50'],
             'puffs'=> ['required', 'max:50000', 'numeric'],
-            'flavor'=> ['required', 'max:191'],
+            'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
-            'image'=> ['image', 'nullable'],
+            'image'=> ['required', 'image', 'nullable'],
         ]);
 
         // Old image path

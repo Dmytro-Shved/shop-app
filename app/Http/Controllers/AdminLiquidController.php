@@ -23,11 +23,11 @@ class AdminLiquidController extends Controller implements HasMiddleware
     public function store(StoreLiquidRequest $request)
     {
         // Validate
-        $liquid = $request->validate([
-            'name' => ['required', 'max:50'],
-            'pg_vg_ratio' => ['required', 'max:10'],
+        $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'pg_vg_ratio' => ['required', 'string', 'max:10'],
             'volume'=> ['required', 'max:25', 'numeric'],
-            'flavor'=> ['required', 'max:191'],
+            'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['required', 'image', 'nullable'],
         ]);
@@ -75,12 +75,12 @@ class AdminLiquidController extends Controller implements HasMiddleware
     {
         // Validate
         $request->validate([
-            'name' => ['required', 'max:50'],
-            'pg_vg_ratio' => ['required', 'max:10'],
-            'volume'=> ['required', 'max:100', 'numeric'],
-            'flavor'=> ['required', 'max:191'],
+            'name' => ['required', 'string', 'max:50'],
+            'pg_vg_ratio' => ['required', 'string', 'max:10'],
+            'volume'=> ['required', 'max:25', 'numeric'],
+            'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
-            'image'=> ['image', 'nullable'],
+            'image'=> ['required', 'image', 'nullable'],
         ]);
 
         // Old image

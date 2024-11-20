@@ -13,7 +13,7 @@ class AdminAuthController extends Controller
     {
         // Validate
         $fields = $request->validate([
-            'name' => ['required', 'max:255', 'unique:admins'],
+            'name' => ['required', 'string', 'max:255', 'unique:admins'],
             'email' => ['required', 'max:255', 'email', 'unique:admins'],
             'password' => ['required', 'min:3', 'confirmed'],
         ]);
@@ -32,7 +32,7 @@ class AdminAuthController extends Controller
     {
         // Validate
         $credentials = $request->validate([
-            'name' => ['required', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'min:3'],
         ]);
 
