@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminLiquidController;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\CartAccept;
 use App\Http\Controllers\ProductsController;
-use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductsController::class, 'index'])
