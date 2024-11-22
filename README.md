@@ -11,8 +11,6 @@ Shop App is an online store where users can conveniently browse, add products to
 - **[PHP 8.2](https://www.php.net/downloads)**
 - **[Laravel 11.x](https://laravel.com/docs/11.x)**
 - **[Composer](https://getcomposer.org/download/)**
-- **[MySQL](https://www.mysql.com/downloads/)** or install local web server (for example **[WampServer](https://www.wampserver.com/en/)**)
-- **[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)** or **[PhpMyAdmin](https://www.phpmyadmin.net/)** (that comes with **[WampServer](https://www.wampserver.com/en/)**) to manage **[MySQL](https://www.mysql.com/downloads/)** queries
 - **[Node.js](https://nodejs.org/en)**
 - **[Livewire](https://laravel-livewire.com/docs/2.x/installation)**
 - **[Shopping Cart Package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**
