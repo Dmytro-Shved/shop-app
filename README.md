@@ -38,7 +38,7 @@ Shop App is an online store where users can conveniently browse, add products to
 3. *Environment configuration: copy code from `.env.example` to `.env`:*
 
 ```
-    cp .env.example .env
+    copy .env.example .env
 ```
 
 4. *Run migrations:*
@@ -67,7 +67,14 @@ This will give you a cart.php config file in which you can make changes to the p
 
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
 
-7. *Run the application:*
+
+7. *Create a link:*
+
+```
+    php artisan storage:link 
+``` 
+
+8. *Run the application:*
 
 ```
     php artisan serve 
