@@ -86,11 +86,11 @@
             reader.onload = function(e) {
                 const imagePreview = document.getElementById('imagePreview');
                 imagePreview.src = e.target.result;
-                imagePreview.style.display = 'block'; // Показываем миниатюру
+                imagePreview.style.display = 'block';
             }
 
             if (file) {
-                reader.readAsDataURL(file); // Читаем изображение
+                reader.readAsDataURL(file);
             }
         }
     </script>

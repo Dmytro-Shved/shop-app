@@ -73,11 +73,11 @@
                 reader.onload = function(e) {
                     const imageLiquidPreview = document.getElementById('imageLiquidPreview');
                     imageLiquidPreview.src = e.target.result;
-                    imageLiquidPreview.style.display = 'block'; // Показываем миниатюру
+                    imageLiquidPreview.style.display = 'block';
                 }
 
                 if (file) {
-                    reader.readAsDataURL(file); // Читаем изображение
+                    reader.readAsDataURL(file);
                 }
             }
         </script>

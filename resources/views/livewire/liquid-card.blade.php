@@ -31,21 +31,27 @@
             {{-- If admin is on admin_panel, display buttons for redact --}}
             @if (Request::route()->getName() === 'admin_panel')
 
-                {{-- Delete Cigarette --}}
+                {{-- Delete Liquid --}}
                 <form action="{{ route('liquids.destroy',  $liquid->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{ $liquid->name }} product ?');">
                     @csrf
                     @method('DELETE')
-                    <button class="button-panel" type="submit">Delete</button>
+                    <button class="admin_delete_btn" type="submit">
+                        {{ svg('ionicon-trash') }}
+                    </button>
                 </form>
 
                 {{-- Go to a page with edit form --}}
-                <button class="button-panel">
-                    <a href="{{ route('liquids.edit', $liquid) }}">Edit</a>
+                <button class="admin_edit_btn">
+                    <a href="{{ route('liquids.edit', $liquid) }}">
+                        {{ svg('bi-pencil-square') }}
+                    </a>
                 </button>
 
                 {{-- Go to a show page  --}}
-                <button class="button-panel">
-                    <a href="{{ route('liquids.show', $liquid) }}">Show</a>
+                <button class="admin_show_btn">
+                    <a href="{{ route('liquids.show', $liquid) }}">
+                        {{ svg('heroicon-s-eye') }}
+                    </a>
                 </button>
 
                 {{-- If admin is on show page then don't display buttons --}}

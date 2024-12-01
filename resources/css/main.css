@@ -1825,3 +1825,112 @@ input:-webkit-autofill:focus {
         transform: translate(-50%, -60%);
     }
 }
+
+
+
+
+
+
+/* Стили для кнопок редактирования товаров */
+.admin_delete_btn, .admin_edit_btn, .admin_show_btn {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Уменьшенный размер текста */
+    padding: 8px 16px; /* Уменьшенные отступы */
+    border-radius: 6px; /* Легкое скругление */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 5px; /* Внешние отступы для разделения кнопок */
+    display: inline-block; /* Для выравнивания кнопок в ряд */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект свечения на hover */
+.admin_delete_btn:hover,
+.admin_edit_btn:hover,
+.admin_show_btn:hover {
+    box-shadow: 0px 0px 12px currentColor; /* Свечение с цветом кнопки */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Стили для кнопки удаления */
+.admin_delete_btn {
+    width: 110px; /* Размер кнопки */
+    height: 50px;
+    border: none;
+    background-color: #e74c3c; /* Красный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Иконка внутри кнопки */
+.admin_delete_btn svg {
+    width: 20px; /* Размер SVG */
+    height: 20px;
+    fill: white; /* Цвет иконки */
+}
+
+/* Эффект при наведении */
+.admin_delete_btn:hover {
+    background-color: #c0392b; /* Темнее при наведении */
+    box-shadow: 0px 0px 10px rgba(231, 76, 60, 0.8); /* Красное свечение */
+    transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Эффект при фокусе */
+.admin_delete_btn:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(231, 76, 60, 0.5); /* Фокусное свечение */
+}
+
+/* Edit Button */
+.admin_edit_btn {
+    background-color: #3498db; /* Синий цвет */
+    color: white;
+}
+
+.admin_edit_btn:hover {
+    background-color: #2980b9; /* Темнее при наведении */
+}
+
+/* Show Button */
+.admin_show_btn {
+    background-color: #2ecc71; /* Зеленый цвет */
+    width: 50px;
+    color: white;
+}
+
+.admin_show_btn:hover {
+    background-color: #27ae60; /* Темнее при наведении */
+}
+
+/* Стили для ссылок внутри кнопок редактирования */
+.admin_delete_btn a,
+.admin_edit_btn a,
+.admin_show_btn a {
+    text-decoration: none;
+    color: inherit; /* Унаследовать цвет кнопки */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.admin_delete_btn a:hover,
+.admin_edit_btn a:hover,
+.admin_show_btn a:hover {
+    text-decoration: none;
+}
+
+/* Дополнительные стили для фокуса */
+.admin_delete_btn:focus,
+.admin_edit_btn:focus,
+.admin_show_btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Обводка при фокусе */
+}
+
