@@ -9,7 +9,7 @@
         <input type="text" name="name" class="input" value="{{ old('name') }}" placeholder="Name">
 
         @error('name')
-        <p>{{ $message }}</p>
+            <p>{{ $message }}</p>
         @enderror
     </div>
 
@@ -63,8 +63,9 @@
     </div>
 
     {{-- Image --}}
-    <div class="product-input">
-        <input type="file" name="image" class="input" placeholder="Image">
+    <div class="product-input-image">
+        <input type="file" name="image" id="imageInput" class="input" placeholder="Image" onchange="previewImage(event)">
+        <img id="imagePreview" src="#" alt="Image preview" style="display:none;">
 
         @error('image')
         <p>{{ $message }}</p>
@@ -72,7 +73,25 @@
     </div>
 
     {{-- Confirm --}}
-    <div class="#">
-        <button type="submit">Confirm</button>
+    <div class="confirm-button">
+        <button type="submit" class="confirm-btn">Confirm</button>
     </div>
+
+    {{-- Mini image --}}
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block'; // Показываем миниатюру
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); // Читаем изображение
+            }
+        }
+    </script>
 </form>

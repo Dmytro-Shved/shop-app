@@ -33,32 +33,53 @@
     left: 50%;
     top: 0;
     transform: translateX(-50%);
-    z-index: 1; /* Название поверх видео */
+    z-index: 1;
 }
 
+/* Фон формы */
 .form__nov-product {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
-    padding: 25px;
-    width: 300px;
-    height: 400px;
-    border-radius: 25px;
+    background-color: rgba(45, 45, 45, 0.9); /* Темный, но не черный фон */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
     text-align: center;
-    z-index: 1; /* Формы будут поверх видео */
+    box-sizing: border-box;
+    z-index: 1;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Стили для полей ввода */
 .product-input {
-    padding: 5px;
-    input {
-        background-color: rgb(15, 18, 20);
-        color: azure;
-        border: 1px solid rgb(86, 77, 31);
-        border-radius: 5px;
-        padding: 5px 5px;
-    }
-    input::placeholder {
-        color: azure;
-    }
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.product-input input {
+    width: 100%;
+    background-color: #2f2f2f; /* Темно-серый фон для полей */
+    color: #f1f1f1; /* Белый цвет текста */
+    border: 1px solid #555555; /* Мягкий серый бордер */
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Подсказки для полей */
+.product-input input::placeholder {
+    color: #b0b0b0; /* Светло-серый цвет для подсказок */
+}
+
+/* Ошибки */
+.product-input p {
+    color: #ff6f61; /* Цвет для сообщений об ошибках */
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .form-button-card {
@@ -94,16 +115,26 @@
 }
 
 .button__logout {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    background-color: rgb(66, 161, 243);
-    color: azure;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;               /* Используем flexbox для выравнивания */
+    align-items: center;         /* Выравнивание элементов по вертикали */
+    justify-content: center;     /* Выравнивание элементов по горизонтали */
+    padding: 10px 20px;          /* Отступы внутри кнопки */
+    background-color: #f1f1f1;   /* Цвет фона кнопки */
+    border: none;                /* Убираем стандартную рамку */
+    border-radius: 5px;          /* Скругляем углы */
+    cursor: pointer;             /* Курсор при наведении */
+    font-size: 16px;             /* Размер текста */
+    color: #333;                 /* Цвет текста */
+}
+
+.button__logout svg {
+    margin-right: 8px;           /* Отступ между иконкой и текстом */
+    width: 20px;                 /* Размер иконки */
+    height: 20px;                /* Размер иконки */
 }
 
 .button__logout:hover {
-    background-color: rgb(229, 169, 95);
+    background-color: rgb(229, 169, 95); /* Цвет фона при наведении */
 }
 
 @media (max-width: 560px) {

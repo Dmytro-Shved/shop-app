@@ -7,10 +7,18 @@
     "require": {
         "php": "^8.2",
         "anayarojo/shoppingcart": "^4.2",
+        "andreiio/blade-remix-icon": "^3.5",
+        "blade-ui-kit/blade-heroicons": "^2.5",
+        "blade-ui-kit/blade-zondicons": "^1.5",
+        "davidhsianturi/blade-bootstrap-icons": "^1.5",
+        "faisal50x/blade-ionicons": "^1.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
-        "livewire/volt": "^1.6"
+        "livewire/volt": "^1.6",
+        "mansoor/blade-lets-icons": "^1.0",
+        "postare/blade-mdi": "^1.1",
+        "ryangjchandler/blade-tabler-icons": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

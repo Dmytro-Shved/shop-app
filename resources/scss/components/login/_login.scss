@@ -23,13 +23,14 @@ input:-webkit-autofill:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.login__title{
+/* Заголовок формы */
+.login__title {
     padding-top: 20px;
     text-align: center;
-    color: aliceblue;
+    color: #f1f1f1; /* Светлый оттенок для заголовка */
     font-size: 25px;
     font-weight: 600;
 }
@@ -51,29 +52,29 @@ input:-webkit-autofill:focus {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    
+
 }
 .input-name,
 .input-password {
     padding: 15px 15px;
     border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.496); 
+    background-color: rgba(0, 0, 0, 0.496);
     border: 3px solid rgb(158, 158, 158);
     color: aliceblue;
     font-size: 15px;
     position: relative;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 .input-name::placeholder{
     padding: 0px 20px;
     text-align: center;
-    
+
 }
 .input-password::placeholder {
     padding: 0px 20px;
     text-align: center;
 
-    
+
 }
 .input-name:focus{
     padding: 15px 35px;
@@ -117,7 +118,7 @@ input:-webkit-autofill:focus {
     padding: 15px 45px;
     margin-bottom: 20px;
     border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.496); 
+    background-color: rgba(0, 0, 0, 0.496);
     border: 3px solid rgb(158, 158, 158);
     color: aliceblue;
     letter-spacing: 1.5px;

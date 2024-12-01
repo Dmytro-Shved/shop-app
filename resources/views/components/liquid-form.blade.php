@@ -50,8 +50,9 @@
     </div>
 
     {{-- Image --}}
-    <div class="product-input">
-        <input type="file" name="image" class="input" placeholder="Image">
+    <div class="product-input-image">
+        <input type="file" name="image" id="imageInputLiquid" class="input" placeholder="Liquid Image" onchange="previewImageLiquid(event)">
+        <img id="imageLiquidPreview" src="#" alt="Liquid Image preview" style="display:none;">
 
         @error('image')
         <p>{{ $message }}</p>
@@ -59,5 +60,26 @@
     </div>
 
     {{-- Confirm --}}
-    <button type="submit">Confirm</button>
+    <div class="confirm-button">
+        <button type="submit" class="confirm-btn">Confirm</button>
+    </div>
+
+        {{-- Mini image --}}
+        <script>
+            function previewImageLiquid(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageLiquidPreview = document.getElementById('imageLiquidPreview');
+                    imageLiquidPreview.src = e.target.result;
+                    imageLiquidPreview.style.display = 'block'; // Показываем миниатюру
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file); // Читаем изображение
+                }
+            }
+        </script>
 </form>
+
