@@ -18,11 +18,12 @@
             <p class="product__price">Cena: {{ $cigarette->price }} zł</p>
         </div>
 
-        {{-- Buy button --}}
-        <button class="button product__buy">Kupić</button>
 
-        {{-- Buttons for guests: [Delete from cart] [Add to cart] --}}
+        {{-- Buttons for guests: [Buy] [Delete from cart] [Add to cart] --}}
         @guest
+            {{-- Buy button --}}
+            <button class="button product__buy">Kupić</button>
+
             <livewire:cart :productId="$cigarette->id" :productName="$cigarette->name" productType="cigarette"/>
         @endguest
 

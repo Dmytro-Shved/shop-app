@@ -18,11 +18,11 @@
             <p class="product__price">Cena: {{ $liquid->price }} zł</p>
         </div>
 
-        {{-- Buy button --}}
-        <button class="button product__buy">Kupić</button>
-
-        {{-- Buttons for guests: [Delete from cart] [Add to cart] --}}
+        {{-- Buttons for guests: [Buy] [Delete from cart] [Add to cart] --}}
         @guest
+            {{-- Buy button --}}
+            <button class="button product__buy">Kupić</button>
+
             <livewire:cart :productId="$liquid->id" :productName="$liquid->name" productType="liquid"/>
         @endguest
 
