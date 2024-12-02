@@ -15,7 +15,7 @@ export default defineConfig({
                 'resources/js/filtr.js',
                 'resources/js/header-menu.js',
 
-                'resources/views/admin'
+                'resources/css/admin.css'
             ],
             refresh: true,
         }),

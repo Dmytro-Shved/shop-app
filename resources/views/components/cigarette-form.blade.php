@@ -64,8 +64,7 @@
 
     {{-- Image --}}
     <div class="product-input-image">
-        <input type="file" name="image" id="imageInput" class="input" placeholder="Image" onchange="previewImage(event)">
-        <img id="imagePreview" src="#" alt="Image preview" style="display:none;">
+        <input type="file" name="image" id="imageInput" class="input" placeholder="Image">
 
         @error('image')
         <p>{{ $message }}</p>
@@ -76,22 +75,4 @@
     <div class="confirm-button">
         <button type="submit" class="confirm-btn">Confirm</button>
     </div>
-
-    {{-- Mini image --}}
-    <script>
-        function previewImage(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const imagePreview = document.getElementById('imagePreview');
-                imagePreview.src = e.target.result;
-                imagePreview.style.display = 'block';
-            }
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
 </form>

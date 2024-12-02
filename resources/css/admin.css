@@ -1,0 +1,598 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.arrow-top-link {
+    background-color: aqua;
+    z-index: 99;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.catal {
+    padding: 32px 0;
+    background: linear-gradient(90deg, rgba(93, 11, 149, 0.78) 0%, rgb(199, 88, 88) 50%, rgba(139, 85, 8, 0.91) 100%);
+}
+
+.catal__heading {
+    margin: 0 0 16px;
+    color: #fff;
+}
+
+/* Контейнер для кнопок и приветствия */
+.header-container {
+    position: fixed;             /* Фиксированное позиционирование */
+    top: 20px;                   /* Отступ от верхнего края */
+    left: 0;
+    right: 0;
+    display: flex;               /* Используем flexbox для распределения элементов */
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center;         /* Выравниваем элементы по вертикали */
+    padding: 0 20px;             /* Отступы по бокам */
+    z-index: 1000;               /* Высокий z-index, чтобы элементы были поверх */
+}
+
+/* Приветствие админа */
+.welcome-admin {
+    font-size: 22px;               /* Уменьшение размера шрифта */
+    font-weight: bold;             /* Жирное начертание */
+    color: #fff;                  /* Белый цвет текста */
+    text-align: center;            /* Центрирование текста */
+    letter-spacing: 1px;           /* Растяжение букв */
+    text-transform: capitalize;    /* Заглавные первые буквы слов */
+    font-family: 'Arial', sans-serif; /* Шрифт для заголовка */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    padding: 8px 9px;             /* Уменьшенные отступы внутри заголовка */
+    border-radius: 15px;           /* Закругленные углы */
+    position: fixed;               /* Фиксированное позиционирование */
+    top: 20px;                     /* Отступ сверху */
+    left: 50%;                     /* Центрируем по горизонтали */
+    transform: translateX(-50%);   /* Центрируем элемент */
+    z-index: 1000;                 /* Устанавливаем высокий z-index */
+}
+
+
+/* Кнопка возврата на главную */
+.button-back {
+    background-color: #559def;    /* Цвет фона кнопки */
+    color: white;                 /* Белый цвет текста */
+    padding: 12px 25px;           /* Отступы внутри кнопки */
+    font-size: 16px;              /* Размер шрифта */
+    text-decoration: none;        /* Убираем подчеркивание */
+    border-radius: 5px;           /* Закругленные углы */
+    text-align: center;           /* Центрируем текст внутри кнопки */
+    display: inline-block;        /* Элемент ведет себя как блок, но встраивается */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные переходы */
+    position: fixed;
+    top: 20px;                    /* Отступ сверху от верхнего края */
+    left: 20px;                   /* Отступ слева */
+}
+
+.button-back:hover {
+    background-color: #3a7bc1;    /* Цвет фона кнопки при наведении */
+    transform: scale(1.05);        /* Легкое увеличение кнопки при наведении */
+}
+
+.button-back:active {
+    background-color: #3a6a9b;    /* Цвет фона кнопки при нажатии */
+}
+
+/* Кнопка логаута */
+.button__logout {
+    background-color: rgb(66, 161, 243);
+    color: azure;
+    font-size: 19px;              /* Увеличиваем размер шрифта */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 20px;           /* Добавляем отступы */
+    border-radius: 5px;           /* Закругленные углы */
+    position: fixed;
+    top: 20px;                    /* Отступ сверху от верхнего края */
+    right: 20px;                  /* Отступ справа */
+}
+
+/* Эффекты наведения и нажатия для кнопки логаута */
+.button__logout:hover {
+    background-color: rgb(239, 83, 80); /* Красный цвет при наведении */
+    color: white;                    /* Цвет текста при наведении */
+    cursor: pointer;
+}
+
+.produkt-title {
+    font-size: 32px;  /* Увеличиваем размер шрифта */
+    font-weight: bold;  /* Жирное начертание */
+    text-align: center;  /* Выравнивание текста по центру */
+    color: #000;  /* Черный цвет текста */
+    margin-top: 30px;  /* Отступ сверху */
+    text-transform: uppercase;  /* Преобразование текста в верхний регистр */
+    letter-spacing: 2px;  /* Увеличиваем расстояние между буквами */
+    font-family: 'Arial', sans-serif;  /* Шрифт */
+    position: relative;
+    z-index: 10;
+
+    /* Добавляем тень для текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Плавная анимация изменения тени */
+    animation: textShadowAnimation 1.5s ease-in-out infinite;
+}
+
+.catalog-title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* Общий стиль для формы */
+.form__nov-product {
+    position: relative;
+    background-color: rgba(45, 45, 45, 0.9); /* Темный, но не черный фон */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 480px) {
+    .form__nov-product {
+        width: 90%; /* Уменьшаем ширину на маленьких экранах */
+        padding: 20px; /* Меньше padding */
+    }
+}
+
+/* Заголовок формы */
+.login__title {
+    padding-top: 20px;
+    text-align: center;
+    color: #f1f1f1; /* Светлый оттенок для заголовка */
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Стили для полей ввода */
+.product-input {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.product-input input {
+    width: 100%;
+    background-color: #2f2f2f; /* Темно-серый фон для полей */
+    color: #f1f1f1; /* Белый цвет текста */
+    border: 1px solid #555555; /* Мягкий серый бордер */
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Подсказки для полей */
+.product-input input::placeholder {
+    color: #b0b0b0; /* Светло-серый цвет для подсказок */
+}
+
+/* Ошибки */
+.product-input p {
+    background-color: #f8d7da; /* Легкий красный фон для ошибок */
+    color: #721c24; /* Темный красный цвет текста */
+    font-size: 14px; /* Увеличенный размер шрифта */
+    padding: 8px; /* Отступы внутри для удобства */
+    margin-top: 5px; /* Отступ сверху */
+    border-radius: 5px; /* Скругленные углы */
+    border: 1px solid #f5c6cb; /* Легкая красная рамка */
+    text-align: left; /* Выравнивание текста по левому краю */
+    font-weight: bold; /* Жирный шрифт для выделения */
+}
+
+.product-input input:focus {
+    border-color: #559def; /* Цвет границы при фокусе */
+    outline: none; /* Убираем стандартное обводка */
+    box-shadow: 0 0 5px rgba(85, 157, 239, 0.7); /* Легкая тень вокруг поля */
+}
+
+@keyframes fadeInError {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.product-input p {
+    animation: fadeInError 0.3s ease-in-out;
+}
+
+.product-input-image {
+    display: flex;
+    flex-direction: column; /* Элементы будут располагаться вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем по вертикали */
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Ошибки */
+.product-input-image p {
+    background-color: #f8d7da; /* Легкий красный фон для ошибок */
+    color: #721c24; /* Темный красный цвет текста */
+    font-size: 14px; /* Увеличенный размер шрифта */
+    padding: 8px; /* Отступы внутри для удобства */
+    margin-top: 5px; /* Отступ сверху */
+    border-radius: 5px; /* Скругленные углы */
+    border: 1px solid #f5c6cb; /* Легкая красная рамка */
+    text-align: left; /* Выравнивание текста по левому краю */
+    font-weight: bold; /* Жирный шрифт для выделения */
+}
+
+/* Стили для контейнера кнопки */
+.confirm-button {
+    display: flex;
+    justify-content: center; /* Центрируем кнопку по горизонтали */
+    margin-top: 20px; /* Добавим отступ сверху */
+}
+
+/* Стили для кнопки Confirm */
+.confirm-btn {
+    background-color: #4CAF50; /* Зеленый цвет кнопки */
+    color: white; /* Белый цвет текста */
+    padding: 12px 24px; /* Отступы вокруг текста */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 8px; /* Закругленные углы */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-transform: uppercase; /* Заглавные буквы */
+    cursor: pointer; /* Курсор в виде руки */
+    transition: background-color 0.3s, transform 0.1s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на кнопку */
+.confirm-btn:hover {
+    background-color: #45a049; /* Немного темнее зеленый при наведении */
+}
+
+/* Эффект при фокусе на кнопке */
+.confirm-btn:focus {
+    outline: none; /* Убираем контур при фокусе */
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.4); /* Светлый контур */
+}
+
+/* Эффект при нажатии */
+.confirm-btn:active {
+    transform: translateY(2px); /* Легкое смещение кнопки вниз */
+    background-color: #388e3c; /* Еще более темный оттенок зеленого при нажатии */
+}
+
+.container_block {
+    min-width: 320px;
+    max-width: 1400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.products {
+    position: relative;
+    overflow: hidden;
+    background-color: aliceblue;
+    border-radius: 25px;
+    padding: 20px;  /* Отступы внутри контейнера */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;  /* Уменьшаем отступ между формами */
+    margin-top: 0;
+    width: 80%;  /* Уменьшаем ширину контейнера */
+    max-width: 1200px;  /* Устанавливаем максимальную ширину */
+    margin: 0 auto;  /* Центрируем контейнер */
+}
+
+.filter-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 25px 0;
+}
+
+@media (max-width: 500px) {
+    .filter-list {
+        display: grid;
+        grid-template-columns: repeat(2, 90px);
+        text-align: center;
+        -moz-column-gap: 30px;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+}
+.filter-item {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.filter-item.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.filter-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.filter-item.active::after {
+    width: 100%;
+}
+
+.filter-item:hover {
+    background-color: rgba(24, 51, 81, 0.368627451);
+}
+
+.grid {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grid__item {
+    flex-basis: calc(33.33% - 16px);
+    min-width: 240px;
+    margin: 0 8px 16px;
+}
+
+.product {
+    position: relative;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.product__name {
+    margin: 15px 0;
+}
+
+.product__info {
+    font-size: 14px;
+    color: rgba(48, 48, 48, 0.86);
+    min-height: 110px;
+}
+
+.product__price {
+    margin: 0;
+}
+
+.product__button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.product__button:hover {
+    background-color: var(--colorHover);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: 16px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button__icon {
+    display: inline-flex;
+}
+
+.button__icon--start {
+    margin-right: 10px;
+}
+
+.button__icon--end {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .filter-item {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 500px) {
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .filter-item {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Стили для кнопок редактирования товаров */
+.admin_delete_btn, .admin_edit_btn, .admin_show_btn {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Уменьшенный размер текста */
+    padding: 8px 16px; /* Уменьшенные отступы */
+    border-radius: 6px; /* Легкое скругление */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 5px; /* Внешние отступы для разделения кнопок */
+    display: inline-block; /* Для выравнивания кнопок в ряд */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект свечения на hover */
+.admin_delete_btn:hover,
+.admin_edit_btn:hover,
+.admin_show_btn:hover {
+    box-shadow: 0px 0px 12px currentColor; /* Свечение с цветом кнопки */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Стили для кнопки удаления */
+.admin_delete_btn {
+    width: 110px; /* Размер кнопки */
+    height: 50px;
+    border: none;
+    background-color: #e74c3c; /* Красный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Иконка внутри кнопки */
+.admin_delete_btn svg {
+    width: 20px; /* Размер SVG */
+    height: 20px;
+    fill: white; /* Цвет иконки */
+}
+
+/* Эффект при наведении */
+.admin_delete_btn:hover {
+    background-color: #c0392b; /* Темнее при наведении */
+    box-shadow: 0px 0px 10px rgba(231, 76, 60, 0.8); /* Красное свечение */
+    transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Эффект при фокусе */
+.admin_delete_btn:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(231, 76, 60, 0.5); /* Фокусное свечение */
+}
+
+/* Edit Button */
+.admin_edit_btn {
+    background-color: #3498db; /* Синий цвет */
+    color: white;
+}
+
+.admin_edit_btn:hover {
+    background-color: #2980b9; /* Темнее при наведении */
+}
+
+/* Show Button */
+.admin_show_btn {
+    background-color: #2ecc71; /* Зеленый цвет */
+    width: 50px;
+    color: white;
+}
+
+.admin_show_btn:hover {
+    background-color: #27ae60; /* Темнее при наведении */
+}
+
+/* Стили для ссылок внутри кнопок редактирования */
+.admin_delete_btn a,
+.admin_edit_btn a,
+.admin_show_btn a {
+    text-decoration: none;
+    color: inherit; /* Унаследовать цвет кнопки */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.admin_delete_btn a:hover,
+.admin_edit_btn a:hover,
+.admin_show_btn a:hover {
+    text-decoration: none;
+}
+
+/* Дополнительные стили для фокуса */
+.admin_delete_btn:focus,
+.admin_edit_btn:focus,
+.admin_show_btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Обводка при фокусе */
+}
+
+/* Поле ввода */
+.input {
+    padding: 10px;
+    color: white;
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    width: 80%; /* Ширина поля ввода */
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.product__buy {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: background-color 0.25s;
+}
+
+.product__buy:hover {
+    background-color: var(--colorHover);
+}
+
+.product__image{
+    width: 400.61px;
+    height: 400.61px;
+}
+
+.container {
+    min-width: 320px;
+    max-width: 1400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}

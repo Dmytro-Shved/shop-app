@@ -7,47 +7,48 @@
     <link rel="icon" type="image/png" href="{{ asset('https://cdn-icons-png.flaticon.com/512/3665/3665892.png') }}">
     <title>Admin Panel</title>
 </head>
-@vite('resources/css/main.css')
+
+@vite('resources/css/admin.css')
 @vite('resources/js/filtr.js')
 
 <body>
 
  {{--Go to the top --}}
-<div class="arrow-top">
+<div>
     <a href="#produkts" class="arrow-top-link">
         {{ svg('zondicon-arrow-outline-up') }}
     </a>
 </div>
 
+{{-- Decide what to do with                                                          !!!!               --}}
+<section class="catal">
 
-
-<section class="catalog">
     {{-- Session messages --}}
     @if(session()->has('success'))
-        <div class="session-message success">
-            <span class="icon">&#10003;</span> {{ session('success') }}
+        <div>
+             {{ session('success') }}
         </div>
     @elseif(session()->has('delete'))
-        <div class="session-message delete">
+        <div>
             {{ session('delete') }}
         </div>
     @elseif(session()->has('edit'))
-        <div class="session-message edit">
+        <div>
             {{ session('edit') }}
         </div>
     @endif
 
     <div class="header-container">
-        <!-- Кнопка возврата на главную -->
+
+        {{-- Go back to home page --}}
         <a href="{{ route('home') }}" class="button-back"> ⤺ Go back to home page </a>
 
-        <!-- Приветствие админа -->
+        <!-- Welcome admin -->
         <h2 class="welcome-admin">Welcome {{ auth()->user()->name }}</h2>
 
-        <!-- Кнопка Логаута -->
+        <!-- Logout button -->
         <form action="{{ route('admin_logout') }}" method="POST">
             @csrf
-
             <button type="submit" class="button__logout">
                 {{ svg('ri-logout-box-line') }} Logout
             </button>
@@ -56,17 +57,18 @@
 
     <h1 class="produkt-title" id="produkts">Admin Panel</h1>
 
-    <div class="container produkts">
+    {{-- Forms styles too                                                                       !!!          --}}
+    <div class="container_block products">
 
-         {{--Cigarette Form --}}
+        {{--Cigarette Form --}}
         <x-cigaretteForm/>
 
-         {{--Liquid Form --}}
+        {{--Liquid Form --}}
         <x-liquidForm/>
     </div>
 </section>
 
-<section class="catalog">
+<section class="catal">
     <h2 class="catalog-title">Edit Products:</h2>
     <div class="container">
 
@@ -83,17 +85,4 @@
     </div>
 </section>
 </body>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const messages = document.querySelectorAll('.session-message');
-        messages.forEach((message) => {
-            setTimeout(() => {
-                message.style.display = 'none';
-            }, 6000); // Сообщение исчезает через 6 секунд
-        });
-    });
-</script>
-
 </html>
