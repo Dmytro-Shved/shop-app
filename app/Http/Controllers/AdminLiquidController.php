@@ -26,7 +26,7 @@ class AdminLiquidController extends Controller implements HasMiddleware
         $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'pg_vg_ratio' => ['required', 'string', 'max:10'],
-            'volume'=> ['required', 'max:25', 'numeric'],
+            'volume'=> ['required', 'max:100', 'numeric'],
             'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
             'image'=> ['required', 'image', 'nullable'],
