@@ -596,3 +596,9 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.image-preview {
+    display: none;
+    max-width: 150px;
+    max-height: 150px;
+}

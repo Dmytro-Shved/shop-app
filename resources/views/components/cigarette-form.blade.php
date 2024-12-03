@@ -64,7 +64,8 @@
 
     {{-- Image --}}
     <div class="product-input-image">
-        <input type="file" name="image" id="imageInput" class="input" placeholder="Image">
+        <input type="file" name="image" id="imageInput" class="input" placeholder="Cigarette Image">
+        <img id="imageCigarettePreview" src="#" alt="Cigarette Image preview" class="image-preview">
 
         @error('image')
         <p>{{ $message }}</p>

@@ -10,6 +10,7 @@
 
 @vite('resources/css/admin.css')
 @vite('resources/js/filtr.js')
+@vite('resources/js/image-preview.js')
 
 <body>
 

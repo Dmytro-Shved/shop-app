@@ -11,11 +11,10 @@ export default defineConfig({
                 'resources/js/bootstrap.js',
                 'resources/js/hurt.js',
                 'resources/js/main.js',
-
                 'resources/js/filtr.js',
                 'resources/js/header-menu.js',
-
-                'resources/css/admin.css'
+                'resources/css/admin.css',
+                'resources/js/image-preview.js',
             ],
             refresh: true,
         }),
