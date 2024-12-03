@@ -10,7 +10,6 @@ class CigaretteCard extends Component
     public $cigarette;
     public $cart;
 
-
     public function render()
     {
         return view('livewire.cigarette-card');

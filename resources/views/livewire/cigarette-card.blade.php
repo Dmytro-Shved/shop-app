@@ -69,4 +69,3 @@
         @endauth
     </article>
 </div>
-

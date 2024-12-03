@@ -13,7 +13,6 @@
         "davidhsianturi/blade-bootstrap-icons": "^1.5",
         "faisal50x/blade-ionicons": "^1.0",
         "laravel/framework": "^11.9",
-        "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "livewire/volt": "^1.6",
@@ -22,6 +21,7 @@
         "ryangjchandler/blade-tabler-icons": "^2.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
