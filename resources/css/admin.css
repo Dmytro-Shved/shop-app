@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 .arrow-top-link {
@@ -15,6 +16,16 @@
     align-items: center;
     width: 50px;
     height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-top-link:hover {
+    background-color: #00d4ff;
+}
+
+.arrow-top-link svg {
+    fill: #1a5667;
 }
 
 .catal {
@@ -27,100 +38,94 @@
     color: #fff;
 }
 
-/* Контейнер для кнопок и приветствия */
 .header-container {
-    position: fixed;             /* Фиксированное позиционирование */
-    top: 20px;                   /* Отступ от верхнего края */
+    position: fixed;
+    top: 20px;
     left: 0;
     right: 0;
-    display: flex;               /* Используем flexbox для распределения элементов */
-    justify-content: space-between; /* Распределяем элементы по краям */
-    align-items: center;         /* Выравниваем элементы по вертикали */
-    padding: 0 20px;             /* Отступы по бокам */
-    z-index: 1000;               /* Высокий z-index, чтобы элементы были поверх */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
 }
 
-/* Приветствие админа */
 .welcome-admin {
-    font-size: 22px;               /* Уменьшение размера шрифта */
-    font-weight: bold;             /* Жирное начертание */
-    color: #fff;                  /* Белый цвет текста */
-    text-align: center;            /* Центрирование текста */
-    letter-spacing: 1px;           /* Растяжение букв */
-    text-transform: capitalize;    /* Заглавные первые буквы слов */
-    font-family: 'Arial', sans-serif; /* Шрифт для заголовка */
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-    padding: 8px 9px;             /* Уменьшенные отступы внутри заголовка */
-    border-radius: 15px;           /* Закругленные углы */
-    position: fixed;               /* Фиксированное позиционирование */
-    top: 20px;                     /* Отступ сверху */
-    left: 50%;                     /* Центрируем по горизонтали */
-    transform: translateX(-50%);   /* Центрируем элемент */
-    z-index: 1000;                 /* Устанавливаем высокий z-index */
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-family: 'Arial', sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 9px;
+    border-radius: 15px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 }
 
-
-/* Кнопка возврата на главную */
 .button-back {
-    background-color: #559def;    /* Цвет фона кнопки */
-    color: white;                 /* Белый цвет текста */
-    padding: 12px 25px;           /* Отступы внутри кнопки */
-    font-size: 16px;              /* Размер шрифта */
-    text-decoration: none;        /* Убираем подчеркивание */
-    border-radius: 5px;           /* Закругленные углы */
-    text-align: center;           /* Центрируем текст внутри кнопки */
-    display: inline-block;        /* Элемент ведет себя как блок, но встраивается */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные переходы */
+    background-color: #559def;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     position: fixed;
-    top: 20px;                    /* Отступ сверху от верхнего края */
-    left: 20px;                   /* Отступ слева */
+    top: 20px;
+    left: 20px;
 }
 
 .button-back:hover {
-    background-color: #3a7bc1;    /* Цвет фона кнопки при наведении */
-    transform: scale(1.05);        /* Легкое увеличение кнопки при наведении */
+    background-color: #3a7bc1;
+    transform: scale(1.05);
 }
 
 .button-back:active {
-    background-color: #3a6a9b;    /* Цвет фона кнопки при нажатии */
+    background-color: #3a6a9b;
 }
 
-/* Кнопка логаута */
 .button__logout {
     background-color: rgb(66, 161, 243);
     color: azure;
-    font-size: 19px;              /* Увеличиваем размер шрифта */
+    font-size: 19px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 10px 20px;           /* Добавляем отступы */
-    border-radius: 5px;           /* Закругленные углы */
+    padding: 10px 20px;
+    border-radius: 5px;
     position: fixed;
-    top: 20px;                    /* Отступ сверху от верхнего края */
-    right: 20px;                  /* Отступ справа */
+    top: 20px;
+    right: 20px;
 }
 
-/* Эффекты наведения и нажатия для кнопки логаута */
 .button__logout:hover {
-    background-color: rgb(239, 83, 80); /* Красный цвет при наведении */
-    color: white;                    /* Цвет текста при наведении */
+    background-color: rgb(239, 83, 80);
+    color: white;
     cursor: pointer;
 }
 
 .produkt-title {
-    font-size: 32px;  /* Увеличиваем размер шрифта */
-    font-weight: bold;  /* Жирное начертание */
-    text-align: center;  /* Выравнивание текста по центру */
-    color: #000;  /* Черный цвет текста */
-    margin-top: 30px;  /* Отступ сверху */
-    text-transform: uppercase;  /* Преобразование текста в верхний регистр */
-    letter-spacing: 2px;  /* Увеличиваем расстояние между буквами */
-    font-family: 'Arial', sans-serif;  /* Шрифт */
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
     position: relative;
     z-index: 10;
 
-    /* Добавляем тень для текста */
+
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
-    /* Плавная анимация изменения тени */
+
     animation: textShadowAnimation 1.5s ease-in-out infinite;
 }
 
@@ -130,10 +135,9 @@
     margin-bottom: 25px;
 }
 
-/* Общий стиль для формы */
 .form__nov-product {
     position: relative;
-    background-color: rgba(45, 45, 45, 0.9); /* Темный, но не черный фон */
+    background-color: rgba(45, 45, 45, 0.9);
     padding: 30px;
     width: 100%;
     max-width: 400px;
@@ -147,21 +151,19 @@
 }
 @media (max-width: 480px) {
     .form__nov-product {
-        width: 90%; /* Уменьшаем ширину на маленьких экранах */
-        padding: 20px; /* Меньше padding */
+        width: 90%;
+        padding: 20px;
     }
 }
 
-/* Заголовок формы */
 .login__title {
     padding-top: 20px;
     text-align: center;
-    color: #f1f1f1; /* Светлый оттенок для заголовка */
+    color: #f1f1f1;
     font-size: 25px;
     font-weight: 600;
 }
 
-/* Стили для полей ввода */
 .product-input {
     padding: 10px 15px;
     margin-bottom: 20px;
@@ -169,9 +171,9 @@
 
 .product-input input {
     width: 100%;
-    background-color: #2f2f2f; /* Темно-серый фон для полей */
-    color: #f1f1f1; /* Белый цвет текста */
-    border: 1px solid #555555; /* Мягкий серый бордер */
+    background-color: #2f2f2f;
+    color: #f1f1f1;
+    border: 1px solid #555555;
     border-radius: 5px;
     padding: 10px 15px;
     font-size: 16px;
@@ -179,28 +181,26 @@
     box-sizing: border-box;
 }
 
-/* Подсказки для полей */
 .product-input input::placeholder {
-    color: #b0b0b0; /* Светло-серый цвет для подсказок */
+    color: #b0b0b0;
 }
 
-/* Ошибки */
 .product-input p {
-    background-color: #f8d7da; /* Легкий красный фон для ошибок */
-    color: #721c24; /* Темный красный цвет текста */
-    font-size: 14px; /* Увеличенный размер шрифта */
-    padding: 8px; /* Отступы внутри для удобства */
-    margin-top: 5px; /* Отступ сверху */
-    border-radius: 5px; /* Скругленные углы */
-    border: 1px solid #f5c6cb; /* Легкая красная рамка */
-    text-align: left; /* Выравнивание текста по левому краю */
-    font-weight: bold; /* Жирный шрифт для выделения */
+    background-color: #f8d7da;
+    color: #721c24;
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    text-align: left;
+    font-weight: bold;
 }
 
 .product-input input:focus {
-    border-color: #559def; /* Цвет границы при фокусе */
-    outline: none; /* Убираем стандартное обводка */
-    box-shadow: 0 0 5px rgba(85, 157, 239, 0.7); /* Легкая тень вокруг поля */
+    border-color: #559def;
+    outline: none;
+    box-shadow: 0 0 5px rgba(85, 157, 239, 0.7);
 }
 
 @keyframes fadeInError {
@@ -218,62 +218,56 @@
 
 .product-input-image {
     display: flex;
-    flex-direction: column; /* Элементы будут располагаться вертикально */
-    align-items: center; /* Центрируем элементы по горизонтали */
-    justify-content: center; /* Центрируем по вертикали */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 20px 0;
     text-align: center;
 }
 
-/* Ошибки */
 .product-input-image p {
-    background-color: #f8d7da; /* Легкий красный фон для ошибок */
-    color: #721c24; /* Темный красный цвет текста */
-    font-size: 14px; /* Увеличенный размер шрифта */
-    padding: 8px; /* Отступы внутри для удобства */
-    margin-top: 5px; /* Отступ сверху */
-    border-radius: 5px; /* Скругленные углы */
-    border: 1px solid #f5c6cb; /* Легкая красная рамка */
-    text-align: left; /* Выравнивание текста по левому краю */
-    font-weight: bold; /* Жирный шрифт для выделения */
+    background-color: #f8d7da;
+    color: #721c24;
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    text-align: left;
+    font-weight: bold;
 }
 
-/* Стили для контейнера кнопки */
 .confirm-button {
     display: flex;
-    justify-content: center; /* Центрируем кнопку по горизонтали */
-    margin-top: 20px; /* Добавим отступ сверху */
+    justify-content: center;
+    margin-top: 20px;
 }
 
-/* Стили для кнопки Confirm */
 .confirm-btn {
-    background-color: #4CAF50; /* Зеленый цвет кнопки */
-    color: white; /* Белый цвет текста */
-    padding: 12px 24px; /* Отступы вокруг текста */
-    border: none; /* Убираем стандартную рамку */
-    border-radius: 8px; /* Закругленные углы */
-    font-size: 16px; /* Размер текста */
-    font-weight: bold; /* Жирный шрифт */
-    text-transform: uppercase; /* Заглавные буквы */
-    cursor: pointer; /* Курсор в виде руки */
-    transition: background-color 0.3s, transform 0.1s ease; /* Плавный переход */
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s ease;
 }
 
-/* Эффект при наведении на кнопку */
 .confirm-btn:hover {
-    background-color: #45a049; /* Немного темнее зеленый при наведении */
+    background-color: #45a049;
 }
 
-/* Эффект при фокусе на кнопке */
 .confirm-btn:focus {
-    outline: none; /* Убираем контур при фокусе */
-    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.4); /* Светлый контур */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.4);
 }
 
-/* Эффект при нажатии */
 .confirm-btn:active {
-    transform: translateY(2px); /* Легкое смещение кнопки вниз */
-    background-color: #388e3c; /* Еще более темный оттенок зеленого при нажатии */
+    transform: translateY(2px);
+    background-color: #388e3c;
 }
 
 .container_block {
@@ -290,16 +284,16 @@
     overflow: hidden;
     background-color: aliceblue;
     border-radius: 25px;
-    padding: 20px;  /* Отступы внутри контейнера */
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 15px;  /* Уменьшаем отступ между формами */
+    gap: 15px;
     margin-top: 0;
-    width: 80%;  /* Уменьшаем ширину контейнера */
-    max-width: 1200px;  /* Устанавливаем максимальную ширину */
-    margin: 0 auto;  /* Центрируем контейнер */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .filter-list {
@@ -455,90 +449,81 @@
     }
 }
 
-/* Стили для кнопок редактирования товаров */
 .admin_delete_btn, .admin_edit_btn, .admin_show_btn {
     font-family: Arial, sans-serif;
-    font-size: 14px; /* Уменьшенный размер текста */
-    padding: 8px 16px; /* Уменьшенные отступы */
-    border-radius: 6px; /* Легкое скругление */
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    margin: 5px; /* Внешние отступы для разделения кнопок */
-    display: inline-block; /* Для выравнивания кнопок в ряд */
+    margin: 5px;
+    display: inline-block;
     position: relative;
     overflow: hidden;
 }
 
-/* Эффект свечения на hover */
 .admin_delete_btn:hover,
 .admin_edit_btn:hover,
 .admin_show_btn:hover {
-    box-shadow: 0px 0px 12px currentColor; /* Свечение с цветом кнопки */
-    transform: scale(1.05); /* Легкое увеличение при наведении */
+    box-shadow: 0px 0px 12px currentColor;
+    transform: scale(1.05);
 }
 
-/* Стили для кнопки удаления */
 .admin_delete_btn {
-    width: 110px; /* Размер кнопки */
+    width: 110px;
     height: 50px;
     border: none;
-    background-color: #e74c3c; /* Красный фон */
+    background-color: #e74c3c;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Иконка внутри кнопки */
 .admin_delete_btn svg {
-    width: 20px; /* Размер SVG */
+    width: 20px;
     height: 20px;
-    fill: white; /* Цвет иконки */
+    fill: white;
 }
 
-/* Эффект при наведении */
 .admin_delete_btn:hover {
-    background-color: #c0392b; /* Темнее при наведении */
-    box-shadow: 0px 0px 10px rgba(231, 76, 60, 0.8); /* Красное свечение */
-    transform: scale(1.1); /* Легкое увеличение */
+    background-color: #c0392b;
+    box-shadow: 0px 0px 10px rgba(231, 76, 60, 0.8);
+    transform: scale(1.1);
 }
 
-/* Эффект при фокусе */
 .admin_delete_btn:focus {
     outline: none;
-    box-shadow: 0px 0px 5px rgba(231, 76, 60, 0.5); /* Фокусное свечение */
+    box-shadow: 0px 0px 5px rgba(231, 76, 60, 0.5);
 }
 
-/* Edit Button */
 .admin_edit_btn {
-    background-color: #3498db; /* Синий цвет */
+    background-color: #3498db;
     color: white;
 }
 
 .admin_edit_btn:hover {
-    background-color: #2980b9; /* Темнее при наведении */
+    background-color: #2980b9;
 }
 
-/* Show Button */
 .admin_show_btn {
-    background-color: #2ecc71; /* Зеленый цвет */
+    background-color: #2ecc71;
     width: 50px;
     color: white;
 }
 
 .admin_show_btn:hover {
-    background-color: #27ae60; /* Темнее при наведении */
+    background-color: #27ae60;
 }
 
-/* Стили для ссылок внутри кнопок редактирования */
 .admin_delete_btn a,
 .admin_edit_btn a,
 .admin_show_btn a {
     text-decoration: none;
-    color: inherit; /* Унаследовать цвет кнопки */
+    color: inherit;
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -550,21 +535,19 @@
     text-decoration: none;
 }
 
-/* Дополнительные стили для фокуса */
 .admin_delete_btn:focus,
 .admin_edit_btn:focus,
 .admin_show_btn:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Обводка при фокусе */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Поле ввода */
 .input {
     padding: 10px;
     color: white;
     background-color: #2f2f2f;
     border-radius: 5px;
-    width: 80%; /* Ширина поля ввода */
+    width: 80%;
     max-width: 300px;
     margin: 10px 0;
 }

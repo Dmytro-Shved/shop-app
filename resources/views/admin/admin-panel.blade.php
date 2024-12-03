@@ -8,9 +8,11 @@
     <title>Admin Panel</title>
 </head>
 
-@vite('resources/css/admin.css')
-@vite('resources/js/filtr.js')
-@vite('resources/js/image-preview.js')
+@vite([
+    'resources/css/admin.css',
+    'resources/js/filtr.js',
+    'resources/js/image-preview.js',
+])
 
 <body>
 
@@ -21,7 +23,6 @@
     </a>
 </div>
 
-{{-- Decide what to do with                                                          !!!!               --}}
 <section class="catal">
 
     {{-- Session messages --}}
@@ -58,7 +59,6 @@
 
     <h1 class="produkt-title" id="produkts">Admin Panel</h1>
 
-    {{-- Forms styles too                                                                       !!!          --}}
     <div class="container_block products">
 
         {{--Cigarette Form --}}
