@@ -240,7 +240,8 @@
             </ul>
 
             <a href="#" class="footer-logo-link"><img src="{{ asset('./storage/images/logo/logo.svg') }}"
-                    alt="logo-footer" class="footer-logo"></a>
+                    alt="logo-footer" class="footer-logo">
+            </a>
             <ul class="footer-social_network">
                 <li class="item-social_network-title">
                     Przyłącz się

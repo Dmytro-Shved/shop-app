@@ -70,7 +70,7 @@
                             <td>
 
                             {{-- Proceed to payment --}}
-                            <a href="{{ route('cart.accept') }}">
+                            <a href="{{ route('cart.order') }}">
                                 <button class="button cart-modal__checkout">Przejdź do kasy</button>
                             </a>
 

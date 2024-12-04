@@ -8,9 +8,9 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\isEmpty;
 
-class CartAccept extends Controller
+class OrderController extends Controller
 {
-    public function accept()
+    public function order()
     {
         $total = Cart::priceTotal();
         $cart = Cart::content();
@@ -20,6 +20,6 @@ class CartAccept extends Controller
             return redirect()->route('home');
         }
 
-        return view('cart.cart-accept', ['cart' => $cart, 'total'=> $total]);
+        return view('cart.order', ['cart' => $cart, 'total'=> $total]);
     }
 }
