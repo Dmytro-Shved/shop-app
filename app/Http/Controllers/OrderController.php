@@ -19,7 +19,8 @@ class OrderController extends Controller
         if ($cart->count() == 0){
             return redirect()->route('home');
         }
-
         return view('cart.order', ['cart' => $cart, 'total'=> $total]);
     }
+
 }
+

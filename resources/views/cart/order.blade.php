@@ -62,43 +62,43 @@
             <h3>Details</h3>
             <div class="form-group">
                 <label for="comments">Note to order (optional)</label>
-                <textarea id="comments" placeholder="Note to your order, for example, special requests to the delivery department."></textarea>
+                <textarea id="comments"
+                          placeholder="Note to your order, for example, special requests to the delivery department."></textarea>
             </div>
         </form>
     </div>
     <div class="right-section">
         <h2>YOUR ORDER</h2>
-        <div class="order-summary">
-            <div class="item">
-                <span>[product name] × [quantity]</span>
-                <span>[price]</span>
+            <div class="order-summary">
+                @foreach($cart as $product)
+                    <div class="item">
+                        <span>{{$product->name}} × {{ $product->qty }}</span>
+                        <span>{{ number_format($product->qty * $product->price, 2) }} zł</span>
+                    </div>
+                @endforeach
+                <div class="total">
+                    <span>Delivery</span>
+                    <span>Nova Poshta</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span>{{ $total }} zł</span>
+                </div>
             </div>
-            <div class="item">
-                <span>[product name] × [quantity]</span>
-                <span>[price]</span>
+
+            <div class="payment-method">
+                <h3>Payment</h3>
+                <div class="radio-option">
+                    <input type="radio" name="payment" value="cash" id="cash" checked>
+                    <label for="cash">Cash on Delivery</label>
+                </div>
+                <p>Payment on receipt of goods at the New Post office (tax fee, commission 2% + 20 UAH)</p>
+                <div class="radio-option">
+                    <input type="radio" name="payment" value="card" id="card">
+                    <label for="card">Card payment</label>
+                </div>
             </div>
-            <div class="total">
-                <span>Delivery</span>
-                <span>Nova Poshta</span>
-            </div>
-            <div class="total">
-                <span>Total</span>
-                <span>[total price]</span>
-            </div>
-        </div>
-        <div class="payment-method">
-            <h3>Payment</h3>
-            <div class="radio-option">
-                <input type="radio" name="payment" value="cash" id="cash" checked>
-                <label for="cash">Cash on Delivery</label>
-            </div>
-            <p>Payment on receipt of goods at the New Post office (tax fee, commission 2% + 20 UAH)</p>
-            <div class="radio-option">
-                <input type="radio" name="payment" value="card" id="card">
-                <label for="card">Card payment</label>
-            </div>
-        </div>
-        <button type="submit" class="submit-button">CONFIRM THE ORDER</button>
+            <button type="submit" class="submit-button">CONFIRM THE ORDER</button>
     </div>
 </div>
 
@@ -106,9 +106,9 @@
     <div class="footer-container">
         <div class="footer-section">
             <a href="#" class="footer-logo-link"><img src="{{ asset('./storage/images/logo/logo.svg') }}"
-                alt="logo-footer" class="footer-logo">
+                                                      alt="logo-footer" class="footer-logo">
             </a>
-            <p>We are in the social. networks:</p>
+            <p>We are in the social networks:</p>
             <ul>
                 <li><a href="#" class="social-link">{{ svg('bi-telegram') }} Telegram</a></li>
                 <li><a href="#" class="social-link">{{ svg('bi-instagram') }} Instagram</a></li>
@@ -116,7 +116,9 @@
             </ul>
         </div>
         <div class="footer-section">
-            <h4><CONTACTS></CONTACTS></h4>
+            <h4>
+                <CONTACTS></CONTACTS>
+            </h4>
             <p>+48 000 000 000</p>
             <p>+48 000 000 000</p>
             <p>Time schedule:</p>
