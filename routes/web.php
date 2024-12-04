@@ -35,3 +35,4 @@ Route::resource('cigarettes', AdminCigaretteController::class);
 Route::resource('liquids', AdminLiquidController::class);
 
 Route::get('/cart/order', [OrderController::class, 'order'])->name('cart.order');
+Route::post('/cart/order', [OrderController::class, 'create_order'])->name('cart.create-order');

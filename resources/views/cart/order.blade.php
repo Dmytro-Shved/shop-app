@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment and Delivery</title>
-    @vite('resources/css/order.css')
+    @vite([
+        'resources/css/order.css',
+        'resources/js/phone-input.js'
+    ])
 </head>
 <body>
 
@@ -18,57 +21,89 @@
     </a>
 </div>
 
-<div class="container" id="top">
-    <div class="left-section">
-        <h2>PAYMENT AND DELIVERY</h2>
-        <form>
+{{-- Payment Form --}}
+<form action="{{ route('cart.create-order') }}" method="POST">
+    @csrf
+    <div class="container" id="top">
+        <div class="left-section">
+            <h2>PAYMENT AND DELIVERY</h2>
+
+            {{-- Name --}}
             <div class="form-group">
-                <label for="first-name">Name *</label>
-                <input type="text" id="first-name" required>
+                <label for="name">Name *</label>
+                <input type="text" name="name" id="first-name" value="{{ old('name') }}">
+
+                @error('name')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
+
+            {{-- Email --}}
             <div class="form-group">
-                <label for="last-name">Lastname *</label>
-                <input type="text" id="last-name" required>
+                <label for="email">Email *</label>
+                <input type="text" name="email" id="email" value="{{ old('email') }}">
+
+                @error('email')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
+
+            {{-- Phone number --}}
             <div class="form-group">
                 <label for="phone">Phone number *</label>
-                <input type="tel" id="phone" required>
+                <input type="tel" name="phone" placeholder="+48 (_ _ _) (_ _ _) (_ _ _)" id="phone" value="{{ old('phone') }}">
+
+                @error('phone')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
+
+            {{-- Address --}}
             <h3>Please specify delivery address</h3>
             <div class="form-group">
-                <select id="delivery-method">
-                    <option value="city">post office</option>
-                    <option value="city">to the door</option>
-                    <option value="city">post terminal</option>
+                <select name="address" id="delivery-method">
+                    <option value="post office">post office</option>
+                    <option value="to the door">to the door</option>
+                    <option value="post terminal">post terminal</option>
                 </select>
             </div>
+
+            {{-- City --}}
             <div class="form-group">
                 <label for="branch">Select city (search)</label>
 
-                <select id="delivery-method">
-                    <option value="city">Odesa</option>
-                    <option value="city">Kyiv</option>
-                    <option value="city">Kryvyi Rih</option>
+                <select name="city" id="delivery-method">
+                    <option value="Odesa">Odesa</option>
+                    <option value="Kyiv">Kyiv</option>
+                    <option value="Kryvyi Rih">Kryvyi Rih</option>
                 </select>
 
-                <label for="branch">Select post office</label>
+                {{-- Post Office --}}
+                <label for="branch" class="form-group">Select post office</label>
 
-                <select id="branch">
-                    <option value="office">34</option>
-                    <option value="office">54</option>
-                    <option value="office">56</option>
+                <select name="office" id="branch">
+                    <option value="34">34</option>
+                    <option value="54">54</option>
+                    <option value="56">56</option>
                 </select>
             </div>
+
+            {{-- Details --}}
             <h3>Details</h3>
             <div class="form-group">
                 <label for="comments">Note to order (optional)</label>
-                <textarea id="comments"
-                          placeholder="Note to your order, for example, special requests to the delivery department."></textarea>
+                <textarea name="details" id="comments"
+                    placeholder="Note to your order, for example, special requests to the delivery department.">
+                </textarea>
+
+                @error('details')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
-        </form>
-    </div>
-    <div class="right-section">
-        <h2>YOUR ORDER</h2>
+        </div>
+        <div class="right-section">
+            {{-- Order --}}
+            <h2>YOUR ORDER</h2>
             <div class="order-summary">
                 @foreach($cart as $product)
                     <div class="item">
@@ -80,27 +115,37 @@
                     <span>Delivery</span>
                     <span>Nova Poshta</span>
                 </div>
+
+                {{-- Total price --}}
                 <div class="total">
                     <span>Total</span>
                     <span>{{ $total }} zł</span>
+                    <input type="hidden" name="total" value="{{ $total }}">
                 </div>
             </div>
 
+            {{-- Payment methods --}}
             <div class="payment-method">
                 <h3>Payment</h3>
+
+                {{--Cash on Delivery --}}
                 <div class="radio-option">
-                    <input type="radio" name="payment" value="cash" id="cash" checked>
+                    <input type="radio" name="payment_method" value="cash" id="cash" checked>
                     <label for="cash">Cash on Delivery</label>
                 </div>
                 <p>Payment on receipt of goods at the New Post office (tax fee, commission 2% + 20 UAH)</p>
+
+                {{-- Card payment --}}
                 <div class="radio-option">
-                    <input type="radio" name="payment" value="card" id="card">
+                    <input type="radio" name="payment_method" value="card" id="card" checked>
                     <label for="card">Card payment</label>
                 </div>
+                <p>Payment details will be sent to the specified email</p>
             </div>
             <button type="submit" class="submit-button">CONFIRM THE ORDER</button>
+        </div>
     </div>
-</div>
+</form>
 
 <footer class="footer">
     <div class="footer-container">

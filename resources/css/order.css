@@ -41,7 +41,9 @@ h2, h3 {
 }
 
 .form-group {
+    margin-top: 15px;
     margin-bottom: 15px;
+    margin-right: 15px;
 }
 
 label {
@@ -278,3 +280,7 @@ input[type="radio"] {
     transform: scale(1);
 }
 
+.error{
+    color: #ff0000;
+    padding: 5px 0px;
+}
