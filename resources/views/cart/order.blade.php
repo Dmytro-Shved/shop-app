@@ -30,7 +30,7 @@
     @csrf
     <div class="container" id="top">
         <div class="left-section">
-            <h2>PAYMENT AND DELIVERY</h2>
+            <h2 class="title">PAYMENT AND DELIVERY</h2>
 
             {{-- Name --}}
             <div class="form-group">

@@ -36,7 +36,7 @@ body {
 }
 
 h2, h3 {
-    margin-top: 0;
+    margin-top: 20px;
     color: #333;
 }
 
@@ -237,7 +237,7 @@ input[type="radio"] {
     cursor: pointer;
     text-decoration: none;
     position: absolute;
-    top: 30px;
+    top: 5px;
     left: 20px;
     z-index: 1000;
 }
@@ -285,3 +285,124 @@ input[type="radio"] {
     padding: 5px 0px;
 }
 
+/* Адаптация для экранов шириной до 768px (мобильные устройства) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Блоки располагаются вертикально */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .left-section, .right-section {
+        padding: 15px;
+        border-right: none; /* Убираем разделительную линию */
+        flex: 1 1 auto; /* Блоки занимают всю ширину */
+    }
+
+    .order-summary .item, .order-summary .total {
+        flex-direction: column; /* Делаем строки вертикальными */
+        align-items: flex-start;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Секции футера одна под другой */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        margin: 0;
+        text-align: center;
+    }
+
+    .footer-logo {
+        max-width: 100px; /* Уменьшаем логотип */
+    }
+
+    .go-to-top-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Адаптация для экранов шириной от 768px до 1024px (планшеты) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Блоки также располагаются вертикально */
+        padding: 15px;
+    }
+
+    .left-section, .right-section {
+        flex: 1 1 100%; /* Блоки занимают всю ширину */
+        padding: 20px;
+    }
+
+    .order-summary .item, .order-summary .total {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .footer-container {
+        flex-wrap: wrap; /* Располагаем секции в две строки */
+        gap: 10px;
+    }
+
+    .footer-section {
+        flex: 1 1 45%; /* Каждая секция занимает 45% ширины */
+    }
+
+    .footer-logo {
+        max-width: 120px;
+    }
+
+    .go-back-button {
+        top: 5px; /* Уменьшаем расстояние сверху */
+        left: 10px; /* Немного смещаем влево для удобства */
+    }
+}
+
+/* Общая адаптация для мелких элементов */
+@media (max-width: 1024px) {
+    h2, h3 {
+        margin-top: 5px;
+        font-size: 18px; /* Уменьшаем заголовки */
+    }
+
+    input, select, textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .radio-option label {
+        font-size: 14px;
+    }
+
+    .payment-method p {
+        font-size: 12px;
+    }
+
+    .go-back-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .footer-bottom {
+        font-size: 10px; /* Уменьшаем текст внизу футера */
+    }
+}
+
+@media (max-width: 768px) {
+    .go-back-button {
+        top: 5px; /* Уменьшаем расстояние сверху */
+        left: 10px; /* Немного смещаем влево для удобства */
+    }
+}
