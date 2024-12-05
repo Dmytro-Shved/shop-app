@@ -18,7 +18,8 @@
         "livewire/volt": "^1.6",
         "mansoor/blade-lets-icons": "^1.0",
         "postare/blade-mdi": "^1.1",
-        "ryangjchandler/blade-tabler-icons": "^2.3"
+        "ryangjchandler/blade-tabler-icons": "^2.3",
+        "symfony/mailer": "~7.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",

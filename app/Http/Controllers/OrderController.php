@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMail;
 use App\Models\Cigarette;
 use App\Models\Liquid;
 use App\Models\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use function PHPUnit\Framework\isEmpty;
 
 class OrderController extends Controller
@@ -45,13 +47,13 @@ class OrderController extends Controller
             'name' => ['required', 'string', 'max:50', 'min:2'],
             'email' => ['required', 'email', 'max:50'],
             'phone' => ['required', 'string', 'size:15'],
-            'details' => ['required', 'string', 'max:191', 'min:20'],
+            'details' => ['max:191', 'nullable'],
         ],[
             'phone.size' => 'Phone number is too small, write your full phone number'
          ]);
 
         // Create a new order
-        Order::create([
+        $order = Order::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => str_replace(' ', '', $request->phone),
@@ -63,6 +65,8 @@ class OrderController extends Controller
             'payment_method' => $request->payment_method,
             'products' => $products,
         ]);
+
+        Mail::to('mityha.shved@gmail.com')->send(new OrderMail($order));
 
         Cart::destroy();
 

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('address',  50);
             $table->string('city',  50);
             $table->string('post_office', 191);
-            $table->string('details', 191)->default('no details');
+            $table->string('details', 191)->nullable();
             $table->float('total');
             $table->string('payment_method', 50);
             $table->json('products');
