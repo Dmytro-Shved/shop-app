@@ -18,12 +18,8 @@
             <p class="product__price">Cena: {{ $cigarette->price }} zł</p>
         </div>
 
-
-        {{-- Buttons for guests: [Buy] [Delete from cart] [Add to cart] --}}
+        {{-- Buttons for guests: [Delete from cart] [Add to cart] --}}
         @guest
-            {{-- Buy button --}}
-            <button class="button product__buy">Kupić</button>
-
             <livewire:cart :productId="$cigarette->id" :productName="$cigarette->name" productType="cigarette"/>
         @endguest
 
@@ -58,11 +54,8 @@
                 {{-- If admin is on show page then don't display buttons --}}
                 @elseif(Request::route()->getName() === 'cigarettes.show')
 
-            {{-- If admin is on another page (index page), display buttons 'buy' and 'cart_button' --}}
+            {{-- If admin is on another page (index page), display button 'cart_button' --}}
             @else
-                {{-- Buy button --}}
-                <button class="button product__buy">Kupić</button>
-
                 {{-- Cart buttons--}}
                 <livewire:cart :productId="$cigarette->id" :productName="$cigarette->name" productType="cigarette"/>
             @endif
