@@ -21,6 +21,10 @@
     </a>
 </div>
 
+@if(session()->has('cart.order'))
+    <p>{{ session($message) }}</p>
+@endif
+
 {{-- Payment Form --}}
 <form action="{{ route('cart.create-order') }}" method="POST">
     @csrf
@@ -187,7 +191,5 @@
         <p>© 2024 ElfVapeShop. All rights reserved</p>
     </div>
 </footer>
-
-
 </body>
 </html>

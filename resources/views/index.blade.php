@@ -24,7 +24,6 @@
     ])
 </head>
 
-
 <body id="element">
     <header class="header">
         <div class="container header__container">
@@ -87,8 +86,14 @@
                 </div>
             </div>
         </section>
-
             <section class="catalog" id="сat">
+
+                @if(session()->has('success'))
+                    <div class="success-message">
+                        <p>{{ session('success') }}</p>
+                    </div>
+                @endif
+
                 <div class="container">
 
                     {{-- Filter --}}

@@ -64,11 +64,10 @@ class OrderController extends Controller
             'products' => $products,
         ]);
 
-        // Destroy
         Cart::destroy();
 
-        // Redirect to home page
-        return redirect()->route('home');
+        return redirect()->route('home')
+            ->with('success', 'Your order was successfully created! Wait for an email message!');
     }
 }
 

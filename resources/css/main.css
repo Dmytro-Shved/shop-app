@@ -1466,6 +1466,19 @@ input:-webkit-autofill:focus {
   gap: 15px;
 }
 
+.success-message{
+    margin: 0px 20px 0px 20px;
+    padding: 10px 10px;
+    border: 2px solid #4caf50;
+    background-color: #dff0d8;
+    color: #3c763d;
+    font-size: 16px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
 
 
 

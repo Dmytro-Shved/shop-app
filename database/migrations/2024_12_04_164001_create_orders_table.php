@@ -23,6 +23,7 @@ return new class extends Migration
             $table->float('total');
             $table->string('payment_method', 50);
             $table->json('products');
+            $table->string('status')->default('in processing');
             $table->timestamps();
         });
     }
