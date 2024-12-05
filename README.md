@@ -45,34 +45,22 @@ Shop App is an online store where users can conveniently browse, add products to
     php artisan migrate
 ```
 
-5. *Install Livewire:*
-
-```
-    composer require livewire/livewire
-```
-
-6. *Install the **[Shopping Cart package](https://github.com/anayarojo/laravel-shopping-cart/tree/master)** through **[Composer](https://getcomposer.org/download/)** :*
+5. *Publish the config file from shopping cart package:*
  
-```
-    composer require anayarojo/shoppingcart
-```
-
-You definitely should publish the config file and take a look at it.
 ```
     php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
 ```
-This will give you a cart.php config file in which you can make changes to the packages behaivor.
 
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
 
 
-7. *Create a link:*
+6. *Create a link:*
 
 ```
     php artisan storage:link 
 ``` 
 
-8. *Run the application:*
+7. *Run the application:*
 
 ```
     php artisan serve 
