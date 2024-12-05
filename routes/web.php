@@ -20,13 +20,7 @@ Route::post('/admin/logout', [AdminPanelController::class, 'logout'])
 Route::middleware('admin')->group(function (){
     Route::get('/admin/panel', [AdminPanelController::class, 'index'])
         ->name('admin_panel');
-
-    Route::view('/admin/register', 'admin/admin-register')
-        ->name('admin_register');
 });
-
-Route::post('/admin/register', [AdminAuthController::class, 'register'])
-    ->name('register');
 
 Route::post('/admin/login', [AdminAuthController::class, 'login'])
     ->name('login');

@@ -120,32 +120,23 @@ This application is an online store where users can browse, add items to cart an
 
 #### Admin functionality
 
-* Administrator registration:
+* Create a new admin:
 
-  To register a new admin for the first time you will need the artisan command 
  ```
     php artisan create:admin
 ```
   
-this command will create an admin in the admins table, once the admin is created you will have access to the form to register a new admin (done for security to prevent new users from becoming admins from the browser). 
-
-then in the future you'll be able to create a new admin using this uri:
-```
-    http://127.0.0.1:8000/admin/register
-```
-
 * Authentication of an existing admin:
  
  ```
-    http://127.0.0.1:8000/admin/login
+    /admin/login
  ```
 
-  Admins can log in through the login page using this uri and providing their credentials (if the credentials are correct, the admin gets access to the admin panel).
+* Access to admin panel:
 
-to access the admin panel through the main page use this example uri:
 
 ```
-    http://127.0.0.1:8000/admin/panel
+    /admin/panel
 ```
 
 * Admin panel (CRUD operations for products):
