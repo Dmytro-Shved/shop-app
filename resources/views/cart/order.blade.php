@@ -176,10 +176,9 @@
         <div class="footer-section">
             <h4>FOR CUSTOMERS</h4>
             <ul>
-                <li><a href="#">Question & Answer</a></li>
-                <li><a href="#">Delivery & Payment</a></li>
-                <li><a href="#">Exchange & Return</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="{{ route('order-faq') }}">Question & Answer</a></li>
+                <li><a href="{{ route('order-del_pay') }}">Delivery & Payment</a></li>
+                <li><a href="{{ route('order-exch_return') }}">Exchange & Return</a></li>
             </ul>
         </div>
         <div class="footer-section">

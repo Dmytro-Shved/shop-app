@@ -1,0 +1,117 @@
+/* Стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #E67E22;
+    margin-bottom: 30px;
+}
+
+.faq-section {
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #D35400;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #E67E22;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #E67E22;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.go-to-top-button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    color: #E67E22;
+    text-align: center;
+    font-size: 24px;
+}
+
+.footer {
+    background-color: #2C3E50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+.return-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 15px;
+}
+
+.go-back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #E67E22;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.go-back-button:hover {
+    background-color: #D35400;
+}
+
+.go-next-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #E67E22;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.go-next-button:hover {
+    background-color: #D35400;
+}

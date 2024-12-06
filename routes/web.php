@@ -30,3 +30,8 @@ Route::resource('liquids', AdminLiquidController::class);
 
 Route::get('/cart/order', [OrderController::class, 'order'])->name('cart.order');
 Route::post('/cart/order', [OrderController::class, 'create_order'])->name('cart.create-order');
+
+
+Route::view('/order/faq', 'cart.faq')->name('order-faq');
+Route::view('/order/delivery_payment', 'cart.delivery-payment')->name('order-del_pay');
+Route::view('/order/exchange_return', 'cart.exchange-return')->name('order-exch_return');
