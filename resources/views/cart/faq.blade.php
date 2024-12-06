@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
     <title>FAQ - Order Related Questions</title>
 
     @vite('resources/css/additional-page.css')
@@ -20,7 +21,7 @@
 <a href="{{ route('order-del_pay') }}" class="go-next-button">Next page: Delivery & Payment</a>
 
 <div class="faq-container">
-    <h1>Frequently Asked Questions (FAQ) - Order Related</h1>
+    <h1>Frequently Asked Questions (FAQ)</h1>
 
     <div class="faq-section">
         <h2>General Order Questions</h2>

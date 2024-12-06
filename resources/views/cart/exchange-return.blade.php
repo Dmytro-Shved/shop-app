@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exchange & Return Policy</title>
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
+    <title>Exchange & Return</title>
 
     @vite('resources/css/additional-page.css')
 </head>
@@ -21,7 +22,7 @@
 </div>
 
 <div class="faq-container">
-    <h1>Exchange & Return Policy</h1>
+    <h1>Exchange & Return</h1>
 
     <div class="faq-section">
         <h2>General Return Policy</h2>

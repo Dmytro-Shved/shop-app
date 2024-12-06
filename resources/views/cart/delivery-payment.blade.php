@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
     <title>Delivery & Payment Information</title>
 
     @vite('resources/css/additional-page.css')
@@ -52,13 +53,6 @@
             <p>Yes, we use secure payment gateways to ensure your payment information is protected. All transactions are encrypted for your security.</p>
         </div>
     </div>
-</div>
-
-<!-- Go to the top button -->
-<div>
-    <a href="#top" class="go-to-top-button">
-        {{ svg('mdi-arrow-up-drop-circle') }}
-    </a>
 </div>
 
 <footer class="footer">

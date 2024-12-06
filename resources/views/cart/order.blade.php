@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
     <title>Payment and Delivery</title>
     @vite([
         'resources/css/order.css',
@@ -159,9 +160,8 @@
             </a>
             <p>We are in the social networks:</p>
             <ul>
-                <li><a href="#" class="social-link">{{ svg('bi-telegram') }} Telegram</a></li>
+                <li><a href="https://t.me/qdrion_cs" class="social-link">{{ svg('bi-telegram') }} Telegram</a></li>
                 <li><a href="#" class="social-link">{{ svg('bi-instagram') }} Instagram</a></li>
-                <li><a href="#" class="social-link">{{ svg('bi-whatsapp') }} WhatsApp</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -171,7 +171,7 @@
             <p>+48 000 000 000</p>
             <p>+48 000 000 000</p>
             <p>Time schedule:</p>
-            <p>Mon-Fri 09:00-20:00</p>
+            <p>Mon-Fri 07:00-20:00</p>
         </div>
         <div class="footer-section">
             <h4>FOR CUSTOMERS</h4>
@@ -183,7 +183,7 @@
         </div>
         <div class="footer-section">
             <p>Subscribe to our channel</p>
-            <a href="#" class="telegram-btn">Telegram</a>
+            <a href="https://t.me/qdrion_cs" class="telegram-btn">Telegram</a>
         </div>
     </div>
     <div class="footer-bottom">

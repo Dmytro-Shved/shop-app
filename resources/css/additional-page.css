@@ -1,10 +1,15 @@
-/* Стили для страницы */
-body {
+/* Общие стили */
+html, body {
+    height: 100%; /* Убедитесь, что html и body занимают всю высоту экрана */
+    margin: 0; /* Убираем маргины */
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
     color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    min-height: 100vh; /* Гарантируем, что body всегда будет иметь минимальную высоту 100% */
 }
 
 .faq-container {
@@ -15,6 +20,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Это позволяет контейнеру растягиваться, если контента мало */
 }
 
 h1 {
@@ -71,7 +77,8 @@ a:hover {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: 40px;
+    width: 100%;
+    margin-top: auto; /* Это гарантирует, что футер всегда будет внизу */
 }
 
 .return-buttons-container {
