@@ -27,7 +27,6 @@ class OrderController extends Controller
 
     public function create_order(Request $request)
     {
-
         // Get content from the cart
         $cart = Cart::content();
 

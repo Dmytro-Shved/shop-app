@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo/logo_link.png') }}">
-    <title>Delivery & Payment Information</title>
-
-    @vite('resources/css/additional-page.css')
-</head>
-<body>
-
-<div class="return-buttons-container">
-    <!-- Go back to home page -->
-    <a href="{{ route('home') }}" class="go-back-button" id="top"> ⤺ Go back to home page </a>
-
-    <!-- Order page -->
-    <a href="{{ route('cart.order') }}" class="go-back-button"> ⤺ Order page </a>
-
-    <!-- Previous page -->
-    <a href="{{ route('order-faq') }}" class="go-back-button"> ⤺ Back to FAQ page </a>
-</div>
-
-<a href="{{ route('order-exch_return') }}" class="go-next-button">Next page: Exchange & Return</a>
-
+<x-support-layout>
 <div class="faq-container">
     <h1>Delivery & Payment Information</h1>
 
@@ -54,12 +30,4 @@
         </div>
     </div>
 </div>
-
-<footer class="footer">
-    <div class="footer-container">
-        <p>© 2024 ElfVapeShop. All rights reserved.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+</x-support-layout>
