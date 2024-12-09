@@ -56,7 +56,6 @@
     </header>
 
     <main class="main">
-
         <section class="hero">
             <div class="hero-video">
                 <video autoplay muted loop playsinline>

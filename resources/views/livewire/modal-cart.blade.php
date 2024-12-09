@@ -65,7 +65,7 @@
                             {{-- Remove product from cart button --}}
                             <td>
                                 <button wire:click="remove('{{ $product->rowId }}')" type="submit"
-                                        class="remove-item">🗑
+                                        class="remove-item">{{ svg('ionicon-trash') }}
                                 </button>
                             <td>
 
@@ -79,7 +79,7 @@
 
                             <form wire:submit="destroy_cart">
                                 @csrf
-                                <button x-on:click="$wire.destroy_cart()" class="cart-delete__basket">🛒&rarr; <span class="bask">🗑</span></button>
+                                <button x-on:click="$wire.destroy_cart()" class="cart-delete__basket">{{ svg('eos-remove-shopping-cart') }}</button>
                             </form>
 
                         </tr>

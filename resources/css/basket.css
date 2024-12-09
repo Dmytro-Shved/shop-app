@@ -101,11 +101,17 @@ th{
     border-radius: 25px;
     padding: 5px;
 }
-.remove-item{
-    font-size: 30px;
+
+.remove-item {
     background: none;
-    color: red;
-    cursor: pointer;
+    border: none;
+    svg {
+        width: 30px;
+        height: 30px;
+        color: red;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 }
 
 td{
@@ -179,24 +185,34 @@ td{
 
 
 
-.cart-delete__basket{
+.cart-delete__basket {
     position: absolute;
     left: 20px;
     top: 10px;
     font-size: 20px;
     padding: 7px;
-    border: 1px solid #d31313;
     border-radius: 6px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    background: transparent;
+    border: none;
 }
-.bask{
 
+.cart-delete__basket svg {
+    fill: #ff0000 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0;
+}
+
+.bask{
     color: red;
     font-size: 25px;
     vertical-align: center;
-
 }
