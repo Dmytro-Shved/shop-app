@@ -4,6 +4,21 @@
     scroll-behavior: smooth;
 }
 
+/*label {*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*label.required::after {*/
+/*    content: " *";*/
+/*    color: red; */
+/*}*/
+
+label[for="name"]::after, label[for="email"]::after, label[for="phone"]::after {
+    content: " *";
+    color: red;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -38,6 +53,15 @@ body {
 h2, h3 {
     margin-top: 20px;
     color: #333;
+    display: inline-flex;
+    align-items: center;
+}
+
+h2 svg, h3 svg {
+    height: 25px;
+    width: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .form-group {
@@ -228,24 +252,31 @@ input[type="radio"] {
 .go-back-button {
     background-color: #ff6b00;
     color: white;
-    border: 2px solid #ccc;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 50px;
-    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    transition: background-color 0.3s, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     cursor: pointer;
     text-decoration: none;
     position: absolute;
     top: 5px;
     left: 20px;
     z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+}
+
+.go-back-button svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
 }
 
 .go-back-button:hover {
     background-color: #e55a00;
-    border-color: #0056b3;
-    transform: scale(1.1);
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.7);
 }
 
 .go-back-button:active {

@@ -13,7 +13,9 @@
 <body>
 
 {{-- Go back to home page --}}
-<a href="{{ route('home') }}" class="go-back-button"> ⤺ Go back to home page </a>
+{{--<a href="{{ route('home') }}" class="go-back-button"> ⤺ Go back to home page </a>--}}
+
+<a href="{{ route('home') }}" class="go-back-button">{{ svg('ionicon-caret-back') }} Go back to home page </a>
 
 {{--Go to the top --}}
 <div>
@@ -31,11 +33,11 @@
     @csrf
     <div class="container" id="top">
         <div class="left-section">
-            <h2 class="title">PAYMENT AND DELIVERY</h2>
+            <h2 class="title">{{ svg('fas-address-card') }} PAYMENT AND DELIVERY</h2>
 
             {{-- Name --}}
             <div class="form-group">
-                <label for="name">Name *</label>
+                <label for="name" class="required">Name</label>
                 <input type="text" name="name" id="first-name" value="{{ old('name') }}">
 
                 @error('name')
@@ -45,7 +47,7 @@
 
             {{-- Email --}}
             <div class="form-group">
-                <label for="email">Email *</label>
+                <label for="email" class="required">Email</label>
                 <input type="text" name="email" id="email" value="{{ old('email') }}">
 
                 @error('email')
@@ -55,7 +57,7 @@
 
             {{-- Phone number --}}
             <div class="form-group">
-                <label for="phone">Phone number *</label>
+                <label for="phone" class="required">Phone number</label>
                 <input type="tel" name="phone" placeholder="+48 (_ _ _) (_ _ _) (_ _ _)" id="phone" value="{{ old('phone') }}">
 
                 @error('phone')
@@ -64,7 +66,7 @@
             </div>
 
             {{-- Address --}}
-            <h3>Please specify delivery address</h3>
+            <h3>{{ svg('mdi-truck-delivery') }}Please specify delivery address</h3>
             <div class="form-group">
                 <select name="address" id="delivery-method">
                     <option value="post office">post office</option>
@@ -94,7 +96,7 @@
             </div>
 
             {{-- Details --}}
-            <h3>Details</h3>
+            <h3>{{ svg('clarity-details-solid') }} Details</h3>
             <div class="form-group">
                 <label for="comments">Note to order (optional)</label>
                 <textarea name="details" id="comments"
@@ -108,7 +110,7 @@
         </div>
         <div class="right-section">
             {{-- Order --}}
-            <h2>YOUR ORDER</h2>
+            <h2>{{ svg('letsicon-order-fill') }} YOUR ORDER</h2>
             <div class="order-summary">
                 @foreach($cart as $product)
                     <div class="item">
@@ -131,7 +133,7 @@
 
             {{-- Payment methods --}}
             <div class="payment-method">
-                <h3>Payment</h3>
+                <h3>{{ svg('fluentui-payment-32') }}Payment</h3>
 
                 {{--Cash on Delivery --}}
                 <div class="radio-option">

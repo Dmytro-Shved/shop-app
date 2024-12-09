@@ -10,6 +10,8 @@
         "andreiio/blade-remix-icon": "^3.5",
         "blade-ui-kit/blade-heroicons": "^2.5",
         "blade-ui-kit/blade-zondicons": "^1.5",
+        "codeat3/blade-carbon-icons": "^2.31",
+        "codeat3/blade-clarity-icons": "^1.9",
         "codeat3/blade-fluentui-system-icons": "^1.33",
         "codeat3/blade-google-material-design-icons": "^1.19",
         "davidhsianturi/blade-bootstrap-icons": "^1.5",
