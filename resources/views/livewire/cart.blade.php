@@ -32,6 +32,9 @@
                 <svg class="button__icon" width="20" height="20">
                     <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>
                 </svg>
+                <div wire:loading wire:target="store({{ $productId}}, '{{ $productType }}')" class="spinner-container">
+                    <div class="spinner"></div>
+                </div>
             </button>
         </form>
     @endif

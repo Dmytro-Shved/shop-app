@@ -19,7 +19,6 @@
         {{-- Cart table --}}
         <div class="cart-table-container">
             <table class="cart-table">
-
                 {{-- If the cart is empty then do not show table headers --}}
                 @if($cart->count())
                     <thead>
@@ -35,6 +34,7 @@
                 <tbody>
                     {{-- Loop for products from cart --}}
                     @forelse($cart as $product)
+                        
                         <tr class="tr-border">
                             <!-- product name -->
                             <td>{{ $product->name }}</td>
@@ -46,6 +46,7 @@
                             <td>
                                 {{-- Quantity control --}}
                                 <div class="quantity-control">
+
 
                                     {{-- decrement quantity--}}
                                     <button wire:click="update_qty_dec('{{ $product->rowId }}', {{ $product->qty - 1 }})"
@@ -77,15 +78,20 @@
                             {{-- Total price --}}
                             <div class="cart-modal__total" id="cart-total">Total price: {{ $total }} zł.</div>
 
+                            {{-- Destroy cart --}}
                             <form wire:submit="destroy_cart">
                                 @csrf
-                                <button x-on:click="$wire.destroy_cart()" class="cart-delete__basket">{{ svg('eos-remove-shopping-cart') }}</button>
+                                <button x-on:click="$wire.destroy_cart()" class="cart-delete__basket">
+                                    {{ svg('eos-remove-shopping-cart') }}
+                                </button>
                             </form>
 
                         </tr>
                     {{-- If cart is empty then show the text --}}
                     @empty
-                        <p>Koszyk jest pusty</p>
+                        <p class="image-container">
+                            {{ svg('hugeicons-shopping-cart-remove-01') }}
+                        </p>
                     @endforelse
                 </tbody>
             </table>
