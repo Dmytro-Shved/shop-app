@@ -4,7 +4,7 @@
 
         {{-- Remove product from cart --}}
         <div>
-            <form wire:submit="remove('{{ $cart->where('id', $productId)->first()->rowId }}')">
+            <form wire:submit="remove('{{ $cart->where('name', $productName)->where('id', $productId)->first()->rowId}}')">
                 @csrf
 
                 <button type="submit" class="delete-from-cart">Delete from cart</button>
@@ -19,9 +19,12 @@
 
             {{-- Quantity control --}}
             <div class="quantity-control">
-                <button wire:click="decrement({{ $productId }})" type="button" class="quantity-button decrease">-</button>
-                <input wire:model="quantity.{{ $productId }}" type="number" name="quantity" class="quantity-input" readonly/>
-                <button wire:click="increment({{ $productId }})" type="button" class="quantity-button increase">+</button>
+                <button wire:click="decrement({{ $productId }})" type="button" class="quantity-button decrease">-
+                </button>
+                <input wire:model="quantity.{{ $productId }}" type="number" name="quantity" class="quantity-input"
+                       readonly/>
+                <button wire:click="increment({{ $productId }})" type="button" class="quantity-button increase">+
+                </button>
             </div>
 
             {{-- Cart button submit (with an image) --}}
