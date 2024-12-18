@@ -276,7 +276,7 @@
         </div>
     </footer>
 
-    {{-- Modal button (new) --}}
+    {{-- Modal button --}}
     <button x-data x-on:click="$dispatch('open-modal')"  class="cart-button">
         <svg class="cart-button__icon" width="30" height="30">--}}
             <use href="./storage/images/footer-icons/symbol-defs.svg#icon-shopping-cart"></use>

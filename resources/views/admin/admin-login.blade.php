@@ -30,7 +30,7 @@
         <div class="login__inputs">
             <div class="login__name">
                 <input type="text" name="name" value="{{ old('name') }}"
-                @class(['input-name', 'error-red-input' => $errors->has('name')]) placeholder="dimon pisidron">
+                @class(['input-name', 'error-red-input' => $errors->has('name')]) placeholder="Name">
                     <!-- <i class='bx bxs-user'></i> -->
 
                     <div class="valid-error">
@@ -43,7 +43,7 @@
             {{-- Password --}}
             <div class="login__password">
                 <input type="password" name="password"
-                @class(['input-password', 'error-red-input' => $errors->has('password')]) placeholder="123">
+                @class(['input-password', 'error-red-input' => $errors->has('password')]) placeholder="Password">
                 <!-- <i class='bx bxs-key icon-q'></i> -->
 
                 <div class="valid-error">

@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="{{ asset('https://png.pngtree.com/png-vector/20190909/ourlarge/pngtree-outline-pencil-icon-and-symbol-isolated-png-image_1727869.jpg') }}">
+    @vite('resources/css/admin-edit.css')
+
     <title>Edit Panel</title>
 </head>
-{{-- ПОКА ЧТО НЕ ПОДКЛЮЧЕНЫ СТИЛИ, РАСКОММЕНТИРУЙ КОД НИЖЕ ЧТОБЫ МОЖНО БЫЛО ДЕЛАТЬ СТИЛИЗАЦИЮ--}}
-{{--@vite('resources/css/main.css')--}}
 
 <body>
 <section class="#">
@@ -71,9 +71,9 @@
         </div>
 
         {{-- Current Image --}}
-        <div class="#">
-            <p>Current image</p>
-            <img src="{{ asset('./storage/'. $liquid->image) }}" alt="">
+        <div class="image-container">
+            <p class="image-label">Current image</p>
+            <img src="{{ asset('./storage/'. $liquid->image) }}" alt="" class="current-image">
         </div>
 
         {{-- Select new image --}}
@@ -92,6 +92,12 @@
         </div>
     </form>
 </section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>© 2024 ElfVapeShop. All rights reserved.</p>
+    </div>
+</footer>
 </body>
 
 </html>
