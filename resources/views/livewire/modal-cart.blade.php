@@ -35,7 +35,7 @@
                     {{-- Loop for products from cart --}}
                     @forelse($cart as $product)
 
-                        <tr class="tr-border">
+                        <tr class="tr-border" wire:key="product-{{ $product->rowId }}">
                             <!-- product name -->
                             <td>{{ $product->name }}</td>
 
