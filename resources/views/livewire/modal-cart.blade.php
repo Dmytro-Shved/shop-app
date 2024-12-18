@@ -34,7 +34,7 @@
                 <tbody>
                     {{-- Loop for products from cart --}}
                     @forelse($cart as $product)
-                        
+
                         <tr class="tr-border">
                             <!-- product name -->
                             <td>{{ $product->name }}</td>
@@ -65,8 +65,13 @@
 
                             {{-- Remove product from cart button --}}
                             <td>
-                                <button wire:click="remove('{{ $product->rowId }}')" type="submit"
-                                        class="remove-item">{{ svg('ionicon-trash') }}
+                                <button
+                                    wire:click="remove('{{ $product->rowId }}')"
+                                    wire:target="remove('{{ $product->rowId }}')"
+                                    wire:loading.attr="disabled"
+                                    wire:loading.class="remove-item-loading"
+                                    type="submit"
+                                    class="remove-item">{{ svg('ionicon-trash') }}
                                 </button>
                             <td>
 
@@ -81,11 +86,15 @@
                             {{-- Destroy cart --}}
                             <form wire:submit="destroy_cart">
                                 @csrf
-                                <button x-on:click="$wire.destroy_cart()" class="cart-delete__basket">
+                                <button
+                                    x-on:click="$wire.destroy_cart()"
+                                    wire:loading.attr="disabled"
+                                    wire:target="destroy_cart"
+                                    wire:loading.class="cart-delete__basket--loading"
+                                    class="cart-delete__basket">
                                     {{ svg('eos-remove-shopping-cart') }}
                                 </button>
                             </form>
-
                         </tr>
                     {{-- If cart is empty then show the text --}}
                     @empty

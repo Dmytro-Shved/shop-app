@@ -114,6 +114,18 @@ th{
     }
 }
 
+.remove-item-loading {
+    background: none;
+    border: none;
+    svg {
+        width: 30px;
+        height: 30px;
+        color: gray;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+}
+
 td{
     text-align: center;
     vertical-align: middle;
@@ -211,8 +223,22 @@ td{
     margin: 0;
 }
 
+.cart-delete__basket--loading svg {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    fill: #777777 !important;
+}
+
 .bask{
     color: red;
     font-size: 25px;
     vertical-align: center;
+}
+
+
+.destroy-cart-loading {
+    margin: 0 0 10px;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 700;
 }
