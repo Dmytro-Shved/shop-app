@@ -8,14 +8,14 @@
             <h2 class="product__name">{{ $liquid->name }}</h2>
             {{-- Info --}}
             <div class="product__info">
-                ✔&nbsp;PG/VG - {{ $liquid->pg_vg_ratio }}
+                {{ svg('tabler-relation-many-to-many') }}&nbsp;PG/VG - {{ $liquid->pg_vg_ratio }}
                 <br>
-                ✔&nbsp;Pojemność - {{ $liquid->volume }} ml
+                {{ svg('ionicon-water-outline') }}&nbsp;Pojemność - {{ $liquid->volume }} ml
                 <br>
-                ✔&nbsp;Smak: {{ $liquid->flavor }}
+                {{ svg('healthicons-o-fruits') }}&nbsp;Smak: {{ $liquid->flavor }}
             </div>
             {{-- Price --}}
-            <p class="product__price">Cena: {{ $liquid->price }} zł</p>
+            <p class="product__price">{{ $liquid->price }} zł</p>
         </div>
 
         {{-- Buttons for guests: [Delete from cart] [Add to cart] --}}

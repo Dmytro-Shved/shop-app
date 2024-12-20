@@ -8,14 +8,15 @@
             <h2 class="product__name">{{ $cigarette->name }}</h2>
             {{-- Info --}}
             <div class="product__info">
-                ✔&nbsp;Moc - {{ $cigarette->strength }}%
+
+                {{ svg('hugeicons-body-part-muscle') }}&nbsp;Moc - {{ $cigarette->strength }}%
                 <br>
-                ✔&nbsp;{{ $cigarette->puffs }} zaciągnięć
+                {{ svg('monoicon-wind') }}&nbsp;{{ $cigarette->puffs }} zaciągnięć
                 <br>
-                ✔&nbsp;Smak: {{ $cigarette->flavor }}
+                {{ svg('healthicons-o-fruits') }}&nbsp;Smak: {{ $cigarette->flavor }}
             </div>
             {{-- Price --}}
-            <p class="product__price">Cena: {{ $cigarette->price }} zł</p>
+            <p class="product__price">{{ $cigarette->price }} zł</p>
         </div>
 
         {{-- Buttons for guests: [Delete from cart] [Add to cart] --}}

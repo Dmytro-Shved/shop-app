@@ -542,13 +542,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 .product__info {
-  font-size: 14px;
-  color: rgba(48, 48, 48, 0.86);
-  min-height: 110px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(48, 48, 48, 0.86);
+}
+
+.product__info svg {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    vertical-align: text-bottom;
 }
 
 .product__price {
-  margin: 0;
+    font-weight: bolder;
+    margin: 5px;
 }
 
 .product__button {
