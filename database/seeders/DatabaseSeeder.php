@@ -15,15 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         Admin::factory(10)->create();
-
-        Admin::factory()->create([
-            'name' => 'Test Admin',
-            'email' => 'test@example.com',
+        // Admin
+        Admin::factory(1)->create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin',
         ]);
 
-
-//        Cigarettes
+        // Cigarettes (5)
         Cigarette::factory(1)->create([
             'name' => 'Gene Pod',
             'type' => 'pod',
@@ -74,8 +73,7 @@ class DatabaseSeeder extends Seeder
             'image' =>  'images/pod/0q8OjD24AfxtElW7W5bnPNxGcDBKyPMOW4M0WZUB.jpg',
         ]);
 
-//        Liquids
-
+        // Liquids (6)
         Liquid::factory(1)->create([
             'name' => 'Cherry Liquid',
             'pg_vg_ratio' => '50/50',
@@ -128,12 +126,6 @@ class DatabaseSeeder extends Seeder
             'flavor' => 'Mango',
             'price' => 25,
             'image' => 'images/liquid/Yl2EsEmK7F8hplu5xOpYhhGS3c8RNro4Z41Z85Ql.jpg',
-        ]);
-
-        Admin::factory(1)->create([
-           'name' => 'admin',
-           'email' => 'admin@gmail.com',
-           'password' => 'admin',
         ]);
     }
 }

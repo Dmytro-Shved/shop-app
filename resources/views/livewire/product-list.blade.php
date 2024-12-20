@@ -3,8 +3,8 @@
     @forelse($cigarettes as $cigarette)
         <livewire:cigarette-card :cigarette="$cigarette"/>
     @empty
-        <div class="#">
-            No cigarettes in the database
+        <div class="no-items-message">
+            No cigarette records found
         </div>
     @endforelse
 
@@ -12,8 +12,8 @@
     @forelse($liquids as $liquid)
         <livewire:liquid-card :liquid="$liquid"/>
     @empty
-        <div class="#">
-            No liquids in the database
+        <div class="no-items-message">
+            No liquids records found
         </div>
     @endforelse
 </div>

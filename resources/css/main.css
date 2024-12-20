@@ -1525,6 +1525,21 @@ input:-webkit-autofill:focus {
     height: 100%; /* SVG займет всю высоту контейнера */
 }
 
+.no-items-message {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #555; /* Текст нейтрального цвета */
+    background-color: #f8d7da; /* Лёгкий красный фон, чтобы показать предупреждение */
+    border: 1px solid #f5c6cb; /* Рамка в тон фона */
+    padding: 15px 20px; /* Пространство внутри блока */
+    border-radius: 8px; /* Скруглённые углы */
+    text-align: center; /* Центрирование текста */
+    width: 100%; /* Занимает всю ширину */
+    max-width: 400px; /* Ограничение ширины блока */
+    margin: 20px auto; /* Выравнивание по центру и отступ сверху/снизу */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
 
 
 
