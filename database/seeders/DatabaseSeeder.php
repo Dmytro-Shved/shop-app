@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin::factory(10)->create();
+         Admin::factory(10)->create();
 
-//        Admin::factory()->create([
-//            'name' => 'Test Admin',
-//            'email' => 'test@example.com',
-//        ]);
+        Admin::factory()->create([
+            'name' => 'Test Admin',
+            'email' => 'test@example.com',
+        ]);
 
 
 //        Cigarettes
@@ -128,6 +128,12 @@ class DatabaseSeeder extends Seeder
             'flavor' => 'Mango',
             'price' => 25,
             'image' => 'images/liquid/Yl2EsEmK7F8hplu5xOpYhhGS3c8RNro4Z41Z85Ql.jpg',
+        ]);
+
+        Admin::factory(1)->create([
+           'name' => 'admin',
+           'email' => 'admin@gmail.com',
+           'password' => 'admin',
         ]);
     }
 }
