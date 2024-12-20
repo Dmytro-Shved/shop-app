@@ -12,9 +12,6 @@
 </head>
 <body>
 
-{{-- Go back to home page --}}
-{{--<a href="{{ route('home') }}" class="go-back-button"> ⤺ Go back to home page </a>--}}
-
 <a href="{{ route('home') }}" class="go-back-button">{{ svg('ionicon-caret-back') }} Go back to home page </a>
 
 {{--Go to the top --}}
