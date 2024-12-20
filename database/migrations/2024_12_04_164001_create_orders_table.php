@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('email', 50);
-            $table->string('phone',  20);
-            $table->string('address',  50);
-            $table->string('city',  50);
-            $table->string('post_office', 191);
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('city');
+            $table->string('post_office');
             $table->string('details', 191)->nullable();
             $table->float('total');
-            $table->string('payment_method', 50);
+            $table->string('payment_method');
             $table->json('products');
             $table->string('status')->default('in processing');
             $table->timestamps();

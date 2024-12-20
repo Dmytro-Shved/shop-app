@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('liquids', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 191);
-            $table->string('pg_vg_ratio', 10);
+            $table->string('name');
+            $table->string('pg_vg_ratio');
             $table->integer('volume');
-            $table->string('flavor', 191);
+            $table->string('flavor');
             $table->decimal('price', 8, 2)->nullable(0);
             $table->string('image');
             $table->timestamps();
