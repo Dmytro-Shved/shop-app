@@ -45,7 +45,13 @@ Shop App is an online store where users can conveniently browse, add products to
     php artisan migrate
 ```
 
-5. *Publish the config file from shopping cart package:*
+5. *Seed the database:*
+
+```
+    php artisan db:seed
+```
+
+6. *Publish the config file from shopping cart package:*
  
 ```
     php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
@@ -54,13 +60,13 @@ Shop App is an online store where users can conveniently browse, add products to
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
 
 
-6. *Create a link:*
+7. *Create a link:*
 
 ```
     php artisan storage:link 
 ``` 
 
-7. *Run the application:*
+8. *Run the application:*
 
 ```
     php artisan serve 
@@ -68,7 +74,7 @@ Shop App is an online store where users can conveniently browse, add products to
 
 ## Using
 
-This application is an online store where users can browse, add items to cart and place orders. A special control panel is provided for administrators, where they can manage products and users.
+This application is an online store where users can browse, add items to cart and place orders. A special control panel is provided for administrators, where they can manage products.
 
 #### Basic functionality
 
