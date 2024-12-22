@@ -93,6 +93,8 @@
 }
 
 .button__logout {
+    width: 100px;
+    height: 100px;
     background-color: rgb(66, 161, 243);
     color: azure;
     font-size: 19px;
@@ -513,6 +515,8 @@
 .admin_edit_btn {
     background-color: #3498db;
     color: white;
+    height: 37px;
+    width: 50px;
 }
 
 .admin_edit_btn:hover {
@@ -594,4 +598,56 @@
     display: none;
     max-width: 150px;
     max-height: 150px;
+}
+
+/* Center the messages */
+.alert {
+    font-family: "Arial Black";
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    z-index: 9999;
+}
+
+/* Success message style */
+.alert-success {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: 1px solid #28a745;
+}
+
+/* Delete message style */
+.alert-delete {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+/* Edit message style */
+.alert-edit {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Optional: Add fade-out effect after some time */
+.alert {
+    animation: fadeOut 5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

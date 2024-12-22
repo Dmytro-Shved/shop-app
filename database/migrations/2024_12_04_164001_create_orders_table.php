@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('post_office');
             $table->string('details', 191)->nullable();
-            $table->float('total');
+            $table->decimal('total');
             $table->string('payment_method');
             $table->json('products');
             $table->string('status')->default('in processing');

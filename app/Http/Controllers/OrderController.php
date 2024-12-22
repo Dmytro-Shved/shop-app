@@ -60,7 +60,7 @@ class OrderController extends Controller
             'city' => $request->city,
             'post_office' => $request->office,
             'details' => $request->details,
-            'total' => $request->total,
+            'total' => str_replace(',', '', $request->total),
             'payment_method' => $request->payment_method,
             'products' => $products,
         ]);

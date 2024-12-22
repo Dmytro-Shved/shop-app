@@ -80,7 +80,7 @@ class AdminLiquidController extends Controller implements HasMiddleware
             'volume'=> ['required', 'max:25', 'numeric'],
             'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
-            'image'=> ['required', 'image', 'nullable'],
+            'image'=> ['image', 'nullable'],
         ]);
 
         // Old image

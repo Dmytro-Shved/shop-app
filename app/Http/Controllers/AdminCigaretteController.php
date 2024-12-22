@@ -83,7 +83,7 @@ class AdminCigaretteController extends Controller implements HasMiddleware
             'puffs'=> ['required', 'max:50000', 'numeric'],
             'flavor'=> ['required', 'string', 'max:191'],
             'price'=> ['required', 'numeric'],
-            'image'=> ['required', 'image', 'nullable'],
+            'image'=> ['image', 'nullable'],
         ]);
 
         // Old image path

@@ -549,8 +549,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .product__info svg {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
     vertical-align: text-bottom;
 }

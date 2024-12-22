@@ -30,7 +30,7 @@
             <input type="text" name="name" class="input" value="{{ $liquid->name }}">
 
             @error('name')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
@@ -39,7 +39,7 @@
             <input type="text" name="pg_vg_ratio" class="input" value="{{ $liquid->pg_vg_ratio }}">
 
             @error('pg_vg_ratio')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
@@ -48,7 +48,7 @@
             <input type="number" name="volume" class="input" value="{{ $liquid->volume }}">
 
             @error('volume')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
@@ -57,7 +57,7 @@
             <input type="text" name="flavor" class="input" value="{{ $liquid->flavor }}">
 
             @error('flavor')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
@@ -66,7 +66,7 @@
             <input type="number" name="price" class="input" value="{{ $liquid->price }}">
 
             @error('price')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
