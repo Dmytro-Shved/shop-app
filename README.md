@@ -22,39 +22,38 @@ Shop App is an online store where users can conveniently browse, add products to
 1. *Clone the repository:*
 
 ```
-    git clone https://github.com/Dmytro-Shved/shop-app.git
+git clone https://github.com/Dmytro-Shved/shop-app.git
 ```
 
 2. *Install dependencies:*
  
 ```
-    composer install
-    npm install
-    npm run dev
+composer install
+npm install
 ```
 
 3. *Environment configuration: copy code from `.env.example` to `.env`:*
 
 ```
-    copy .env.example .env
+copy .env.example .env
 ```
 
 4. *Run migrations:*
  
 ```
-    php artisan migrate
+php artisan migrate
 ```
 
 5. *Seed the database:*
 
 ```
-    php artisan db:seed
+php artisan db:seed
 ```
 
 6. *Publish the config file from shopping cart package:*
  
 ```
-    php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
 ```
 
 (If you would like to learn more about the functionality of the package, visit the **[package page](https://github.com/anayarojo/laravel-shopping-cart/tree/master)**)
@@ -63,13 +62,14 @@ Shop App is an online store where users can conveniently browse, add products to
 7. *Create a link:*
 
 ```
-    php artisan storage:link 
+php artisan storage:link 
 ``` 
 
 8. *Run the application:*
 
 ```
-    php artisan serve 
+php artisan serve 
+npm run dev
 ``` 
 
 ## Using
