@@ -4,7 +4,7 @@
 
 ## About Shop App (ElfVapeShop)
 
-Shop App is an online store where users can conveniently browse, add products to the cart, save their quantity and quickly place orders. We offer a wide range of products and an intuitive interface for comfortable shopping. 
+Shop App is an online store that lets users easily browse products, add them to their cart, adjust quantities, and quickly place orders. We offer a wide range of products and a user-friendly interface to make shopping a pleasant experience.
 
 ## Requirements
 
